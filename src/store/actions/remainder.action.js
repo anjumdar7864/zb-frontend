@@ -64,7 +64,7 @@ export const setUserReminder = (id, body, onSuccess, onError) => {
 //         return data;
 //       } catch (error) {
 //         console.log("check data", error.response?.data?.message);
-//         if (error.response?.data?.message == "Session expiredd") {
+//         if (error.response?.data?.message == "Session expired") {
 //           console.log("check data ==", error.response?.data?.message);
 //           localStorage.clear();
 //           dispatch({
@@ -117,7 +117,7 @@ export const updateUserReminder = (id, body, onSuccess, onError) => {
 //         return data;
 //       } catch (error) {
 //         console.log("check data", error.response?.data?.message);
-//         if (error.response?.data?.message == "Session expiredd") {
+//         if (error.response?.data?.message == "Session expired") {
 //           console.log("check data ==", error.response?.data?.message);
 //           localStorage.clear();
 //           dispatch({
@@ -167,7 +167,7 @@ export const cancelUserReminder = (id, onSuccess, onError) => {
 //         return data;
 //       } catch (error) {
 //         console.log("check data ==", error.response?.data?.message);
-//         if (error.response?.data?.message == "Session expiredd") {
+//         if (error.response?.data?.message == "Session expired") {
 //           console.log("check data", error.response?.data?.message);
 //           localStorage.clear();
 //           dispatch({

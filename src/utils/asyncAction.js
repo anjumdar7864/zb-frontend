@@ -42,7 +42,7 @@ export const asyncAction = (
       // console.log("chulling this ++++" , error?.response?.data?.message);
       
       if (
-        error?.response?.data?.message === "Session expiredd"
+        error?.response?.data?.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({

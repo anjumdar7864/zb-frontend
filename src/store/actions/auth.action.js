@@ -39,7 +39,7 @@ export const Login = (body, isRememberMe) => {
       }
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -77,7 +77,7 @@ export const LoginWithGoogle = (body, isRememberMe) =>{
       }
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -122,7 +122,7 @@ export const LoginAsUser = (email, onSuccess) => {
         toast.error(error?.response?.data?.message);
       }
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -167,7 +167,7 @@ export const LoginAsUserMaster = (email, onSuccess) => {
         toast.error(error?.response?.data?.message);
       }
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -214,7 +214,7 @@ export const CreateNewUser = (body, onSuccess, onError) => {
       });
       onError(error.response.data.message);
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -255,7 +255,7 @@ export const signUpUser = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -296,7 +296,7 @@ export const signUpUserCreateByAdmin = (body, adminId) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -336,7 +336,7 @@ export const CreatePassword = (body, userId) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -376,7 +376,7 @@ export const ChangePassword = (body, userId) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -420,7 +420,7 @@ export const GetAllUser = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -460,7 +460,7 @@ export const GetAllUserWithAdmin = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -500,7 +500,7 @@ export const DeleteUser = (userId, onSuccess) => {
       onSuccess();
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -543,7 +543,7 @@ export const GetSingleUser = (id, role , onSuccess) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -588,7 +588,7 @@ export const GetSingleUserAdmin = (id, role , onSuccess) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -627,7 +627,7 @@ export const GetAdminProfile = (id, role) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -669,7 +669,7 @@ export const GetSingleUserProfile = (id, role) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -709,7 +709,7 @@ export const CreateNewPassword = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -751,7 +751,7 @@ export const UpdateSingleUser = (body, id, role, onSuccess, onError) => {
       onSuccess && onSuccess();
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -809,7 +809,7 @@ export const UpdateLoginTanent = (body, id, role, onSuccess, onError) => {
       onSuccess && onSuccess();
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -867,7 +867,7 @@ export const UpdateSingleUserAgent = (body, id, role, onSuccess, onError) => {
       window.location.reload();
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -899,7 +899,7 @@ export const logOut = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         sessionStorage.clear();
@@ -940,7 +940,7 @@ export const ForgotPassword = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -980,7 +980,7 @@ export const TransferLeadsOfUser = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -1020,7 +1020,7 @@ export const VerifyPassword = (passwordBody, transferLeadBody) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({

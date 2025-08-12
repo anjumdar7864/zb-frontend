@@ -45,7 +45,7 @@ export const GetCompleteStatusBatch = (page, limit, userId, userType , sorting ,
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -104,7 +104,7 @@ export const GetPausedStatusBatch = (userId, userType , page , limit , sorting) 
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -146,7 +146,7 @@ export const GetAllUserForBatch = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -191,7 +191,7 @@ export const GetBatchById = (batchId) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -232,7 +232,7 @@ export const GetCampaignForBatch = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -288,7 +288,7 @@ export const CreateBatch = (body, showProcessingBatchModal) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -331,7 +331,7 @@ export const CheckCompaignWorkingHour = (
       }
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -375,7 +375,7 @@ export const ChangeTemplate = (body, id) => {
       dispatch(GetPausedStatusBatch());
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -421,7 +421,7 @@ export const SendMessage = (body, onClose) => {
       // dispatch(GetBatchById(body.batchId));
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -465,7 +465,7 @@ export const UpdateDailyCount = (body, onClose) => {
       // dispatch(GetBatchById(body.batchId));
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -506,7 +506,7 @@ export const CancelBatch = (batchId) => {
     } catch (error) {
       console.log("error is", error);
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({

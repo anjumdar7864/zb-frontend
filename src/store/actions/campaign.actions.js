@@ -118,7 +118,7 @@ export const getAllCompaigns = (
           authHeaders
         );
         console.log("check data", data);
-        // if (data == "Session expiredd") {
+        // if (data == "Session expired") {
         //   console.log("check data ==", data);
         //   localStorage.clear();
         //   dispatch({
@@ -130,7 +130,7 @@ export const getAllCompaigns = (
         return data;
       } catch (error) {
         console.log("check data", error.response?.data?.message);
-        if (error.response?.data?.message == "Session expiredd") {
+        if (error.response?.data?.message == "Session expired") {
           console.log("check data ==", error.response?.data?.message);
           localStorage.clear();
           dispatch({

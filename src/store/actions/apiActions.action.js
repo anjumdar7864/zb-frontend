@@ -22,7 +22,7 @@ export const apiCall = (endpoint, method, body) => {
       dispatch({ type: 'API_SUCCESS', payload: response.data });
 
     } catch (error) {
-      if (error.response?.data?.message === "Session expiredd") {
+      if (error.response?.data?.message === "Session expired") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,

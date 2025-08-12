@@ -23,7 +23,7 @@ export const GetAllAreaCode = (modeType="" , tenantId="") => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -63,7 +63,7 @@ export const getTimeZoneAccordingToAreaCode = (areaCodeId) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({

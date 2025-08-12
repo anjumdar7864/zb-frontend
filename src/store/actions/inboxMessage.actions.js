@@ -50,8 +50,8 @@ export const getAllInboxMessagesFilters = (params, onSuccess, onError) => {
 //           params,
 //         });
 
-//         if (data?.message === "Session expiredd") {
-//           console.log("Session expiredd:", data?.message);
+//         if (data?.message === "Session expired") {
+//           console.log("Session expired:", data?.message);
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -63,7 +63,7 @@ export const getAllInboxMessagesFilters = (params, onSuccess, onError) => {
 //         return data;
 //       } catch (error) {
 //         console.error("Error fetching inbox messages:", error.response?.data?.message);
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -93,7 +93,7 @@ export const getUserInboxMessages = (params, onSuccess, onError) => {
           ...authHeaders,
           params,
         });
-        if (data?.message == "Session expiredd") {
+        if (data?.message == "Session expired") {
           console.log("check data", data?.message);
           localStorage.clear();
           dispatch({
@@ -122,8 +122,8 @@ export const getUserInboxMessages = (params, onSuccess, onError) => {
 //           params,
 //         });
 
-//         if (data?.message === "Session expiredd") {
-//           console.log("Session expiredd:", data?.message);
+//         if (data?.message === "Session expired") {
+//           console.log("Session expired:", data?.message);
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -135,7 +135,7 @@ export const getUserInboxMessages = (params, onSuccess, onError) => {
 //         return data;
 //       } catch (error) {
 //         console.error("Error fetching inbox messages:", error.response?.data?.message);
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -186,7 +186,7 @@ export const sendInboxMessage = (type, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error sending inbox message:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -238,7 +238,7 @@ export const getInboxActivityList = (id, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error fetching inbox activity list:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -290,7 +290,7 @@ export const getInboxNotesList = (id, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error fetching inbox notes list:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -370,7 +370,7 @@ export const sendInboxNoteList = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error sending inbox note:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -426,7 +426,7 @@ export const deleteInboxNote = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error deleting inbox note:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -480,7 +480,7 @@ export const sendVerifiedNumber = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error sending verified number:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -536,7 +536,7 @@ export const sendAddToDNCNumber = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error adding to DNC number:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -604,7 +604,7 @@ export const sendWrongNumberList = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error adding to Wrong Number:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -650,7 +650,7 @@ export const getProspectDetails = (phone, inboxId) => {
         payload: data,
       });
     } catch (error) {
-      if (error?.response?.data?.message === "Session expiredd") {
+      if (error?.response?.data?.message === "Session expired") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -686,7 +686,7 @@ export const getProspectDetails = (phone, inboxId) => {
 //       } catch (error) {
 //         console.error("Error fetching prospect details:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -738,7 +738,7 @@ export const removeVerifiedNumber = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error removing verified number:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -795,7 +795,7 @@ export const removeAddToDNCNumber = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error removing number from DNC:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -849,7 +849,7 @@ export const removeWrongNumber = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error removing wrong number mark:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -901,7 +901,7 @@ export const addTagToUserInbox = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error adding tag:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -953,7 +953,7 @@ export const removeTagToUserInbox = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error removing tag:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1007,7 +1007,7 @@ export const markAsRead = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error marking as read:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1061,7 +1061,7 @@ export const markAsUnRead = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error marking as unread:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1129,7 +1129,7 @@ export const addStatusToInboxList = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error updating status:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1225,7 +1225,7 @@ export const assignDripToInbox = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error assigning drip automation:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1297,7 +1297,7 @@ export const removeStatusToInboxList = (id, body, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error removing status:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1353,7 +1353,7 @@ export const UnAssignDripToInbox = (id, onSuccess, onError) => {
 //       } catch (error) {
 //         console.error("Error unassigning drip:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1409,7 +1409,7 @@ export const pushDataToCRM = (body) => {
           error.response?.data?.message
         );
         toast.error(error.response?.data?.message)
-        if (error.response?.data?.message === "Session expiredd") {
+        if (error.response?.data?.message === "Session expired") {
           localStorage.clear();
           dispatch({
             type: authConstant.SESSION_EXPIRE,
@@ -1459,7 +1459,7 @@ export const changeLeadName = (inbox, body) => {
 //       } catch (error) {
 //         console.error("Error updating lead name:", error.response?.data?.message);
 
-//         if (error.response?.data?.message === "Session expiredd") {
+//         if (error.response?.data?.message === "Session expired") {
 //           localStorage.clear();
 //           dispatch({
 //             type: authConstant.SESSION_EXPIRE,
@@ -1504,7 +1504,7 @@ export const changeLeadName = (inbox, body) => {
 //       });
 //     } catch (error) {
 //       if (
-//         error.response.data.message === "Session expiredd"
+//         error.response.data.message === "Session expired"
 //       ) {
 //         localStorage.clear();
 //         dispatch({
@@ -1545,7 +1545,7 @@ export const DripFilterForInbox = (id) => {
     } catch (error) {
       console.error("Drip filter fetch error:", error.response?.data?.message);
 
-      if (error.response?.data?.message === "Session expiredd") {
+      if (error.response?.data?.message === "Session expired") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
