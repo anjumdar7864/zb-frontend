@@ -1,0 +1,247 @@
+.tabContainer {
+    padding: 40px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    overflow: auto;
+    height: 100%;
+}
+
+
+.dropdownContainer {
+    position: relative;
+    display: inline-block;
+    
+}
+
+
+
+.GeneralTop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.GeneralBottom {
+    flex-grow: 1;
+    padding: 40px 0px;
+    padding-bottom: 20px;
+
+    overflow: auto;
+
+}
+.GeneralBottomSec{
+    
+    padding-top: 40px;
+ 
+
+ 
+}
+
+.TennentInfoTop{
+    background-color: white;
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+}
+.TennentInfoTopHTitle{
+    color: #012635;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    border-bottom: solid 1px #E0E0E0;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.TennentInfoBody{
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.TennentInfoBottom{
+    padding-top: 24px;
+}
+.tableLayout {
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+    max-height: 100%;
+    background-color: white;
+    overflow: auto;
+}
+.tableLayoutInfo {
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+   border-end-end-radius: unset;
+   border-end-start-radius: unset;
+    overflow: hidden;
+    /* max-height: 154px; */
+   
+    background-color: white;
+    overflow: auto;
+}
+
+.searchContainer {
+    width: 250px;
+    height: 48px;
+    display: flex;
+    padding: 0px 12px;
+    outline: none;
+    border: solid 1px #D3D7DD;
+    border-radius: 8px;
+    background-color: white;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.SearchInput {
+    outline: none;
+    border: none;
+    color: #777777;
+    flex-grow: 1;
+    font-size: 16px;
+
+}
+
+.button {
+    display: flex;
+    background-color: #00BD82;
+    padding: 0px 12px;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    align-items: center;
+    cursor: pointer;
+    min-width: 190px;
+    height: 40px;
+}
+
+.dropdown {
+    appearance: none;
+    /* Hide default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 150px;
+    height: 48px;
+    border-radius: 8px;
+    border: solid 1px #D3D7DD;
+    cursor: pointer;
+    outline: none;
+    color: #777777;
+    padding: 0px 12px;
+}
+
+
+.dropdown:focus{
+    border: solid 1px #00BD82;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    /* Icon won’t interfere with select interaction */
+    color: #012635;
+    /* Customize icon color */
+    font-size: 22px;
+}
+
+
+.outbondInput{
+    height: 48px;
+    width: 100%;
+    border: 1px solid #D3D7DD;
+    border-radius: 8px;
+   
+    color: #777777;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    outline: none;
+    padding: 0px 12px;
+}
+
+.outbondInput:hover{
+    border: 1px solid #5BF1B2;
+
+}
+
+.outbondInput:focus{
+    border: 1px solid #5BF1B2;
+
+}
+
+.custom_select {
+    width: 100%;
+    height: 48px;
+    padding: "0px 12px";
+    
+    border-radius: 8px;
+    border: 1px solid #D3D7DD;
+   outline: none;
+  }
+
+/* .custom_scrollbar::-webkit-scrollbar {
+    width: 8px; 
+ }
+  */
+ /* .custom_scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+ }
+  */
+ /* .custom_scrollbar::-webkit-scrollbar-thumb {
+    background: #00bd82;
+    border-radius: 10px;
+ } */
+ 
+ /* .custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #00bd82;
+ } */
+
+
+ .custom_scrollbar::-webkit-scrollbar {
+    width: 2px, 
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-track {
+    background-color: transparent
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-thumb {
+    background-color: #F7F7F7; 
+    border-radius: 10px, 
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #F7F7F7, 
+  }
+  .custom_scrollbar::-webkit-scrollbar-button {
+    display: none 
+  }
+
+  .custom_scrollbar{
+    scrollbar-width: thin;
+    scrollbar-color: #00BD82 transparent; 
+    position:relative
+  }
+
+  .SubmissionBottom {
+    flex-grow: 1;
+    padding-bottom: 40px;
+    /* padding-bottom: 20px; */
+
+    overflow: auto;
+
+}

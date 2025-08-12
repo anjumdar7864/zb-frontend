@@ -1,0 +1,159 @@
+{
+  "featuresSection": {
+    "title": "",
+    "description": "",
+    "data": [
+      {
+        "image": "./images/home/card-image-1_1.png",
+        "title": "Set up in seconds",
+        "description": "In just a few clicks, you’ll be ready to have meaningful conversations from anywhere in the world.",
+        "cta": "Explore all features",
+        "ctaUrl": "/"
+      },
+      {
+        "image": "./images/home/card-image-2_1.png",
+        "title": "Text message automation",
+        "description": "Boost productivity and efficiency with drip automated, smarter conversations that enhance your outreach.",
+        "cta": "See our automation",
+        "ctaUrl": ""
+      },
+      {
+        "image": "./images/home/card-image-3.png",
+        "title": "Leverage insights",
+        "description": "Goodby guesswork. Hello, better decisions. Monitor metrics in real-time to start making measurable improvements.",
+        "cta": "Monitor key metrics",
+        "ctaUrl": ""
+      },
+      {
+        "image": "./images/home/card-image-4.png",
+        "title": "Accelerate your outreach",
+        "description": "Whether you use Zeitblast as your primary CRM or integrate it with others using our one-click Push to CRM feature, experience advanced CRM capabilities and seamless integration.",
+        "cta": "Explore ZeitBlast AI",
+        "ctaUrl": ""
+      }
+    ]
+  },
+  "ReliabailitySection": {
+    "title": "Reliability with No Downtime",
+    "data": [
+      {
+        "image": "./images/home/reliable-card-1_1.png",
+        "title": "Unmatched Reliability",
+        "subTitle": "We ensure you never miss a lead with Zeitblast unparalleled reliability. Experience zero downtime and maintain a steady flow of leads without interruption. ",
+        "ctaLink": "/",
+        "cardImage": "./images/home/reliabailityCard_1.png",
+        "cardTitle": "Regine Langhorn",
+        "cardSubTitle": "Lead Generation Manager @ Encore Real Estate",
+        "cardDescription": "We switched from another text marketing platform to Zeitblast. Unreliability and down time was a huge concern for us, since we switched to Zeitblast not once we experienced any downtime and the deliverability is amazing."
+      },
+      {
+        "image": "./images/home/reliable-card-2.png",
+        "title": "Build in A2P 10DLC compliance feature",
+        "subTitle": "Stay compliant effortlessly with our built-in features designed to meet all regulatory requirements. Focus on your business while we ensure your campaigns are always in line with the latest regulations.",
+        "ctaLink": "/",
+        "cardImage": "./images/home/reliabailityCard2.png",
+        "cardTitle": "Jay Bustamante",
+        "cardSubTitle": "Real Estate Investor @ Smart REI",
+        "cardDescription": "Compliance was a huge concern for us, but with the built-in features, we now manage our campaigns confidently and without any legal worries."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Three Plans Loaded with Opportunities",
+    "cards": [
+      {
+        "theme": "primary",
+        "featured": false,
+        "title": "I'm Serious",
+        "price": 2500,
+        "priceId": "price_1QRGTBCqlbj03UwyPSaXYkrb",
+        "description": "Commit to success with our 'I'm Serious' Plan, packed with advanced tools and dedicated support for real estate professionals ready to get started.",
+        "subDescription": "Get started for $2500, billed monthly",
+        "subscriptionId": "67445d36f4d8d6cff7dbde60",
+        "subTitle": "What’s Included",
+       
+        "features": [
+          "Send up to 15,000 Initial Outbound Messages",
+          "Unlimited drip campaigns",
+          "Free unlimited inbound & outbound active conversations",
+          "Guaranteed Highest Delivery & Response",
+          "All local numbers with unlimited exchanges",
+          "Built-in 10DLC compliance feature"
+        ]
+      },
+      {
+        "theme": "secondary",
+        "featured": true,
+        "title": "Time to Scale",
+        "price": 780,
+        "priceId": "price_1QP7RwCqlbj03Uwy61TJ5c0l",
+        "description": "Expand your outreach with the 'Time to Scale' Plan, designed to help ambitious professionals grow their real estate business and dominate their market.",
+        "subDescription": "Get started for $780, billed monthly",
+        "subscriptionId": "67445e5cf4d8d6cff7dbde85",
+        "subTitle": "All features from the I'm Serious plan, plus:",
+        "features": [
+          "Send up to 30,000 initial outbound messages",
+          "3 licensed account users (agents)",
+          "Advanced area code monitoring for highest deliverability",
+          "Built-in 10DLC compliance feature"
+        ]
+      },
+      {
+        "theme": "tertiary",
+        "featured": false,
+        "title": "Market Dominator",
+        "price": 1450,
+        "priceId": "price_1QP7U5Cqlbj03UwyvpFMCOGq",
+        "description": "Ready to dominate the market? The 'Market Dominator' Plan is designed for top-tier professionals with a full-scale operation, offering wide resources.",
+        "subDescription": "Get started for $1450, billed monthly",
+        "subscriptionId": "6744614ba4d142ed16ea9c97",
+        "subTitle": "All features from the Time to Scale plan, plus:",
+        "features": [
+          "Send up to 65,000 initial outbound messages",
+          "Dedicated account manager",
+          "Customized strategy sessions and personalized support",
+          "Built-in 10DLC compliance feature"
+        ]
+      }
+    ]
+  },
+  "jumpStart": {
+    "theme": "primary",
+    "featured": false,
+    "title": "Jumpstart JV",
+    "price": 195,
+    "priceId": "price_1QR9qUCqlbj03UwytGzSYPRx",
+    "description": "Generate Leads, Close Deals, and Learn the Ropes with Comprehensive Support.Are you ready to dive into the real estate market but need a little extra help to get started? Our 'Jumpstart JV Plan' is perfect for entry-level real estate professionals who want to generate leads and close deals with unparalleled support and guidance",
+    "subDescription": "Get started for $195, billed monthly",
+    "subscriptionId": "6744617ea4d142ed16ea9c9e",
+    "subTitle": "What’s Included",
+    "features": [
+      "Affordable Entry: For just $195/month, gain access to all features included in our 'I'm Serious' plan.",
+      "Unlimited drip campaigns",
+      "Lead Generation Power: Send out 15,000 outbound messages every month to kickstart your lead generation.",
+      "Comprehensive Full Support: Receive expert assistance with acquisition calls, closing calls, contractual agreements, and disposition of all your deals.",
+      "Learning and Growth: Benefit from our extensive training on various exit strategies, including but not limited to novation and subject to.",
+      "Joint Venture Partnership: Collaborate with us on deals, sharing profits with a 50/50 split. You'll learn while you earn, gaining valuable experience along the way."
+    ]
+  } ,
+   "doneForU": {
+    "theme": "primary",
+    "featured": false,
+    "title": "Done-for-You",
+    "price": 195,
+    "priceId": "price_1QpPuwCqlbj03UwyW4XbBXVo",
+    "description": "Struggling to generate leads while closing deals? With Zeitblast’s Done-for-You Lead Gen Subscription, we take care of the entire lead generation process — no time, expertise, or effort needed on your end. You focus on closing deals, we handle the rest.",
+    "subDescription": "Get started for $195, billed monthly",
+    "subscriptionId": "6744617ea4d142ed16ea9c9e",
+    "subTitle": "What’s Included",
+    "features": [
+      "Fully Managed SMS Campaigns: No need to learn or run campaigns. Our experts handle everything from strategy to execution",
+      "Unlimited drip campaigns",
+      "Virtual Assistant Hiring & Management:We source, train, and manage skilled VAs to support your lead generation efforts.",
+      "Daily Lead Delivery: Receive 3+ vetted, qualified leads delivered directly to your CRM every day.",
+      "Complete Operational Oversight: Forget about the complexities of operations. We handle all logistics, systems, and workflows.",
+      "Seamless CRM Integration: Leads are automatically pushed to your CRM for easy follow-up and tracking." , 
+      "Expert Execution: Leverage our proven processes and industry knowledge for consistent lead flow."
+    ]
+  }
+}

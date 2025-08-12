@@ -1,0 +1,907 @@
+/* ---------- container ---------- */
+.InboxStyled {
+    width: 100%;
+  
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+
+    /* background-color: #00bd82; */
+  }
+  
+
+
+  /* ---------- TOP BAR ---------- */
+  /* .InboxStyled > .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 24px 40px;
+  } */
+.InboxStyledTopLeftH1{
+    font-weight: 400;
+    color: black; 
+    line-height: 1.6em;
+    font-size: 32px;
+    font-weight: 700;
+    color: #012635;
+}
+
+  .InboxStyledTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 24px 40px;
+  }
+  
+  /* .InboxStyled > .top > .left > h1 {
+    line-height: 1.6em;
+    font-size: 32px;
+    font-weight: 700;
+    color: #012635;
+  } */
+  .InboxStyledTopLeft{
+    line-height: 1.6em;
+    font-size: 32px;
+    font-weight: 700;
+    color: #012635;
+  }
+  
+  /* search wrapper */
+  /* .InboxStyled > .top > .right {
+    display: flex;
+    border: 1px solid #d3d7dd;
+    border-radius: 8px;
+    height: 48px;
+    width: 250px;
+    transition: width 0.3s ease;
+  } */
+
+  .InboxStyledTopRight{
+    display: flex;
+    border: 1px solid #d3d7dd;
+    border-radius: 8px;
+    /* height: 48px; */
+    width: 250px;
+    transition: width 0.3s ease;
+  }
+  
+  /* .InboxStyled > .top > .right input {
+    flex: 1 1 auto;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #858585;
+    border-radius: 8px;
+    transition: background-color .3s, border .3s;
+  } */
+
+  .InboxStyledTopRightInput{
+    flex: 1 1 auto;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #858585;
+    border-radius: 8px;
+    transition: background-color .3s, border .3s;
+  }
+  
+  .InboxStyledTopRightInput::placeholder { color:#858585; }
+  .InboxStyledTopRightInput:focus    { border-color:#384ad7; background:#fff; }
+  
+  .InboxStyledTopRight button{
+    min-width:46px; width:3.6rem; display:grid; place-items:center;
+    border-radius:0 1.2rem 1.2rem 0; color:#012635; font-size:22px;
+    transition:background-color 300ms;
+  }
+
+  .listContainer {
+    flex-grow: 1;
+    overflow: auto;
+    gap: 2px;
+    padding: 8px 16px;
+  }
+
+
+  .DesktopPagination{
+    display: flex;
+  }
+
+  .MobilePagination{
+    display: none;
+  }
+
+
+  @media (max-width: 1440px) {   /* Replace 1400px with your actual breakpoint */
+    .DesktopPagination{
+      display: none;
+    }
+
+    .MobilePagination{
+      display: block;
+    }
+  }
+
+
+  /* ---------- SEARCH shrink→expand on very-wide screens (≤1360 px) ---------- */
+  @media (max-width:1360px){
+    .InboxStyledTopRight{ width:46px; overflow:hidden; }
+    .InboxStyledTopRight:hover{ width:250px; }
+
+   
+  }
+  
+  /* ---------- mobile-stack TOP BAR (≤500 px) ---------- */
+  @media (max-width:500px){
+    .InboxStyledTop{
+      flex-direction:column; align-items:flex-start; gap:16px; padding:16px;
+    }
+  }
+  
+  /* ---------- MAIN ---------- */
+  .InboxStyledBottom{
+    flex:1 1 auto;
+     display:flex; 
+     flex-direction:column; 
+     gap:1.5rem;
+    padding:24px 40px; 
+    overflow:auto;
+  }
+  @media (max-width:500px){
+    .InboxStyledBottom{ padding:0 16px 10px; gap:0; }
+  }
+  
+
+
+  .InboxStyledBottomSec {
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 1400px) {   /* Replace 1400px with your actual breakpoint */
+    .bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  /* ---------- FILTER BAR ---------- */
+  /* .InboxStyledBottom > .top{ padding:24px 0; }
+  .InboxStyledBottom > .top > .top{
+    display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:.5rem;
+  } */
+  
+  /* chip styles */
+  .InboxStyled .filter-chip,
+  .InboxStyled .filter-chip button{
+    cursor:pointer; display:flex; align-items:center; gap:.4rem;
+    padding:.4rem .6rem; border-radius:.4rem; color:#858585;
+    transition:background-color .3s;
+  }
+  .InboxStyled .filter-chip:hover{ background:#dedfe7; }
+  .InboxStyled .filter-chip.selected .icon,
+  .InboxStyled .filter-chip.selected .text{ color:#36a3f7; }
+  .InboxStyled .filter-chip.remainder{ background:#fff; padding-right:.7rem; }
+  .InboxStyled .filter-chip.remainder.open{
+    background:#5867dd;
+  }
+  .InboxStyled .filter-chip.remainder.open .icon,
+  .InboxStyled .filter-chip.remainder.open .text{ color:#fff; }
+  
+  /* ---------- TAG LIST ---------- */
+  .InboxStyled .tag-section{ display:inline-block; margin:.4rem; }
+  .InboxStyled .tag-section .item{
+    display:flex; align-items:center; gap:.6rem; height:32px;
+    background:#f0f0f0; border-radius:8px; padding:.3rem 12px;
+  }
+  .InboxStyled .tag-section .item .icon{ font-size:1.3rem; color:#9ba3ae; }
+  .InboxStyled .tag-section .item .text{ font-size:14px; color:#012635; font-weight:500; }
+  .InboxStyled .tag-section .item:hover button{ display:block; }
+  .InboxStyled .tag-section .item button{ display:none; font-size:1rem; color:#9ba3ae; cursor:pointer; }
+  
+  /* ---------- PAGINATION ---------- */
+  .InboxStyled .paginationMobile{ display:none; }
+  @media (max-width:500px){                       /* sm */
+    .InboxStyled .paginationMobile{
+      display:flex; justify-content:space-between; background:#fff;
+      align-items:center; padding:10px 16px 0;
+      border-left:1px solid #e0e0e0; border-right:1px solid #e0e0e0;
+    }
+    .InboxStyled .paginationDesktop{
+      justify-content:center; border-top:0;
+    }
+    .InboxStyled .paginationDesktop .desktopView,
+    .InboxStyled .paginationDesktop .desktopViewTwo{ display:none; }
+  }
+  
+  .InboxStyled .paginationDesktop{
+    display:flex; justify-content:space-between; border:1px solid #e0e0e0;
+  }
+  
+  /* ---------- LIST / TABLE region ---------- */
+  .InboxStyled .content-wrapper{
+    background:#fff; border:1px solid #e0e0e0; border-radius:8px 8px 0 0;
+    overflow:auto; display:grid; gap:2.1rem; align-content:start;
+  }
+  
+  /* custom scrollbars */
+  .InboxStyled          ::-webkit-scrollbar{ width:.4rem; }
+  .InboxStyled          ::-webkit-scrollbar-thumb{ background:#dedfe7; }
+  .InboxStyled          ::-webkit-scrollbar-track{ background:#fff; }
+  
+  .InboxStyled .content-wrapper::-webkit-scrollbar{ width:.6rem; }
+  .InboxStyled .content-wrapper::-webkit-scrollbar-thumb{ background:#00bd82; border-radius:5px; }
+  .InboxStyled .content-wrapper::-webkit-scrollbar-track{ background:#f1f1f1; }
+  
+  /* empty state */
+  .InboxStyled .no-prospects{ height:15vh; text-align:center; }
+  
+  /* footer under list */
+  .InboxStyled .content-footer{
+    display:flex; justify-content:space-between;
+  }
+  @media (max-width:990px){                       /* xlg */
+    .InboxStyled .content-footer{ flex-direction:column; gap:1.3rem; }
+  }
+  .InboxStyled .content-footer .left > span{ font-size:1.3rem; color:#212529; }
+  
+  /* --------- OPTIONAL breakpoint blocks already covered ---------
+     If you later need md (≤650 px), tab (≤1024 px), xlgg (≤1150 px), etc.,
+     just add more @media (max-width: ⟨value⟩px) sections following this pattern. */
+  
+
+
+
+
+
+
+
+     /* ---------- Message Item ---------- */
+
+     .message {
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      border-radius: 5px;
+      transition: background-color 300ms ease-in-out;
+      cursor: pointer;
+      padding: 0.13rem;
+      width: 100%;
+    }
+
+    .message:hover {
+      background-color: #f1f2fb;
+    }
+
+.MessageItemStyled {
+    border-top: 0.1rem solid #f6f3f3;
+    background-color: white;
+    /* padding: 16px; */
+    padding: 8px 12px;
+    display: grid;
+    align-content: start;
+    
+  }
+  
+  .MessageItemStyled:last-of-type {
+    /* border-bottom: 0.1rem solid #dbdada; */
+  }
+  
+  /* Selected state */
+  /* .MessageItemStyled[selected] {
+    background: #F7F7F7 !important;
+    transition: .3s ease-in-out;
+    border-left: 0.25rem solid #00BD82;
+  }
+   */
+
+   .MessageItemStyled.selected {
+    background: #F7F7F7 !important;
+    transition: .3s ease-in-out;
+    border-left: 0.25rem solid #00BD82;
+  }
+  /* ---------- Top Section ---------- */
+  .MessageItemStyledTop {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+  
+  .StatusUpdateMenuStyledLeft {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .MessageItemStyled > .top > .left > .items {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 8px;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .MessageItemStyled > .top > .left > .items > button {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: var(--color);
+    font-size: 1.3rem;
+  }
+  
+  .MessageItemStyled > .top > .left > .items > h6 {
+    color: #393939;
+    font-size: 1.3rem;
+    font-weight: 500;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .MessageItemStyled > .top > .left > .items > .tag {
+    padding: 2px 8px;
+    background-color: var(--color);
+    font-size: 12px;
+    color: #393939;
+    font-weight: 500;
+    border-radius: 12px;
+  }
+  
+  .StatusUpdateMenuHoverItems {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    gap: 0.65rem;
+    justify-content: start;
+    align-items: center;
+  }
+  
+  .StatusUpdateMenuHoverItems > .tag {
+    padding: 0.13rem 8px;
+    background-color: var(--color);
+    color: white;
+    border-radius: 12px;
+  }
+  
+  /* .StatusUpdateMenuHoverItems > button {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: #ccc;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: var(--background);
+   
+    font-size: 1.3rem;
+    transition: background-color 300ms ease-in-out;
+  } */
+
+  .StatusUpdateMenuHoverItemsButton{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    color: #ccc;
+    width: 22px;
+    height: 22px;
+    border-radius: 8px;
+    background-color: var(--background);
+   
+    font-size: 1.3rem;
+    transition: background-color 300ms ease-in-out;
+  }
+
+  .StatusUpdateMenuStyledLeftSelected{
+    color: var(--color);
+    background-color: var(--color) !important ; 
+  
+  }
+  .StatusUpdateMenuItems{
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    gap: 0.65rem;
+    justify-content: start;
+    align-items: center;
+  }
+  .StatusUpdateMenuHoverItemsSelected{
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--color);
+    color: #fff;
+    transition: opacity 300ms ease-in-out;
+    width: 22px;
+    height: 22px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+  }
+  
+  .StatusUpdateMenuHoverItems > .noStatus {
+    background-color: var(--color);
+    color: #fff;
+    border-color: var(--color);
+    transition: opacity 300ms ease-in-out;
+  }
+  
+  /* ---------- Right Section ---------- */
+  /* .MessageItemStyled > .top > .right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+  } */
+
+  .MessageItemStyledTopRight{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: flex-end;
+    
+  }
+  
+  /* .MessageItemStyled > .top > .right > span {
+    font-size: 1.2rem;
+    color: #858585;
+    font-weight: 400;
+  } */
+  
+  .MessageItemStyledTopRight > span{
+    /* font-size: 1.2rem;
+    color: #858585;
+    font-weight: 400; */
+  }
+  .MessageItemStyled > .top > .right > span > button {
+    font-size: 1.5rem;
+    color: #aaa;
+    line-height: 0;
+    transition: color 300ms ease-in-out;
+  }
+  
+  .MessageItemStyled > .top > .right > span > button.added {
+    color: #5867dd;
+  }
+  
+  .MessageItemStyled > .top > .right > span > button.added:hover {
+    color: #384ad7;
+  }
+  
+  /* ---------- Bottom Section ---------- */
+  .MessageItemStyledBottom {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 1rem;
+    align-items: center;
+  }
+  
+  /* .MessageItemStyled > .bottom > *:first-child {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  } */
+  
+  .MessageItemStyled > .bottom > *:first-child {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  
+  /* .MessageItemStyled > .bottom > *:last-child {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    
+  } */
+
+  .MessageItemStyledBottom > *:last-child{
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    flex-direction: column;
+  
+  }
+  
+  .MessageItemStyled > .bottom > .message {
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 300ms ease-in-out;
+    cursor: pointer;
+    padding: 0.13rem;
+    width: 100%;
+  }
+  
+  .MessageItemStyled > .bottom > .message:hover {
+    background-color: #f1f2fb;
+  }
+  
+  /* .MessageItemStyled > .bottom > .message > .dot {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #eeeffb;
+    transition: background-color 300ms ease-in-out;
+  } */
+
+  .dot {
+    display: block;
+    /* width: 1rem;
+    height: 1rem; */
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #eeeffb;
+    transition: background-color 300ms ease-in-out;
+  }
+  
+  .MessageItemStyled > .bottom > .message:hover > .dot {
+    background-color: var(--color);
+  }
+  
+  /* .MessageItemStyled > .bottom > .message > .dot.unread-yellow {
+    background-color: var(--UnreadColorYellow);
+    box-shadow: 0 0 var(--UnreadColorYellow);
+    animation: pulse-red 2s infinite;
+  } */
+  
+
+  .unreadYellow {
+    /* background-color: var(--UnreadColorYellow); */
+    background-color: #f6c34f;
+    box-shadow: 0 0 #f6c34f;
+    animation: pulse-red 2s infinite;
+  }
+  /* .MessageItemStyled > .bottom > .message > .dot.unread-blue {
+    background-color: var(--UnreadColorBlue);
+    box-shadow: 0 0 var(--UnreadColorBlue);
+    animation: pulse-red 2s infinite;
+  } */
+
+  .unreadBlue {
+    /* background-color: var(--UnreadColorBlue); */
+    background-color: #36a3f7;
+    box-shadow: 0 0 #36a3f7;
+    animation: pulse-red 2s infinite;
+  }
+  
+  /* .MessageItemStyled > .bottom > .message > .dot.unread-red {
+    background-color: var(--UnreadColorRed);
+    box-shadow: 0 0 var(--UnreadColorRed);
+    animation: pulse-red 2s infinite;
+  } */
+
+
+  .unreadRed {
+    /* background-color: var(--UnreadColorRed); */
+    background-color: #E25D6F;
+    box-shadow: 0 0 #E25D6F;
+    animation: pulse-red 2s infinite;
+  }
+  
+  @keyframes pulse-red {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 #ff5252b3;
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 6px #ff525200;
+    }
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 #ff525200;
+    }
+  }
+  
+  .MessageItemStyled > .bottom > .message > p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #777777;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .unread{
+    font-weight: 400;
+    color: #777777;
+  }
+  
+  .MessageItemStyled > .bottom > a > .message {
+    display: grid;
+    gap: 0.65rem;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 300ms ease-in-out;
+    cursor: pointer;
+    padding: 0.13rem;
+  }
+  
+  .MessageItemStyled > .bottom > a > .message:hover {
+    background-color: #f1f2fb;
+  }
+  
+  /* more options button */
+  .MessageItemStyled > .bottom > .moreOptions {
+    justify-self: end;
+    display: grid;
+  }
+  
+  .MessageItemStyled > .bottom > .moreOptions > button {
+    color: #212529;
+    opacity: 0.5;
+    transition: opacity 300ms ease-in-out;
+  }
+  
+  .MessageItemStyled > .bottom > .moreOptions > button:hover {
+    opacity: 0.7;
+  }
+  
+  /* ---------- Phone Status ---------- */
+  /* .MessageItemStyled > .bottom > .phone {
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.3rem;
+  } */
+  
+  /* .MessageItemStyled > .bottom > .phone > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #212529;
+    opacity: 0.5;
+    width: fit-content;
+    width: 15px;
+    height: 20px;
+    border-radius: 0.2rem;
+    cursor: pointer;
+  } */
+
+
+  .phone{
+    padding-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.3rem;
+  }
+
+
+  .phoneSpan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #212529;
+    opacity: 0.5;
+    width: fit-content;
+    width: 15px;
+    height: 20px;
+    border-radius: 0.2rem;
+    cursor: pointer;
+
+  }
+  
+  .phoneSpan:hover {
+    background-color: #d8d8d8;
+    opacity: 0.8;
+  }
+  
+  /* .MessageItemStyled > .bottom > .phone > span.verified {
+    background-color: #43cd80;
+  } */
+
+  .phoneSpanVerified{
+    background-color: #43cd80;
+  }
+  
+  /* .MessageItemStyled > .bottom > .phone > span.dnc {
+    background-color: #f4516c;
+  } */
+  
+  .phoneSpanDnc{
+    background-color: #f4516c;
+  }
+  
+  /* .MessageItemStyled > .bottom > .phone > span.wrong {
+    position: relative;
+  } */
+  
+  .phoneSpanWrong{
+    position: relative;
+  }
+  
+  .phoneSpanWrong::after {
+    font-family: "Font Awesome 5 Free";
+    content: "!";
+    position: absolute;
+    margin-right: 0rem;
+    margin-top: -0.2rem;
+    z-index: 1001;
+    font-size: 1.3rem;
+    color: #e52935;
+    font-weight: bold;
+  }
+  
+
+
+
+
+  /* RightSide.module.css */
+
+/* Root container */
+.rightSideStyled {
+  height: 100%;
+  width: 100%;
+
+}
+
+/* Desktop layout */
+.desktopRightSide {
+  position: relative;
+  /* display: grid; */
+  display: flex;
+}
+
+.StatusFilterButton {
+  margin: 0.3rem;
+  line-height: 0;
+  color: #939bd3;
+  font-size: 1.5rem;
+}
+
+.StatusFilterItem {
+  padding: 0.3rem 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  height: 28px;
+  background-color: #f0f0f0;
+}
+
+/* Icon inside .item */
+.StatusFilterItem .icon {
+  color: #9ba3ae;
+  font-size: 1.3rem;
+  line-height: 0;
+}
+
+/* Text inside .item */
+.StatusFilterItem .text {
+  /* font-size: 14px; */
+  /* color: #012635; */
+  /* font-weight: 500; */
+  text-transform: capitalize;
+}
+.StatusFilterItem > div {
+  width: 20px;
+}
+
+/* Button inside the child div of .item (hidden by default) */
+.StatusFilterItem > div > button {
+  color: #9ba3ae;
+  font-size: 1rem;
+  line-height: 0;
+  display: none;
+  cursor: pointer;
+}
+
+/* Show the button on hover of .item */
+.StatusFilterItem:hover > div > button {
+  display: block;
+}
+
+.StatusFilterSection{
+  display: inline-block;
+  margin: 2px;
+}
+.statusFilterBottom{
+  display: flex;
+  align-items: center;
+}
+
+.activeFilterText{
+  /* font-weight: 400;
+  color: #858585;
+  font-size: 1.2rem; */
+  margin-right: 0.8rem;
+}
+/* Hide desktopRightSide on tab (<= 1024px) */
+@media (max-width: 1024px) {
+  .desktopRightSide {
+    display: none;
+  }
+
+.InboxStyled {
+  /* display: grid; */
+  }
+
+  .rightSideStyled{
+    width: 100%;
+  }
+}
+
+/* Mobile Chat Box Show */
+.mobileChatBoxShow {
+  display: flex;
+  position: relative;
+}
+
+/* Hide first child by default (except on tab and below) */
+.mobileChatBoxShow > *:first-child {
+  width: 100%;
+  display: none;
+  z-index: 10;
+  position: absolute;
+}
+
+/* Show first child on tab (<= 1024px) */
+@media (max-width: 1024px) {
+  .mobileChatBoxShow > *:first-child {
+    display: block;
+  }
+
+  
+}
+
+/* Hide mobileProspectShow by default */
+.mobileProspectShow {
+  display: none;
+  width: 65%;
+  position: absolute;
+  z-index: 10000;
+}
+
+
+/* Show mobileProspectShow on xxllg (<= 1360px) */
+@media (max-width: 1360px) {
+  .mobileProspectShow {
+    display: block;
+  }
+  .statusFilterBottom{
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* align-items: start; */
+  }
+
+  .activeFilterText{
+    /* margin-bottom: 0.6rem; */
+    /* margin-right: 0rem; */
+  }
+  .InboxStyled{
+    flex: 1;
+  
+ 
+  }
+.rightStyled{
+  flex: 1.5;
+}
+
+}
+
+@media (min-width: 768px) {
+  .StatusFilterItem .text {
+    /* font-size: 1.1rem; */
+  }
+}

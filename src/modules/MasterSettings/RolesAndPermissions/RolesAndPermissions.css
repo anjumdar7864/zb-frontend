@@ -1,0 +1,94 @@
+.tabContainer {
+    padding: 40px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+}
+.RoleAndPermissionBottom {
+    flex-grow: 1;
+    padding: 24px 0px;
+    padding-bottom: 20px;
+    /* overflow: auto; */
+
+}
+.RoleAndPermissionTop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.searchContainer {
+    width: 250px;
+    height: 48px;
+    display: flex;
+    padding: 0px 12px;
+    outline: none;
+    border: solid 1px #D3D7DD;
+    border-radius: 8px;
+    background-color: white;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.SearchInput {
+    outline: none;
+    border: none;
+    color: #777777;
+    flex-grow: 1;
+
+}
+
+.button {
+    display: flex;
+    background-color: #00BD82;
+    padding: 0px 12px;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    align-items: center;
+    cursor: pointer;
+    min-width: 109px;
+    height: 40px;
+}
+
+.AdminTop{
+    background-color: white;
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+}
+.AdminTitle{
+    color: #012635;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    /* border-bottom: solid 1px #E0E0E0; */
+    padding: 24px;
+}
+
+.AdminBody{
+    padding: 24px;
+    padding-top: 0px;
+    /* display: flex;
+    flex-wrap: wrap;
+    gap: 16px; */
+}
+
+.tableLayout {
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+}
+
+.modalContainer {
+    width: "700px"; 
+    height: "660px";
+    background-color: "#fff";
+}

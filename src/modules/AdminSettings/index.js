@@ -1,0 +1,11 @@
+export { default as AdminSettings } from "./AdminSettings/AdminSettings";
+export { default as UserEdit } from "./UserEdit/UserEdit";
+export { default as UserNew } from "./UserNew/UserNew";
+export { default as UsersList } from "./UsersList/UsersList";
+export { default as RolesList } from "./RolesList/RolesList";
+export { default as RoleNew } from "./RoleNew/RoleNew";
+export { default as SingleRoleList } from "./SingleRoleList/SingleRoleList";
+export { default as RoleEdit } from "./RoleEdit/RoleEdit";
+export { default as PermissionList } from "./PermissionList/PermissionList";
+export { default as PermissionNew } from "./PermissionNew/PermissionNew";
+export { default as PermissionEdit } from "./PermissionEdit/PermissionEdit";

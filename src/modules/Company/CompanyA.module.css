@@ -1,0 +1,1012 @@
+.container {
+    width: 100%;
+}
+
+/* .company_logo {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+  
+    color: #012635;
+    padding: 30px 40px;
+    padding-bottom: 10px;
+} */
+
+.company_logo {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 42px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    color: #012635;
+    padding: 20px 40px;
+    padding-bottom: 10px;
+}
+.tab_container {
+    display: flex;
+    /* justify-content: space-between; */
+    /* width: 50%; */
+    /* background-color: red; */
+    gap: 10px;
+    padding-left: 40px;
+    color: #012635;
+    font-weight: 500;
+    line-height: 22px;
+    font-size: 14px;
+
+}
+
+.tab_item {
+    padding-top: 8px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+
+
+}
+
+.tab_item:hover {
+    box-shadow: 0 2px 0 0 #a5a5a5;
+}
+
+.bg {
+    background-color: white;
+    position: relative;
+    /* z-index: 989; */
+}
+
+.CompanyInfo_container {
+    padding: 20px 30px;
+    height: 100%;
+}
+
+.CompanyPlan_container{
+    display: flex;
+    gap: 20px;
+}
+
+.companyInfo_title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #012635;
+    line-height: 32px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    padding-bottom: 20px;
+
+
+}
+
+.CompanyInfo_upload {
+
+    /* height: 179px; */
+    height: 200px;
+    max-width: 400px;
+    width: 390px;
+    background-color: white;
+    border: 1px solid #D3D7DD;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.CompanyInfo_uploadTop {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.CompanyInfo_uploadBottom {
+    height: 40px;
+    border-top: 1px solid #D3D7DD;
+    ;
+    display: flex;
+    align-items: center;
+
+}
+
+.name_intial {
+    border: #F49C17 1px solid;
+    background-color: #FFF2CC;
+    height: 80px;
+    width: 80px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F49C17;
+    font-size: 30px;
+
+    line-height: 40px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+.CompanyInfo_button {
+    width: 108px;
+    /* display: flex;
+    justify-content: center; */
+    position: relative;
+    margin: auto;
+    /* color: #00b388; */
+    color: #073F56;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    /* background-color: #FCBB26; */
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.CompanyInfo_logoImg {
+    border: solid 1px #D3D7DD;
+    border-radius: 12px;
+}
+
+.CompanyInfo_button:hover {
+    text-decoration-line: underline;
+    color: #006B51;
+    transition: color 1000ms;
+}
+
+.CompanyInfo_fieldsContainer {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #E2E7E4;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    height: fit-content;
+}
+
+.CompanyInfo_fieldsTop {
+    padding: 20px 20px;
+}
+
+.CompanyInfo_fields {
+    display: flex;
+    gap: 20px;
+}
+
+.CompanyInfo_fieldsLabel {
+    font-weight: 500;
+    line-height: 18px;
+    color: #012635;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.CompanyInfo_fieldsInput {
+
+
+    padding: 13px 16px;
+    width: 313px;
+    border: 1px solid #D3D7DD;
+    border-radius: 8px;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    margin-top: 10px;
+
+}
+
+.CompanyInfo_fieldsInput:focus {
+    border: 1px solid #5BF1B2;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.CompanyInfo_fieldsBottom {
+    height: 65px;
+    width: 100%;
+    border-top: 1px solid #E2E7E4;
+    ;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    padding: 8px 20px;
+    transition: all 400ms;
+    overflow: hidden;
+}
+
+.CompanyInfo_save {
+    background-color: #00b388;
+    height: 48px;
+    padding: 0px 16px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    transition: all 1000ms;
+
+}
+
+
+
+.CompanyInfo_save:hover {
+    background-color: #006B51;
+}
+
+.CompanyInfo_undo {
+    height: 100%;
+    color: #2E2E2E;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 1000ms;
+    padding: 0px 16px;
+    border-radius: 8px;
+
+}
+
+.CompanyInfo_undo:hover {
+    background-color: #EEF4F6;
+}
+
+
+
+
+.card {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    display: flex;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 280px;
+}
+
+.cardLeftContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #00b388;
+    margin-bottom: 20px;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+}
+
+.cardPriceSmall {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: #012635;
+}
+
+.cardPrice {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #012635;
+}
+
+.card_price_discount {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    color: #00b388;
+    display: flex;
+    align-items: center;
+}
+
+.cardBottomLayout {
+
+    flex-grow: 1;
+    display: flex;
+
+    align-items: end;
+}
+
+.card_subscribe {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    background-color: #00b388;
+    color: white;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 325px;
+}
+
+.visaButton {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    background-color: #00b388;
+    color: white;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 16px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.cardRightContainer {
+    margin-left: 60px;
+}
+
+.cardShortDis {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #012635;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+}
+
+.card_package {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #012635;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+}
+
+.cardDis {
+    padding: 20px 0px;
+    font-size: 14px;
+font-weight: 500;
+    line-height: 18px;
+    color: #2E2E2E;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+}
+
+.cardList {
+    font-size: 14px;
+
+    line-height: 18px;
+    color: #012635;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    margin: 20px;
+    font-weight: 400;
+}
+
+.CompanyPlan {
+
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #6B6B6B;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.Company_securityLayout {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+
+    padding: 20px;
+    padding-bottom: 0px;
+    margin-top: 20px;
+    min-height: 280px;
+}
+
+.Company_securityDis {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: black;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+
+}
+
+.Company_securitySelection {
+    background-color: white;
+    /* width: 0%; */
+    max-width: 428px;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.securityDis {
+    padding-left: 16px;
+    /* color: #6B6B6B; */
+    color: #999999;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+}
+
+.Company_securityMAnage {
+    border: 1px solid #1E9B50;
+    padding: 16px;
+    border-radius: 8px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    /* font-size: 16px; */
+    line-height: 18px;
+    font-weight: 500;
+    color: #1E9B50;
+    margin: 20px 0px;
+}
+
+.Company_securityLayoutSec {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #E2E7E4;
+    border-radius: 8px;
+
+    padding: 20px;
+    /* padding-bottom: 0px; */
+    margin-top: 20px;
+    /* min-height: 280px; */
+}
+
+.Company_securityLink {
+    color: #00b388;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    /* display: flex ;
+      align-items: center; */
+}
+
+
+.Company_securityLink:hover {
+    color: #006B51;
+}
+
+.table_title {
+    /* color: #012635; */
+    color: red;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.table_bottom {
+    border-top: #E0E0E0 1px solid;
+    border-bottom: #E0E0E0 1px solid;
+    display: flex;
+    justify-content: end;
+    padding: 16px;
+}
+
+.table_bottomLayout {
+    display: flex;
+    gap: 5px;
+
+}
+
+.table_bottomButton {
+    border: #E0E0E0 solid 1px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: "#999999";
+    cursor: pointer;
+
+
+}
+
+.table_bottomArrow {
+    border: #E0E0E0 solid 1px;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: "#999999";
+    cursor: pointer;
+
+}
+
+.invoice_mailListing {
+    border: #E0E0E0 solid 1px;
+    border-radius: 8px;
+
+}
+
+.invoice_mailRow {
+
+
+    display: flex;
+}
+
+.invoice_mailRow:hover {
+    background-color: #F7F7F7;
+}
+
+.addMAil {
+    border: #E0E0E0 solid 1px;
+    border-top: 0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companyPermission_dis {
+    padding: 20px;
+    padding-top: 0px;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: #666666;
+}
+
+.PermissionTable_tag {
+
+    width: fit-content;
+    padding: 0px 6px;
+    height: 24px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 12px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.CompanyInfo_UploadedLayout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+}
+
+.CompanyInfo_UploadedLayoutChild {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.CompanyPlanLeft {
+    width: 342px;
+    min-width: 342px;
+}
+
+.CompanyPlanLeftTitle {
+    color: "#012635";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+
+}
+
+.subscription_cycle {
+    border: solid 1px #D3D7DD;
+    padding: 6px;
+    border-radius: 48px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.subscription_Annually {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: white;
+    background-color: #00BD82;
+    padding: 8px;
+    border-radius: 48px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 500ms;
+ 
+    transition-delay: 100ms;
+    transition-timing-function: linear;
+
+
+    >span {
+        color: #999999;
+        background-color: white;
+        padding: 4px 12px;
+        border-radius: 24px;
+    }
+}
+
+.subscription_AnnuallyDis {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+
+    padding: 8px;
+    border-radius: 48px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 500ms;
+
+    /* transition-delay: 100ms; */
+    >span {
+        color: #000000;
+        background-color: #D3D7DD;
+        padding: 4px 12px;
+        border-radius: 24px;
+    }
+}
+
+.subscription_AnnuallyDis:hover {
+    background-color: #F7F7F7;
+}
+
+
+.subscription_monthly {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    align-items: center;
+    color: #999999;
+    flex-grow: 1;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 500ms;
+    transition-delay: 100ms;
+}
+
+
+.subscription_monthly:hover {
+    background-color: #F7F7F7;
+}
+
+
+.subscription_monthlyAc {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    align-items: center;
+    color: white;
+    background-color: #00BD82;
+    flex-grow: 1;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: 500ms;
+    /* transition-delay: 100ms; */
+}
+
+.CompanyBilling_label{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #012635;
+}
+
+.CompanyBilling_PCard{
+    border: solid 1px #D3D7DD;
+    border-radius: 12px;
+    width: 390px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+.payment_form {
+    /* max-width: 400px; */
+    /* margin: auto; */
+    padding: 40px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    /* background-color: #e42020; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form_group {
+    margin-bottom: 20px;
+  }
+  
+  .card_number_container {
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .card_input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .card_icons {
+    margin-left: 10px;
+    display: flex;
+  }
+  
+  .card_icons img {
+    height: 25px;
+    margin-right: 5px;
+  }
+  
+  .form_row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form_row .form_group {
+    width: 48%;
+  }
+  
+  .submit_button {
+    /* width: 100%; */
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit_button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+
+
+
+
+
+  .subscribeContainer{
+    display: flex;
+    gap: 24px;
+    /* max-height: 100%; */
+    
+  
+    
+    }
+    
+    
+    .subscribeLeft{
+        border: solid 1px #E0E0E0;
+        border-radius: 12px;
+        min-width: 764px;
+        width: 764px;
+        /* display: flex; */
+        
+    }
+    .subscribeRight{
+        border: solid 1px #E0E0E0;
+        border-radius: 12px;
+        min-width: 390px;
+        height: fit-content;
+        padding-bottom: 50px;
+        width: 390px;
+        
+    }
+    .SubscribePageContainer{
+        padding: 0px 8px;
+        border-left: solid 1px #E0E0E0;
+        margin: 10px 0px;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .SubscribePage{
+        background-color: #E0E0E0;
+        width:32px ; 
+        height: 32px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 22px;
+        color: #777777;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .subscribeSmallText{
+        color: #012635;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 5px;
+    }
+    
+    .subscribeFirstTab {
+        padding: 8px 16px;
+        border-radius: 24px;
+        color: #777777;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+        flex-grow: 1;
+        text-align: center;
+        cursor: pointer;
+    }
+
+
+    .PaymentModal_height{
+        /* height: 348px; */
+        transition:  300ms;
+        
+    }
+
+    .SubscribeFourText{
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #777777;
+    }
+    .SubscribePlanTitle{
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+
+
+    .CompanyInfo_cancel {
+        background-color: #F0F0F0;
+        height: 40px;
+        padding: 0px 16px;
+        border-radius: 8px;
+        color: #012635;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+        transition: all 1000ms;
+    
+    }
+
+    .SubscribedTop{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 4px;
+        background-color: #F0F0F0;
+        border-radius: 8px;
+    }
+
+    .SubscribedTopItem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        border-right: solid 1px #E0E0E0;
+    }
+
+    .SubscribedBody{
+        
+    }
+    .SubscribedBottom{
+        height: 88px;
+        border-top: solid 1px #E0E0E0;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 0px 24px;
+    }
+
+
+    .customScroll::-webkit-scrollbar {
+        width: 8px; /* Width of the scrollbar */
+     }
+     
+     .customScroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+     }
+     
+     .customScroll::-webkit-scrollbar-thumb {
+        background: #00bd82;
+        border-radius: 10px;
+     }
+     
+     .customScroll::-webkit-scrollbar-thumb:hover {
+        background: #00bd82;
+     }
+@media (max-width: 1024px) {
+    .CompanyInfo_upload {
+        width: 312px;
+    }
+    .CompanyPlan_container{
+        flex-direction: column;
+    }
+    .CompanyPlanLeft{
+        width: 100%;
+    }
+    .subscription_Annually{
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    .CompanyInfo_upload {
+        width: 100%;
+    }
+
+    .CompanyInfo_container {
+        padding: 10px 20px;
+    }
+
+    .tab_container {
+        gap: 0;
+        padding-left: 20px;
+
+    }
+
+    .tab_item {
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    .tab_itemText {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-align: center;
+    }
+
+    .CompanyInfo_fields {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .CompanyInfo_fieldsInputLayout {
+        width: 100%;
+    }
+
+    .CompanyInfo_fieldsInput {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+    .CompanyInfo_fieldsInput {
+        width: 100%;
+    }
+
+    .CompanyInfo_fieldsInputLayout {
+        width: calc(50% - 10px);
+    }
+}

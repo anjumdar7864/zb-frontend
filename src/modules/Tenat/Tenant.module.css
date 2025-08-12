@@ -1,0 +1,9 @@
+
+.options{
+    border-radius: 8px;
+    color: #012635;
+}
+
+.options:hover{
+background-color: #ededed;
+}

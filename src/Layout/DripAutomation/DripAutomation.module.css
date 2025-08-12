@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.top {
+    background-color: white;
+    padding: 2.4rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.AddNewButton{
+    background-color: #00BD82;
+    padding-inline: 2rem;
+    padding-block: 0.8rem;
+    color: white;
+    border-radius: 0.8rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width:900px) {
+    .top {
+        background-color: white;
+        padding: 2.4rem 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .breadcrumbsTop {
+        padding-block: 15px;
+        padding-inline: 1rem !important;
+        width: 100%;
+        border-bottom: 1px solid #E0E0E0;
+    }
+
+}
+
+
+@media only screen and (max-width:572px) {
+    .top {
+        background-color: white;
+        padding: 2.4rem 2rem;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .breadcrumbsTop {
+        padding-block: 15px;
+        padding-inline: 1rem !important;
+        width: 100%;
+        border-bottom: 1px solid #E0E0E0;
+    }
+    .AddNewButton{
+        background-color: #00BD82;
+        padding-inline: 2rem;
+        padding-block: 0.8rem;
+        color: white;
+        border-radius: 0.8rem;
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+}
+
+
+.title {
+    color: #012635;
+    font-size: 32px;
+    line-height: 4rem;
+    font-weight: 700;
+}
+
+.tabLayout {
+    display: flex;
+}
+
+.tabItems {
+    padding: 8px 16px;
+    color: #012635;
+    font-size: 1.2rem;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+.breadcrumbsTop {
+    padding-block: 15px;
+    padding-inline: 4rem;
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.breadcrumbsTop .innerBreadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.breadcrumbsTop .innerBreadcrumbs .parentBreadcrumb {
+    font-size: 14px;
+    color: #777777;
+    font-weight: 400;
+}
+
+.breadcrumbsTop .innerBreadcrumbs .ChildBreadcrumb {
+    font-size: 14px;
+    color: #012635;
+    font-weight: 500;
+}
+
+
+.container::-webkit-scrollbar {
+    width: 0 !important;
+}

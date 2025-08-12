@@ -1,0 +1,175 @@
+.ResourceTopWraper{
+    background-color: #F7F8FC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 112px;
+}
+
+
+
+.TopContainer{
+    display: flex;
+   align-items: center;
+    max-width: 1216px;
+    gap: 8px;
+
+}
+
+.TopTitle{
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 64px;
+    color: #012635;
+    padding-bottom: 24px;
+}
+
+.TopParagraph{
+    font-size: 24px;
+    line-height: 32px;
+    color: #073F56;
+}
+
+.ProductNewsWraper{
+    padding: 96px 0px;
+}
+
+.ProductNewsTitle{
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 46px;
+    color: #012635;
+    width: 100%;
+    text-align: center;
+    padding-left: 24px;
+}
+
+.ProductNewsContainer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1216px;
+ padding-top: 56px;
+ padding-left: 24px;
+ padding-right: 24px;
+}
+
+.ProductNewsDuration{
+    color: #00BD82;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.ProductItemTitle{
+    color: #012635;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+.productItemCard{
+    max-width: 596px;
+}
+
+.ProductNewsBottom{
+    width: 100%;
+ 
+}
+.ProductNewsTop{
+    width: 100%;
+    padding-bottom: 24px;
+}
+
+.ProductItemDiscription{
+    color: #073F56;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.VideoListTitle{
+    font-size: 38px;
+    line-height: 46px;
+    font-weight: 600;
+    padding-left: 24px;
+}
+
+.VideoListContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1216px;
+   padding-top: 56px;
+   padding-left: 24px;
+   padding-right: 24px;
+  }
+
+  .VideoListWraper{
+    max-width: 1216px;
+    padding: 96px 0px;
+  }
+
+  .ProductNewsImage{
+    width: 100%;
+  }
+
+  .TopImage{
+    width: 528px;
+    /* height: 396px; */
+  }
+
+
+  @media screen and (max-width: 668px) {
+    .ProductNewsContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .VideoListContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .TopContainer {
+        flex-direction: column;
+    }
+    .TopImage{
+        width: 100%;
+        height: 268px;
+      }
+      .ResourceTopWraper{
+        padding: 100px 24px;
+      }
+
+      .TopTitle{
+        font-size: 38px;
+        line-height: 46px;
+      }
+
+      .TopParagraph{
+        font-size: 18px;
+        line-height: 26px;
+      }
+}
+
+
+
+@media screen and (min-width: 668px) and (max-width: 1280px) {
+    .ProductNewsContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .VideoListContainer {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+
+    .TopContainer {
+        flex-direction: column;
+    }
+
+    .TopImage{
+        width: 100%;
+        /* height: 396px; */
+      }
+
+    
+}

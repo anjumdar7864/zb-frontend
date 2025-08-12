@@ -1,0 +1,244 @@
+.tabContainerSubscription {
+    padding: 0px 40px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+    max-height: 100%;
+    ;
+}
+.SubscriptionManagementBottom {
+    flex-grow: 1;
+    padding: 24px 0px;
+    padding-bottom: 20px;
+    /* overflow: auto; */
+
+}
+.SubscriptionManagementTop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.searchContainer {
+    width: 250px;
+    height: 48px;
+    display: flex;
+    padding: 0px 12px;
+    outline: none;
+    border: solid 1px #D3D7DD;
+    border-radius: 8px;
+    background-color: white;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropDown {
+    width: 150px ; 
+    
+    }
+    
+.SearchInput {
+    outline: none;
+    border: none;
+    color: #777777;
+    flex-grow: 1;
+
+}
+.tableLayout {
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+    overflow: auto;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+}
+
+.modalContainerSubscription {
+    width: "700px"; 
+    height: "660px";
+    background-color: "#fff";
+}
+.labels {
+    font-size: 14px;
+    font-weight: 500;
+    color: #012635;
+    line-height: 22px;
+}
+.inputField {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #D3D7DD;
+    transition: border-color 0.3s ease;
+    color: #777777;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.inputField:focus {
+    border-color: #5BF1B2;
+    outline: none; /* Removes default outline */
+}
+.select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #D3D7DD;
+    transition: border-color 0.3s ease;
+    color: #777777;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.select:focus {
+    border-color: #5BF1B2;
+    outline: none; /* Removes default outline */
+}
+
+.creatAdmin{
+    background-color: #00BD82;
+    width:126px ;
+    height: 48px;
+    color: white; 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    
+}
+.modalHeading {
+    font-size: 24px;
+    font-weight: 600;
+    color: #012635;
+    line-height: 26px;
+}
+.labels {
+    font-size: 16px;
+    font-weight: 500;
+    color: #012635;
+    line-height: 22px;
+    
+}
+.inputField {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #D3D7DD;
+    transition: border-color 0.3s ease;
+    color: #777777;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    height: 48px;
+}
+
+.inputField:focus {
+    border-color: #5BF1B2;
+    outline: none; /* Removes default outline */
+}
+.custom_scrollbar::-webkit-scrollbar {
+    width: 2px, 
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-track {
+    background-color: transparent
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-thumb {
+    background-color: #F7F7F7; 
+    border-radius: 10px, 
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #F7F7F7, 
+  }
+  .custom_scrollbar::-webkit-scrollbar-button {
+    display: none 
+  }
+
+  .custom_scrollbar{
+    scrollbar-width: thin;
+    scrollbar-color: #00BD82 transparent; 
+    position:relative
+  }
+
+  .modalContainer{
+    width: 1156px;
+    /* height: 770px; */
+    max-height: 770px;
+    background-color: #fff;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.modalBody{
+    display: flex;
+    align-items: flex-start;
+    height:  594px;
+    /* overflow: auto; */
+}
+.modalBody::-webkit-scrollbar {
+    width: 2px, 
+  }
+
+  .modalBody::-webkit-scrollbar-track {
+    background-color: transparent
+  }
+
+  .modalBody::-webkit-scrollbar-thumb {
+    background-color: #F7F7F7; 
+    border-radius: 10px, 
+  }
+
+  .modalBody::-webkit-scrollbar-thumb:hover {
+    background-color: #F7F7F7, 
+  }
+  .modalBody::-webkit-scrollbar-button {
+    display: none 
+  }
+
+  .modalBody{
+    scrollbar-width: thin;
+    scrollbar-color: #00BD82 transparent; 
+    position:relative
+  }
+.seprator{
+
+}
+
+.inputContainer{
+
+}
+
+  @media (max-width: 1172px) {
+    .modalContainer {
+      width: calc(100% - 32px); /* Adjust the width to fit within a margin */
+      max-width: 1156px; /* Ensure it doesn't exceed the original width */
+    }
+    .modalBody{
+      display: block;
+      overflow: auto;
+      
+    }
+    .seprator{
+        display: none;
+    }
+    .inputContainer{
+        display: flex;
+    gap: 20px;
+    }
+    .tabContainerSubscription {
+        padding: 0px 10px;
+        padding-top: 20px;
+    }
+  }
+
+ 

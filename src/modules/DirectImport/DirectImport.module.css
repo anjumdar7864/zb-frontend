@@ -1,0 +1,336 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+    overflow: auto;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    color: #012635;
+}
+
+
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center !important;
+    padding-block: 24px;
+    padding-inline: 40px;
+    background-color: white;
+}
+
+.bottom {
+    padding-inline: 40px;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.searchContainer {
+    width: 234px;
+    height: 48px;
+    border: solid 1px #D3D7DD;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 8px 12px;
+}
+
+.tableButton {
+    width: fit-content;
+    padding: 0px 10px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px #D3D7DD;
+    border-radius: 12px;
+    margin-top: 5px;
+    color: #012635;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.firstText {
+    display: block;
+}
+
+.secText {
+    display: none;
+}
+
+.TableIcon {
+    display: none;
+    font-size: 20px;
+    color: #012635;
+    margin-left: 10px;
+}
+
+.TableIconClose {
+    display: none;
+    /* font-size: 20px; */
+    color: #012635;
+    /* margin-left: 10px; */
+}
+
+.tableButton:hover {
+    background-color: #C2FFEC;
+    border: solid 1px #5BF1B2;
+    cursor: pointer;
+    color: #00724E;
+
+
+}
+
+.tableButton:hover .TableIconClose {
+    display: block;
+}
+
+.tableButton:hover .TableIcon {
+    display: block;
+}
+
+/* .tableButton:hover .firstText {
+    display: none;
+} */
+/* .tableButton:hover .secText {
+    display: block;
+} */
+
+.modalTitle {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+
+
+.custom_file_upload {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    cursor: pointer;
+    gap: 16px;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    background-color: #D6E7FC;
+    /* Light background color */
+    transition: background-color 0.3s ease;
+}
+
+.custom_file_upload:hover {
+    background-color: #D6E7FC;
+    /* Change color on hover */
+}
+
+.upload_text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #012635;
+}
+
+.file_input {
+    display: none;
+    /* Hide the default file input */
+}
+
+.drafFile {
+    height: 84px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+
+.custom_file_upload.active {
+    background-color: #A7C6ED;
+    /* Change color on drag over */
+}
+
+
+.matchDropdown {
+    border: solid 1px #D3D7DD;
+    outline: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    width: 260px;
+    height: 48px;
+}
+
+.matchDropdown:focus {
+    border: solid 1px #5BF1B2;
+}
+
+/* Apply custom scrollbar styles to a specific class */
+/* .custom_scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom_scrollbar::-webkit-scrollbar-track {
+    background: #00BD82;
+    border-radius: 10px;
+  }
+  
+  .custom_scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid #00BD82;
+  }
+  
+  .custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  
+  .custom_scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #00BD82 #f1f1f1;
+  } */
+
+
+
+
+.custom_scrollbar::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
+.custom_scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb {
+    background: #00bd82;
+    border-radius: 10px;
+}
+
+.custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #00bd82;
+}
+
+
+
+
+.lineClamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+
+.custom_input {
+    outline: none;
+    border: 0;
+    width: 100%;
+    /* Optional border */
+}
+
+.custom_input:focus {
+    outline: none;
+}
+
+.tableDownload {
+    color: #777777;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px !important;
+}
+
+.tableDownload:hover {
+    background-color: #F7F8FC;
+    color: #012635;
+}
+
+.listOption{
+    background-color: white;
+
+}
+.listOption:hover{
+    background-color: #F7F8FC;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0px;
+    }
+    .drafFile {
+        display: none
+    }
+    .custom_file_upload {
+        height: 176px;
+        justify-content: center;
+    }
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center !important;
+        padding-block: 24px;
+        padding-inline: 24px;
+        background-color: white;
+    }
+    .bottom {
+        padding-inline: 24px;
+        padding-top: 25px;
+        padding-bottom: 40px;
+        flex-grow: 1;
+        overflow: auto;
+    }
+}
+
+@media (max-width: 660px) {
+    .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start !important;
+        padding-block: 16px;
+        padding-inline: 16px;
+        background-color: white;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        color: #012635;
+        padding-bottom: 16px;
+
+    }
+    .bottom {
+        padding-inline: 16px;
+        padding-top: 16px;
+        padding-bottom: 20px;
+        flex-grow: 1;
+        overflow: auto;
+    }
+    .SaveBtn{
+        width: 116px !important;
+    }
+    .searchContainer {
+        width: 234px;
+        height: 48px;
+        border: solid 1px #D3D7DD;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 8px 12px;
+    }
+}

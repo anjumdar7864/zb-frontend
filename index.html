@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+ 
+    <link rel="icon" type="image/png" href="/fevicon.png" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zeit Blast</title>
+    <style>
+      .loader {
+        z-index: 10000;
+        background-color: rgba(255, 255, 255, 0.8);
+        position: fixed;
+        inset: 0;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border-width: 2px;
+          border-style: solid;
+          border-color: transparent #228ae6 #228ae6;
+          position: absolute;
+          top: calc(50% - 75px);
+          left: calc(50% - 75px);
+          will-change: transform;
+          animation: spin 0.75s infinite ease-in-out;
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loader"></div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

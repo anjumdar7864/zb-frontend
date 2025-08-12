@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
+  
+ }
+ .top{
+  background-color: white;
+  padding: 24px 40px;
+  padding-bottom: 0px;
+ }
+ .title {
+     color: #012635;
+     font-size: 32px;
+     line-height: 40px;
+     font-weight: 700;
+     margin-bottom: 20px;
+ }
+ 
+ .tabLayout{
+     display: flex;
+ }
+ 
+ .tabItems{
+     padding: 8px 16px;
+     color: #012635;
+     font-size: 14px;
+     line-height: 22px;
+     font-weight: 500;
+ }
+

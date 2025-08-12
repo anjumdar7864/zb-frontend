@@ -1,0 +1,207 @@
+.title{
+    color:#012635 ;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.dis{
+    color: #777777;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding-top: 28px;
+   
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    
+}
+
+.accept{
+    width: 120px;
+    height: 40px;
+    background-color: #00BD82;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+
+}
+.settingAccept{
+    width: 172px;
+    height: 40px;
+    background-color: #00BD82;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+
+}
+.reject{
+    width: 100px;
+    height: 40px;
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    color: #012635;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.buttonsContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.settings{
+    color: #073F56;
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.link{
+    color: #00BD82;
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+.settingHeader{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:solid 1px #F7F7F7;
+    padding: 0px 20px;
+    
+}
+.settingBody{
+    padding: 16px 20px;
+    overflow: auto;
+    height: calc(100% - 136px);
+  
+}
+.settingBodyTitle{
+    color: #012635;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+    
+}
+.settingDiscription{
+    color: #777777;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+.OptionContainer{
+    padding: 12px;
+    border: solid 1px #D3D7DD;
+    border-radius: 8px;
+}
+.OptionTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.subTitle{
+    color: #012635;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.settingFooter{
+    height: 72px;
+
+}
+
+.settingFooter{
+    border-top:solid 1px #F0F0F0 ;
+    padding: 0px 16px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 16px;
+}
+
+.settingsReject{
+    width: 100px;
+    border: solid 1px #777777;
+    color: #777777;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.customScroll::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+ }
+ 
+ .customScroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+ }
+ 
+ .customScroll::-webkit-scrollbar-thumb {
+    background: #00bd82;
+    border-radius: 10px;
+ }
+ 
+ .customScroll::-webkit-scrollbar-thumb:hover {
+    background: #00bd82;
+ }
+@media (max-width: 460px) {
+   .footer{
+    flex-direction: column-reverse;
+   }
+   .buttonsContainer{
+    flex-direction: column;
+   
+    width: 100%;
+    align-items: center;
+   }
+   .reject{
+    width: 100%;
+   }
+   .accept{
+    width: 100%;
+   }
+   .settings{
+    padding-top: 10px;
+   }
+   .settingFooter{
+    flex-direction: column;
+    height: 144px;
+    padding-bottom: 32px;
+    padding-top: 16px;
+   }
+   .settingsReject{
+    width: 100%;
+   }
+   .settingAccept{
+    width: 100%;
+   }
+    }

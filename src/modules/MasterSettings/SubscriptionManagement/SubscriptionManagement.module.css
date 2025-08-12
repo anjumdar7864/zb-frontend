@@ -1,0 +1,121 @@
+.tabContainerSubscription {
+    padding: 40px;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+}
+.SubscriptionManagementBottom {
+    flex-grow: 1;
+    padding: 24px 0px;
+    padding-bottom: 20px;
+    /* overflow: auto; */
+
+}
+.SubscriptionManagementTop {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.tableLayout {
+    border: solid 1px #E0E0E0;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+}
+.modalHeading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #012635;
+  line-height: 26px;
+}
+.modalContainer {
+  width: 700px; 
+    height: 594px;
+  max-height: 90vh;
+  background-color: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+
+  
+}
+/* .modalBody{
+  display: flex;
+  align-items: flex-start;
+  height:  448px;
+  
+} */
+
+.modalContainerSubscription {
+    width: "700px"; 
+    height: "660px";
+    background-color: "#fff";
+}
+.labels {
+    font-size: 14px;
+    font-weight: 500;
+    color: #012635;
+    line-height: 22px;
+}
+.custom_scrollbar::-webkit-scrollbar {
+    width: 2px, 
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-track {
+    background-color: transparent
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-thumb {
+    background-color: #F7F7F7; 
+    border-radius: 10px, 
+  }
+
+  .custom_scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #F7F7F7, 
+  }
+  .custom_scrollbar::-webkit-scrollbar-button {
+    display: none 
+  }
+
+  .custom_scrollbar{
+    scrollbar-width: thin;
+    scrollbar-color: #00BD82 transparent; 
+    position:relative
+  }
+.inputField {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #D3D7DD;
+    transition: border-color 0.3s ease;
+    color: #777777;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.inputField:focus {
+    border-color: #5BF1B2;
+    outline: none; /* Removes default outline */
+}
+.select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #D3D7DD;
+    transition: border-color 0.3s ease;
+    color: #777777;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.select:focus {
+    border-color: #5BF1B2;
+    outline: none; /* Removes default outline */
+}

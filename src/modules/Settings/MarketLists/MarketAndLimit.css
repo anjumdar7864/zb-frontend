@@ -1,0 +1,9 @@
+.phoneInput{
+    border: solid 1px red;
+}
+
+.phone_input_disabled input {
+    pointer-events: none;
+    background-color: #f4f5f8; /* Light grey background to look disabled */
+    color: #999;
+  }

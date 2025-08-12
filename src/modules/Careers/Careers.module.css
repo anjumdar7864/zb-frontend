@@ -1,0 +1,660 @@
+.top {
+  width: 100%;
+  height: 904px;
+  position: relative;
+  display: flex;
+  /* align-items: end; */
+  justify-content: end;
+  flex-direction: column;
+  background-color: #3086EE;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+}
+
+.topBottomWhite {
+  width: 100%;
+  /* height: 70px; */
+  height: 70px;
+  background-color: white;
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+  z-index: 2;
+}
+
+.topContant {
+  z-index: 2;
+  padding-bottom: 50px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 112px;
+  gap: 20px;
+}
+
+.topTitle {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 64px;
+}
+
+.discription {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.topBottom {
+  max-width: 1019px;
+  height: 336px;
+  background: #FFFFFF4D;
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  display: flex;
+  padding: 24px;
+  padding-right: 48px;
+}
+
+.jobsLeft {
+  width: 50%;
+  display: flex;
+  gap: 24px;
+}
+
+.jobsRight {
+  width: 50%;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+}
+
+.jobTitle {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 46px;
+  color: white;
+}
+
+.jobDis {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  color: white;
+}
+
+.jobButton {
+  width: 203px;
+  height: 48px;
+  background-color: white;
+  color: #012635;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  border-radius: 40px;
+}
+
+.locationWrapper {
+  width: 100%;
+  overflow: hidden;
+  /* Hide overflowing content */
+  position: relative;
+}
+
+/* This container will be animated */
+.locationContainer {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  width: max-content;
+  /* Ensure it extends enough for smooth animation */
+  animation: scroll 20s linear infinite;
+}
+
+/* Define the scrolling animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+    /* Move left by half its length */
+  }
+}
+
+.locationItem {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex: 0 0 auto;
+  /* Prevent shrinking */
+}
+
+.locationImage {
+  width: 120px;
+  height: 120px;
+}
+
+.locationTitle {
+  color: #012635;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 80px;
+}
+
+.locationCount {
+  color: #012635;
+  background-color: #5BF1B2;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.locationHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #012635;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+  padding-bottom: 56px;
+}
+
+.rolesContainer {
+  max-width: 1216px;
+  width: 100%;
+  padding-top: 88px;
+}
+
+.rolesTitle {
+  color: #012635;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+  padding-bottom: 48px;
+
+}
+
+.jobItem {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F7F8FC;
+  border-radius: 16px;
+  align-items: center;
+  padding: 24px;
+}
+
+
+
+
+.BestContainer {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 96px 20px;
+}
+
+.BestTitle {
+  font-size: 38px;
+  font-weight: 600;
+  color: #012635;
+  /* Dark blue text */
+}
+
+.BestSubtitle {
+  font-size: 24px;
+  color: #012635;
+  margin: 10px 0;
+}
+
+.BestText {
+  font-size: 16px;
+  color: #777777;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.BestButton {
+  background-color: #00C173;
+  /* Green button */
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s;
+
+}
+
+.BestButton:hover {
+  background-color: #009f5e;
+  /* Darker green on hover */
+}
+
+
+.MapContainer {
+  width: 100%;
+  max-width: 1216px;
+  display: flex;
+
+}
+
+.MapChild {
+  flex: 1;
+}
+
+.mapContent {
+  background-color: #F7F8FC;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 495px;
+}
+
+.mapContentTitle {
+  color: #012635;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  max-width: 495px;
+}
+
+.mapContentDis {
+  color: #777777;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+.growContainer {
+  position: relative;
+  background-color: #012635;
+  height: 800px;
+  display: flex;
+
+  justify-content: end;
+  padding: 24px;
+}
+
+.imgContainerBottom {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: fit-content;
+  overflow: hidden;
+  /* z-index: -1; */
+}
+
+.growContant {
+  display: flex;
+  /* padding: 64px 112px; */
+  z-index: 2;
+  max-width: 1216px;
+  width: 100%;
+  position: relative;
+  margin: auto;
+
+  justify-content: space-around;
+}
+
+.growContantLeft {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  justify-content: center;
+  padding-right: 50px;
+
+}
+
+.grwoTitle {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+}
+
+.grwoDis {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.grwoDisFooter {
+  background-color: #ffffff30;
+
+  backdrop-filter: blur(20px);
+  width: 495px;
+  border-radius: 24px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  padding: 24px;
+}
+
+.growContantRight {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+
+}
+
+
+.BestCard {
+  position: relative;
+  width: 100%;
+  height: 284px;
+  border-radius: 15px;
+  overflow: hidden;
+  /* background-color: #FFFFFF4D; */
+  background-color: #ffffff30;
+
+  backdrop-filter: blur(20px);
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  padding: 8px;
+}
+
+.BestImage {
+  width: 100%;
+  max-width: 272px;
+  max-height: 192px;
+  object-fit: cover;
+}
+
+.BestOverlay {
+  position: absolute;
+  bottom: 10px;
+  /* left: 10px; */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.BestValue {
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 46px;
+}
+
+.BestLabel {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.BestCardsContainer {
+  display: flex;
+  gap: 24px;
+}
+
+.BestCardsContainerLeft {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.BestCardsContainerRight {
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sliderWrapper {
+  max-width: 60%;
+  margin: auto;
+  text-align: center;
+}
+
+.slide {
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  margin: 10px;
+  opacity: 0.5;
+  /* Default state (greyed out) */
+  transform: scale(0.9);
+}
+
+.active {
+  opacity: 1;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+.inactive {
+  background: #f8f9fa !important;
+  color: #aaa;
+}
+
+
+
+.BottomContainer {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 630px;
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+  padding: 96px 112px;
+}
+
+
+.bottomTitle {
+  color: white;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 46px;
+  text-align: center;
+}
+
+.bottomDis {
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  padding-bottom: 48px;
+
+}
+
+.BottomGridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 48px;
+
+  padding: 10px;
+}
+
+.cardIcons{
+  background-color: #ffffff30;
+
+  backdrop-filter: blur(20px);
+
+  height: 72px;
+  width: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+}
+
+.cardTitle{
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+}
+.mobileImage{
+  display: none;
+}
+.locationWrapperMobile{
+  display: none;
+}
+
+.select{
+   width: 288px ; 
+}
+.CareersBAckgroundsec{
+  width: 100%;
+}
+
+@media (min-width: 268px) and (max-width: 1280px) {
+  .topBottom{
+    flex-direction: column;
+    height: fit-content;
+    padding-right: 24px;
+  }
+.desktopImage{
+  display: none;
+}
+.mobileImage{
+  display: block;
+}
+.jobsRight {
+  width: 100%;
+  text-align: center;
+  padding-top: 24px;
+  
+
+}
+.jobsLeft{
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.top{
+  height: fit-content;
+}
+.topTitle{
+  font-size: 38px;
+  line-height: 46px;
+}
+.discription{
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.growContant{
+  flex-direction: column;
+  gap: 48px;
+
+}
+.growContainer{
+  /* height: fit-content; */
+}
+
+.BestCardsContainerLeft{
+ flex-direction: row;
+ min-height: fit-content;
+ padding-top: 0;
+ overflow: hidden;
+}
+.BestCardsContainerRight{
+  flex-direction: row;
+  min-height: fit-content;
+  padding-bottom: 0;
+  overflow: hidden;
+ }
+ .BestCard{
+  min-width:272px ;
+ }
+ .growContainer{
+  height: fit-content;
+ }
+ .grwoDisFooter{
+  width: 100%;
+ }
+ .growContantLeft{
+  padding-right: 0;
+  text-align: center;
+ }
+}
+
+@media (max-width: 460px) {
+.topContant{
+  padding: 48px 16px;
+}
+
+.locationWrapper{
+  display: none;
+}
+.locationImage{
+  width: 72px;
+  height: 72px;
+}
+
+.locationTitle{
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  width: 197px;
+}
+.locationCount{
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+}
+.locationItem{
+
+}
+.locationWrapperMobile{
+  display: flex;
+  flex-direction: column;
+  gap:24px ;
+  padding: 0px 24px;
+}
+
+.select{
+  width: 100% ; 
+}
+.rolesTitle{
+  text-align: center;
+}
+.jobItem{
+  flex-direction: column;
+ align-items: start;
+ gap: 24px;
+}
+.MapContainer{
+  flex-direction: column-reverse;
+  gap: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.growContant{
+  flex-direction: column;
+}
+}

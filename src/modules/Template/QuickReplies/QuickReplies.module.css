@@ -1,0 +1,35 @@
+.select {
+    height: 48px;
+    padding-left: 1.5rem;
+    padding-right: 2.3rem;
+    border-radius: 8px;
+    border: 0.1rem solid #D3D7DD;
+    color: #575962;
+    background-color: white;
+    font-size: 1.2rem;
+    outline: none;
+    transition: background-color 300ms, color 300ms, border-color 300ms;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("${(p) => p.ChevronDown}");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 1.5rem) center;
+    background-size: 1rem;
+    font-size: 1.3rem;
+    width: 300px;
+    margin-left: 0px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width:900px) {
+    .select {
+        width: 256px;
+    }
+}
+
+.select:focus {
+    border-color: #00BD82;
+    color: #575962;
+    background-color: #fff;
+}

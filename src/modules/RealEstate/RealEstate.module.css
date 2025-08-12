@@ -1,0 +1,421 @@
+.top {
+  width: 100%;
+  height: 904px;
+  position: relative;
+  display: flex;
+  /* align-items: end; */
+  justify-content: end;
+  flex-direction: column;
+  background-color: #3086EE;
+}
+
+.bottom {
+  width: 100%;
+  height: 1030px;
+  position: relative;
+  display: flex;
+  /* align-items: end; */
+  justify-content: end;
+  flex-direction: column;
+  background-color: #3086EE;
+}
+
+.imgContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+}
+
+.topBottomWhite {
+  width: 100%;
+  /* height: 70px; */
+  height: 70px;
+  background-color: #F7F8FC;
+  border-top-left-radius: 64px;
+  border-top-right-radius: 64px;
+  z-index: 2;
+}
+
+.topBody {
+  display: flex;
+  z-index: 3;
+  max-width: 1216px;
+  margin: auto;
+}
+
+.TopSubTitle {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 40px;
+  color: white;
+}
+
+.TopTitle {
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 64px;
+  color: white;
+}
+
+
+.TopParagraph {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  color: white;
+
+}
+
+.topContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.TopButton {
+  width: 173px;
+  height: 48px;
+  background-color: white;
+  border-radius: 40px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+}
+
+.MidleBodyTop {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.MidleSmallTitle {
+  color: #012635;
+  font-weight: 400;
+  font-size: 18px;
+
+}
+
+
+.MidleTitle {
+  color: #012635;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+
+}
+
+.MidleParagraph {
+  font-size: 18px;
+  line-height: 26px;
+
+}
+
+.MidleCardTitle {
+  color: #012635;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.MidleCardSubTitle {
+  color: #012635;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.MidleCardBottom {
+  height: 142px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border-bottom-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+
+.MidleCard {
+  width: fit-content;
+}
+
+.MidleCardContainer {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.MidleOptions {
+  padding: 96px 0px;
+  max-width: 1216px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+}
+
+
+.reverseFlex {
+  flex-direction: row-reverse;
+}
+
+.MidleOptionsContainer {
+  display: flex;
+  background-color: #F7F8FC;
+  border-radius: 32px;
+  gap: 48px;
+  padding: 48px;
+
+}
+
+.MidleOptionsCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+}
+
+.MidleOptionsCardTitle {
+  color: #012635;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+
+.MidleOptionsCarddiscription {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #777777;
+}
+
+
+.MidleOptionsButton {
+  background-color: #00BD82;
+  width: 118px;
+  height: 48px;
+  border-radius: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.bottomBody {
+  padding: 96px 0px;
+  max-width: 1216px;
+  margin: auto;
+  z-index: 200;
+}
+
+.bottomSubTitle {
+  color: white;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+.bottomTitle {
+  color: white;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 600;
+}
+
+.bottomParagraph {
+  color: white;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.bottomButton {
+  background-color: white;
+  width: 245px;
+  height: 48px;
+  border-radius: 40px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #012635;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomCardContainer {
+  display: flex;
+
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.bottomCardTitle {
+  color: white;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  height: 64px;
+}
+
+.bottomCardButton {
+  background-color: #00BD82;
+  width: 118px;
+  height: 48px;
+  border-radius: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.bottomCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 1280px) {
+  .topBody {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .MidleOptionsContainer {
+    flex-direction: column-reverse;
+  }
+
+  .MidleOptionsCardImage {
+    width: 100%;
+  }
+
+  .MidleOptions {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .MidleCardImage {
+    width: 100%;
+
+  }
+
+  .bottomCardContainer {
+    flex-direction: column;
+  }
+
+  .bottom {
+    height: fit-content;
+  }
+
+  .bottomCardImage {
+    width: 100%;
+  }
+
+  /* .MidleCardContainer {
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  .topBody {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .topImage {
+    width: 100%;
+  }
+
+  .TopSubTitle {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .TopTitle {
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  .TopParagraph {
+    font-size: 18px;
+  }
+
+  .MidleSmallTitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .MidleTitle {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .MidleParagraph {
+    font-size: 16px;
+  }
+
+  .MidleCardImage {
+    width: 100%;
+
+  }
+
+  .MidleCardContainer {
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .MidleOptionsContainer {
+    flex-direction: column-reverse;
+    padding: 16px;
+  }
+
+  .MidleOptionsCardImage {
+    width: 100%;
+  }
+
+  .MidleOptions {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  .bottomCardContainer {
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .bottom {
+    height: fit-content;
+  }
+
+  .bottomCardImage {
+    width: 100%;
+  }
+  .bottomSubTitle{
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .bottomTitle{
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .bottomParagraph{
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

@@ -1,0 +1,44 @@
+.filterContainer{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+
+}
+
+.searchContainer {
+    width: 250px;
+    height: 40px;
+    display: flex;
+    padding: 0px 12px;
+    outline: none;
+    border: solid 1px #D3D7DD;
+    border-radius: 8px;
+    background-color: white;
+    align-items: center;
+    gap: 8px;
+}
+
+.SearchInput {
+    outline: none;
+    border: none;
+    color: #777777;
+    flex-grow: 1;
+
+}
+
+.tableContainer{
+    padding: 0px 16px;
+    padding-bottom: 8px;
+
+}
+
+.table{
+    border-radius: 12px;
+    overflow: hidden;
+    border: solid 1px #E0E0E0;
+}
+
+.DesktopPagination{
+    display: flex;
+  }
+

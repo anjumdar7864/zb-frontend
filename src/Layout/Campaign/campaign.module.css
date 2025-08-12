@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.top {
+    background-color: white;
+    padding: 2rem 40px;
+    padding-bottom: 0px;
+    border-top: 1px solid #E0E0E0;
+}
+
+@media only screen and (max-width:1024px) {
+    .top {
+        background-color: white;
+        padding:24px 2rem;
+        padding-bottom: 0px;
+        border-top: 1px solid #E0E0E0;
+    }
+    .breadcrumbsTop {
+        padding-block: 15px;
+        padding-inline: 1rem !important;
+        width: 100%;
+        border-bottom: 1px solid #E0E0E0;
+    }
+    
+}
+
+.title {
+    color: #012635;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tabLayout {
+    display: flex;
+}
+
+.tabItems {
+    padding: 8px 16px;
+    color: #012635;
+    font-size: 1.2rem;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+.breadcrumbsTop {
+    padding-block: 14px;
+    padding-inline: 40px;
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0;
+    background-color: #f7f7f7;
+    height: 50px;
+}
+
+.breadcrumbsTop .innerBreadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.innerBreadcrumbs h6{
+    line-height: 22px;
+}
+
+.breadcrumbsTop .innerBreadcrumbs .parentBreadcrumb {
+    font-size: 14px;
+    color: #777777;
+    font-weight: 400;
+}
+
+.breadcrumbsTop .innerBreadcrumbs .ChildBreadcrumb {
+    font-size: 14px;
+    color: #012635;
+    font-weight: 500;
+}
+
+
+.container::-webkit-scrollbar {
+    width: 0 !important;
+}
+
+.TopContainer{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.TopContainer h1{
+    color:#012635;
+    line-height: 40px;
+    font-weight: 700;
+    font-size: 32px;
+}
+.CreateNew{
+    background-color: #00BD82;
+    color: white;
+    line-height: 24px;
+    padding-block: 8px;
+    border-radius: 8px;
+    margin-right: 8px;
+}
+.FollowUp{
+    background-color: #00BD82;
+    color: white;
+    line-height: 24px;
+    padding-block: 8px;
+    border-radius: 8px;
+}

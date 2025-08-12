@@ -1,0 +1,145 @@
+.actionButton {
+    padding: 0px 6px;
+    border-radius: 8px;
+    background-color: #e8eaed;
+    transition: background 300ms ease-in-out;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+  }
+  
+  .actionButton:hover {
+    background-color: #d5d3d3;
+  }
+  
+  .actionButton:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  
+  .actionButton.disabled {
+    opacity: 0.65;
+  }
+  
+  .actionButton > .icon {
+    font-size: 16px;
+    line-height: 0;
+    color: #0a3501;
+  }
+  
+  .actionButton > .text {
+    color: #000;
+    /* font-size: 16px;
+    font-weight: 500; */
+    letter-spacing: 0.4px;
+  }
+  
+  /* Verified Style */
+  .actionButton.verified {
+    background-color: #00bd82;
+  }
+  
+  .actionButton.verified:hover {
+    background: linear-gradient(to right, #3fbe78, #74d19e);
+  }
+  
+  .actionButton.verified > .icon,
+  .actionButton.verified > .text {
+    color: #fff;
+  }
+  
+  /* Wrong Style */
+  .actionButton.wrong {
+    background: #bb2100;
+  }
+  
+  .actionButton.wrong:hover {
+    background: #dc4861;
+  }
+  
+  .actionButton.wrong > .icon,
+  .actionButton.wrong > .text {
+    color: #fff;
+  }
+  
+  /* DNC Style */
+  .actionButton.dnc {
+    background: #ffc000;
+  }
+  
+  .actionButton.dnc:hover {
+    background: #ffc000;
+  }
+  
+  .actionButton.dnc > .icon,
+  .actionButton.dnc > .text {
+    color: #000;
+  }
+
+
+  @media (max-width: 1240px) and (min-width: 1024px) {
+.actionButton > .text{
+  display: none;
+}
+
+.actionButton{
+  gap: 0px;
+
+}
+  }
+  
+
+
+  @media (max-width: 750px) and (min-width: 600px) {
+ 
+
+    .actionButton > .text{
+      display: none;
+    }
+    
+    .actionButton{
+      gap: 0px;
+    }
+  }
+
+
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .actionButton {
+      flex-grow: 1;
+      min-width: 48%;
+    }
+
+  
+  }
+
+
+  
+  @media (max-width: 1440px) {
+    /* .actionButton {
+      padding: 0px;
+      height: 32px;
+      width: 44px;
+      gap: 0px;
+    } */
+  
+    /* .actionButton > .text {
+      display: none;
+    } */
+  }
+  
+  @media (max-width: 1024px) {
+    .actionButton {
+      padding: 0px 12px;
+      width: fit-content;
+      
+    }
+  
+    /* .actionButton > .text {
+      display: block;
+    } */
+  }
+  

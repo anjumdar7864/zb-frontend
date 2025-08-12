@@ -1,0 +1,553 @@
+.chatBoxStyled {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1f;
+  height: calc(100vh - 85px);
+  /* height: calc(100svh - 7.4rem); */
+  border-left: 1px solid #3086ee;
+  background-color: white;
+}
+
+
+
+.chatBoxTopContainer {
+  padding: 16px 16px;
+  padding-bottom: 0;
+  border-bottom: 1px solid #dedfe7;
+  z-index: 3;
+
+}
+
+
+.chatBoxTopBody {
+  /* display: grid; */
+  display: block;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.1rem;
+  padding-bottom: 4px;
+}
+
+
+
+.optionLayout {
+  /* padding-top: 12px; */
+}
+
+
+.detail {
+  display: flex;
+}
+
+.close {
+  display: none;
+}
+
+.chatBoxTopDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0px;
+  padding-top: 0px;
+}
+
+.topBottom {
+  display: flex;
+}
+
+.proertyRightSideStyled {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detailBoxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 8px 16px;
+
+}
+
+.detailBox {
+  width: 100%;
+}
+
+
+.pushToCrm {
+  display: none;
+}
+
+
+.bottomContainer {}
+
+.pushToCrmButton {}
+
+.pushToCrmDesktop {}
+
+
+
+.pushToCrmButton {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.325rem 0.975rem;
+  border: 0.1rem solid transparent;
+  transition: border-color 300ms ease-in-out, background-color 300ms ease-in-out;
+  width: fit-content;
+  justify-self: center;
+}
+
+/* Responsive - equivalent to styled-components' theme.queryStatement(theme.breakpoints.sm) */
+
+
+.pushToCrmButton:has(.icon) {
+  grid-template-columns: auto auto;
+}
+
+.pushToCrmButton:hover {
+  background-color: #f5f5f5;
+}
+
+.pushToCrmButton>.icon {
+  line-height: 0;
+  font-size: 1.5rem;
+  color: #aaa;
+  transition: color 300ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pushToCrmButton>.text {
+  color: #393939;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 300ms ease-in-out;
+}
+
+.pushToCrmButton.block>.icon {
+  color: #f4516c;
+}
+
+.pushToCrmButton.verified>.icon {
+  color: #43cd80;
+}
+
+.pushToCrmButton.verified>.icon>.red {
+  color: #f4516c;
+}
+
+.pushToCrmButton.cut {
+  text-decoration-line: line-through;
+}
+
+.pushToCrmButton.selected {
+  border-bottom: 1px solid #00bd82;
+}
+
+.pushToCrmButton.selected:hover {
+  background: rgba(54, 163, 247, 0.2);
+}
+
+.pushToCrmButton.selected>.text {
+  color: #012635;
+}
+
+
+.chatBoxMiddle {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 16px 12px;
+  padding-bottom: 0;
+  overflow-y: auto;
+}
+
+.chatBoxMiddle::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.chatBoxMiddle::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+.chatBoxMiddle::-webkit-scrollbar-thumb {
+  background: #00bd82;
+}
+
+
+.chatBoxMiddleItem {
+  max-width: 100%;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.chatBoxMiddleOther {
+  justify-content: start;
+
+  &>div{
+    &>p {
+      border-radius: 8px;
+      padding: 1rem 1.3rem;
+      /* border-top-left-radius: 0; */
+      background-color: #f0f0f0;
+      color: #012635;
+      /* font-size: 14px; */
+      /* font-weight: 500; */
+      justify-self: start;
+    }
+  }
+
+
+  &>span {
+    color: #777777;
+    font-size: 10px;
+    font-weight: 500;
+    justify-self: end;
+  }
+}
+
+.chatBoxMiddleMe {
+  justify-self: end;
+&>div{
+ display: flex;
+ flex-direction: row-reverse;
+ gap: 2px;
+  &>p {
+    /* padding: 0.65rem 0.995rem; */
+    border-radius: 8px;
+    padding: 8px 12px;
+    /* border-top-right-radius: 0; */
+    background-color: #3086ee;
+    color: #fff;
+    /* font-size: 14px;
+    font-weight: 500; */
+    justify-self: end;
+  }
+}
+  
+
+  &>span {
+    color: #777777;
+    font-size: 10px;
+    font-weight: 500;
+    justify-self: end;
+  }
+}
+
+.chatBottomSendButton {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+  align-items: center;
+  justify-content: end;
+}
+
+
+
+
+.chatBBottomRight {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 16px;
+  align-items: center;
+  justify-content: end;
+}
+
+
+.sendButton {
+  /* padding: 0.585rem 1.04rem; */
+  border-radius: 0.2rem;
+  transition: background 300ms ease-in-out;
+}
+
+.sendButton:hover {
+  background-color: #d5d3d3;
+}
+
+.sendButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.sendButton>.text {
+  /* color: #777777;
+  font-size: 16px;
+  font-weight: 500; */
+}
+
+/* Styles when button has a child with class "icon" */
+.sendButton:has(.icon) {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+  background-color: #00bd82;
+  border-radius: 8px;
+  width: 86px;
+  height: 32px;
+}
+
+.sendButton:has(.icon):hover {
+  background-color: #00bd82;
+}
+
+.sendButton:has(.icon)>.icon {
+  font-size: 1.3rem;
+  line-height: 0;
+  color: #fff;
+}
+
+.sendButton:has(.icon)>.text {
+  color: #fff;
+}
+
+
+
+.emojoyButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  background-color: #f0f0f0;
+  transition: background 300ms ease-in-out;
+}
+
+.emojoyButton:hover {
+  background-color: #d5d3d3;
+}
+
+.emojoyButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+
+.chatBBottom {
+  height: 56px;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+}
+
+
+.chatBTopRight {
+  display: grid;
+  align-items: center;
+  align-content: end;
+  justify-content: end;
+  gap: 8px;
+  grid-template-columns: auto auto auto;
+}
+
+.phoneNumberButton {}
+
+
+
+.phoneNumberButton {
+  /* padding: 0.585rem 1.04rem; */
+  height: 32px;
+  width: 104px;
+  border-radius: 8px;
+  transition: background 300ms ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+}
+
+.phoneNumberButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.phoneNumberButton>.icon {
+  font-size: 20px;
+  line-height: 0;
+  color: #8d8d8d;
+}
+
+.phoneNumberButton>.text {
+  color: #012635;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+.chatBoxBTop {
+  padding: 0px 16px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+}
+
+
+.newMessage {
+  display: grid;
+  background-color: #60aaf3;
+  opacity: 0.5;
+  margin: 0 14rem;
+
+}
+
+.newMessageButton {
+  color: #fff;
+  line-height: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.chatBoxBottom {
+  margin: 8px 0px ;
+  margin-bottom: 0px;
+  border: 1px solid #e0e0e0;
+  border-left: 0px;
+  border-right: 0px;
+  /* border-radius: 4px; */
+  overflow: hidden;
+  min-width: 368px;
+}
+
+@media (max-width: 1140px) and (min-width: 1024px) {
+  .chatBoxBottom {
+    min-width: 300px;
+    margin: 8px;
+  }
+  .chatBoxBTop{
+    /* padding: 0px 8px; */
+  }
+}
+
+@media (max-width: 1360px) {
+  .chatBoxStyled {
+    height: calc(100vh - 85px);
+    height: calc(100svh - 85px);
+  }
+
+  .chatBoxTopBody {
+    display: block;
+  }
+
+  .optionLayout {
+    padding-top: 0px;
+  }
+
+
+  .chatBoxTopDiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0px;
+    padding-top: 0px;
+  }
+
+  .detailBox {
+    flex-grow: 1;
+  }
+
+  .chatBoxBTop{
+    padding: 0px 8px;
+  }
+}
+
+
+
+@media (max-width: 1024px) {
+  .close {
+    display: flex;
+  }
+
+  .detailBox {
+    flex-grow: 1;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .chatBoxStyled {
+    height: calc(100vh - 7rem);
+    height: calc(100svh - 7rem);
+  }
+
+  .chatBoxTopDiv {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .detailBox {
+    width: 100%;
+  }
+
+  .pushToCrm {
+    display: block;
+  }
+
+
+  .bottomContainer {
+    display: none;
+  }
+
+  .pushToCrmButton {
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .pushToCrmDesktop {
+    display: none;
+  }
+
+  .chatBottomSendButton {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 10px;
+  }
+
+
+  .sendButton:has(.icon)>.text {
+    width: 100%;
+  }
+
+
+
+  .chatBBottomRight {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 10px;
+  }
+
+  .chatBBottom {
+    height: fit-content;
+  }
+
+
+  .chatBTopRight {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+
+  .chatBoxBTop {
+    flex-direction: column;
+    height: fit-content;
+    align-items: start;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+}
+
+@media (max-width: 600px) {}

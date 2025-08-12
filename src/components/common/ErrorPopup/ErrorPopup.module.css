@@ -1,0 +1,9 @@
+.company_logo {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+    /* font-family: Fellix, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; */
+    color: #012635;
+    padding: 30px 40px;
+    padding-bottom: 10px;
+}

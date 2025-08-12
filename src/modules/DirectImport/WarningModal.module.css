@@ -1,0 +1,67 @@
+.title{
+    color:#012635 ;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dis{
+    color: #777777;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    padding-top: 28px;
+   
+}
+
+.footer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-top: 28px;
+    
+}
+
+.accept{
+    width: 120px;
+    height: 40px;
+    background-color: #00BD82;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+
+}
+.settingAccept{
+    width: 172px;
+    height: 40px;
+    background-color: #00BD82;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+
+}
+.reject{
+    width: 100px;
+    height: 40px;
+    background-color: #F0F0F0;
+    border-radius: 8px;
+    color: #012635;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.buttonsContainer{
+    display: flex;
+    gap: 10px;
+}
