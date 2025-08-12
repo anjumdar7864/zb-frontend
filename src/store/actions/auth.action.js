@@ -122,7 +122,7 @@ export const LoginAsUser = (email, onSuccess) => {
         toast.error(error?.response?.data?.message);
       }
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -167,7 +167,7 @@ export const LoginAsUserMaster = (email, onSuccess) => {
         toast.error(error?.response?.data?.message);
       }
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -214,7 +214,7 @@ export const CreateNewUser = (body, onSuccess, onError) => {
       });
       onError(error.response.data.message);
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({

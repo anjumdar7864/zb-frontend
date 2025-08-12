@@ -38,7 +38,7 @@ export const GetAllTenets = (query = null , SesstionExpire) => {
     } catch (error) {
       
 
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         console.log("error", error.response.data.message);
         localStorage.clear();
         dispatch({
@@ -89,7 +89,7 @@ export const CreateTenetAdmin = (body) => {
     } catch (error) {
       console.log("error", error.response.data.message);
 
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         console.log("error", error.response.data.message);
 
         localStorage.clear();
@@ -129,7 +129,7 @@ export const ResetTenetPaymentEmail = (body) => {
     } catch (error) {
       console.log("error", error.response.data.message);
 
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         console.log("error", error.response.data.message);
 
         localStorage.clear();
@@ -212,7 +212,7 @@ export const UpdateSingleTenet = (body, id) => {
       });
       
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -259,7 +259,7 @@ export const UpdateSingleTenetCarrierType = (body, id , onSuccess) => {
       // });
       onSuccess();
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -342,7 +342,7 @@ export const DeActiveTenant = (body, id, onSuccess) => {
         payload: "Tenant has been suspended",
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -379,7 +379,7 @@ export const GetSingleTenets = (Id) => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,

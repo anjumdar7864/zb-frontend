@@ -28,7 +28,7 @@ export const GetAllPermission = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -68,7 +68,7 @@ export const CreatePermission = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -151,7 +151,7 @@ export const GetSinglePermission = (id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -238,7 +238,7 @@ export const UpdateSingleUserPermission = (body, id, onSuccess , onError) => {
     } catch (error) {
       onError(error.response.data.message)
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -279,7 +279,7 @@ export const ResetPermission = (id , success) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({

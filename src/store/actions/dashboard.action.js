@@ -28,7 +28,7 @@ export const GetLeadsBreakDown = (mode) => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -96,7 +96,7 @@ export const GetTopThreeCampaigns = () => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -150,7 +150,7 @@ export const GetAvgReplyTime = (date) => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -190,7 +190,7 @@ export const GetSavedAvgReplyTime = (mode) => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -237,7 +237,7 @@ export const GetSavedAvgReplyTime = (mode) => {
 //       });
 //     } catch (error) {
 //       if (
-//         error.response.data.message === "Session expireddd"
+//         error.response.data.message === "Session expiredd"
 //       ) {
 //         localStorage.clear();
 //         dispatch({
@@ -289,7 +289,7 @@ export const GetReportMessage = (mode, startDate, endDate) => {
       });
     } catch (error) {
       console.error("Error in GetReportMessage:", error);
-      if (error.response && error.response.data.message === "Session expireddd") {
+      if (error.response && error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -333,7 +333,7 @@ export const GetReportTags = (mode) => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -374,7 +374,7 @@ export const GetReportMessagesInLast30 = () => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -415,7 +415,7 @@ export const GetReportSendAndQueue = () => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -456,7 +456,7 @@ export const GetProspectsLeads = (mode) => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -495,7 +495,7 @@ export const GetFlagStatus = (mode) => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -546,7 +546,7 @@ export const GetMarket = (phone, mode , page , limit) => {
         payload: updatedMarketData,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -596,7 +596,7 @@ export const GetOutbounds = (number, mode, page, limit) => {
         payload: res.data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -635,7 +635,7 @@ export const GetTopDrip = () => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -674,7 +674,7 @@ export const GetReportOfDripSchedule = () => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -721,7 +721,7 @@ export const GetReportOfNoStatus = () => {
         payload: data?.status,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -759,7 +759,7 @@ export const GetReportOfReminder = () => {
         payload: data?.reminder,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -797,7 +797,7 @@ export const GetReportOfUnRead = () => {
         payload: data?.unRead,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -835,7 +835,7 @@ export const GetReportOfUnAnswered = () => {
         payload: data?.unAnswered,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -873,7 +873,7 @@ export const countOfMessageSend = () => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expireddd") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,

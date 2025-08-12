@@ -191,7 +191,7 @@ export const addNewDirectImports = (
         return data;
       } catch (error) {
         console.log("check data", error.response?.data?.message);
-        if (error.response?.data?.message == "Session expired") {
+        if (error.response?.data?.message == "Session expiredd") {
           console.log("check data ==", error.response?.data?.message);
           localStorage.clear();
           dispatch({
