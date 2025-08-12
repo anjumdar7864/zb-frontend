@@ -7,7 +7,7 @@ export const commonAPICall = async (method, url, payload , ) => {
    
     return { data:myJson?.data, isError: false, message: "" , sessionExpired: false };
   } else if ((myJson && myJson?.status == "401") || myJson?.status == "401"){
-    const message = myJson?.response?.data?.message ?? "Session expiredd";
+    const message = myJson?.response?.data?.message ?? "Session expired";
 
     return { data: [], isError: true, message , sessionExpired: true};
   } else{

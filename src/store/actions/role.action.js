@@ -28,7 +28,7 @@ export const GetAllRole = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -68,7 +68,7 @@ export const CreateRole = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -107,7 +107,7 @@ export const DeleteRole = (id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -147,7 +147,7 @@ export const GetSingleRole = (id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -186,7 +186,7 @@ export const UpdateSingleRole = (body, id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({

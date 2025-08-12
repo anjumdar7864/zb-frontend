@@ -109,7 +109,7 @@ export const DeletePermission = (id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
@@ -192,7 +192,7 @@ export const UpdateSinglePermission = (body, id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expiredd"
+        error.response.data.message === "Session expired"
       ) {
         localStorage.clear();
         dispatch({
