@@ -33,6 +33,7 @@ import {
 import { BiSolidDownArrow, BiSolidUpArrow } from "react-icons/bi";
 import formatDate from "../../../utils/formatDate";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import toast from "react-hot-toast";
 
 const LightTooltip = styled(Components.Common.LightTooltip)`
   & > .MuiTooltip-tooltip {
@@ -629,7 +630,9 @@ const AddNewTagModal = ({
 
   const addNewTag = () => {
     let data = { name: name, color: selectedColor };
-    dispatch(addTag(data));
+    dispatch(addTag(data ,  (e)=>toast.success("Tag added") , (e)=> toast.error( e?.response?.data?.message    )
+    ) 
+    );
     setIsAddNewModalOpen(false);
   };
   // console.log("used color" , usedColors , "other check" ,remainingColors);

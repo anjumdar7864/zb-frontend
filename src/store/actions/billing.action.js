@@ -29,7 +29,7 @@ export const GetAllSubscription = (query = null) => {
         },
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -67,7 +67,7 @@ export const GetSingleAdminUser = (id) => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         //localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -105,7 +105,7 @@ export const GetSingleAdminUserForSignup = (id) => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         //localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -148,7 +148,7 @@ export const GetPaymentHistoryById = () => {
         payload: data,
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -196,7 +196,7 @@ export const UpdateSubscription = (body) => {
 
       dispatch(GetSingleAdminUser(body?.adminId));
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
@@ -262,7 +262,7 @@ export const downloadCsvAdmin = () => {
         payload: "Exported",
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,

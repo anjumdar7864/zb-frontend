@@ -59,7 +59,7 @@ const FollowupCampaign = () => {
             <FaChevronRight color='#012635' />
           </div>
           <div>
-            <h6 className={styles.ChildBreadcrumb}>Create Follow Up Campaign</h6>
+            <h6 className={`${styles.ChildBreadcrumb}`}>Create Follow Up Campaign</h6>
           </div>
         </div>
       </div>

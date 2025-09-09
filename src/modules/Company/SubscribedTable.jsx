@@ -13,12 +13,13 @@ function createData(Created, plan, cost, Total) {
 }
 
 export default function SubscribedTable({subscribePackage = {}}) {
-    const {price, maxTenants,  countOfOutBoundNumber ,tenantSubscriptionType ,  monthlyOutBoundNumber ,extraNumber ,yearlyPrice ,   monthlyPrice ,  marketIncluded } = subscribePackage;
+    const {price, maxTenants,  countOfOutBoundNumber ,tenantSubscriptionType ,  monthlyOutBoundNumber ,extraNumber  ,yearlyPrice ,   monthlyPrice ,  marketIncluded } = subscribePackage;
+   let extraNumberNumber = extraNumber < 0 ? 0 : extraNumber
     const rows = [
         createData('Messages', `${monthlyOutBoundNumber}/monthly`, `$ ${tenantSubscriptionType == "monthly" ? monthlyPrice : yearlyPrice} / ${tenantSubscriptionType}`, `$ ${tenantSubscriptionType == "monthly" ? monthlyPrice : yearlyPrice} /${tenantSubscriptionType}`),
-        createData('Markets', `${countOfOutBoundNumber} created / ${marketIncluded} included`, `${extraNumber != 0 ?`$${tenantSubscriptionType == "monthly" ? extraNumber * 500 : (extraNumber * 500)*12 }  / ${tenantSubscriptionType}` :""}`,   `${extraNumber != 0 ?`$${tenantSubscriptionType == "monthly" ? extraNumber * 500 : (extraNumber * 500)*12 }  / ${tenantSubscriptionType}` :""}`),
+        createData('Markets', `${countOfOutBoundNumber} created / ${marketIncluded} included`, `${extraNumberNumber  != 0 ?`$${tenantSubscriptionType == "monthly" ? extraNumberNumber * 500 : (extraNumberNumber * 500)*12 }  / ${tenantSubscriptionType}` :""}`,   `${extraNumberNumber != 0 ?`$${tenantSubscriptionType == "monthly" ? extraNumberNumber * 500 : (extraNumberNumber * 500)*12 }  / ${tenantSubscriptionType}` :""}`),
         createData('Users', maxTenants, "", ""),
-        createData('Total', "", "", `$ ${(tenantSubscriptionType == "monthly" ? monthlyPrice : yearlyPrice) +(tenantSubscriptionType == "monthly" ?  (extraNumber * 500) :  (extraNumber * 500)*12)}/${tenantSubscriptionType}`),
+        createData('Total', "", "", `$ ${(tenantSubscriptionType == "monthly" ? monthlyPrice : yearlyPrice) +(tenantSubscriptionType == "monthly" ?  (extraNumberNumber * 500) :  (extraNumberNumber * 500)*12)}/${tenantSubscriptionType}`),
     
     ];
 

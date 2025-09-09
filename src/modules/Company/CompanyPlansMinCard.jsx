@@ -227,7 +227,7 @@ const CompanyPlansMinCard = ({
       </div>
       {
         title !== "CUSTOM" ?
-          <SubscribeModal handleOpen={handleOpen} open={open} setOpen={setOpen} selectedType={packageType} disable={isCurrentPlan && packageType != subscriptionType ? true : false} planDetail={data} setSubscribe={setSubscribe} handleContinue={handleContinue}>
+          <SubscribeModal handleOpen={handleOpen} open={open} setOpen={setOpen} selectedType={packageType} currentPackageId={currentPackageId} disable={isCurrentPlan && packageType != subscriptionType ? true : false} planDetail={data} setSubscribe={setSubscribe} handleContinue={handleContinue} tenantSubscriptionType={tenantSubscriptionType}>
             <div
               style={{
                 // backgroundColor: isCurrentPlan && packageType == subscriptionType ? '#E0E0E0' : color, // Change color if it's the current plan

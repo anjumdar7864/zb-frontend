@@ -22,13 +22,8 @@ export const apiCall = (endpoint, method, body) => {
       dispatch({ type: 'API_SUCCESS', payload: response.data });
 
     } catch (error) {
-      if (error.response?.data?.message === "Session expired") {
-        localStorage.clear();
-        dispatch({
-          type: authConstant.SESSION_EXPIRE,
-          payload: { err: "Session has been expired" },
-        });
-      } else if (error.response && error.response.status === 403) {
+      // Handle 403 Forbidden errors and log the user out
+      if (error.response && error.response.status === 403) {
         console.log('Token is expired or unauthorized (403), logging out...');
         dispatch({ type: authConstant.LOGOUT });
       } else {

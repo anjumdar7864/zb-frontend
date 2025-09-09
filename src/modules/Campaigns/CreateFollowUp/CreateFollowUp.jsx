@@ -102,7 +102,8 @@ const CreateFollowUp = () => {
           createFollowUpCampaign({ body }, () => {
             toast.success("Created successfully!");
             navigate("/campaigns");
-          })
+          },(e)=> toast.error( e?.response?.data?.message)
+          )
         );
     },
   });
@@ -202,20 +203,15 @@ const CreateFollowUp = () => {
 
   return (
     <CreateFollowUpStyled icon={Assets.Images.SortDefault}>
-      <div className="top">
-        <h1>{editId ? "Edit" : "Create"} Follow Up Campaign</h1>
-        {/* <button onClick={() => navigate(-1)}>
-          <span className="icon">
-            <FaArrowLeft />
-          </span>
-          <span className="text">Cancel</span>
-        </button> */}
+      <div className="top body1Medium textPrimeryColor ">
+        <h1 className="body1Medium textPrimeryColor">{editId ? "Edit" : "Create"} Follow Up Campaign</h1>
+    
       </div>
       <form className="bottom" onSubmit={formik.handleSubmit}>
         <div className="top">
           <label className="item">
             <span className="left">
-              <span className="text">Campaign</span>
+              <span className="text body4Medium textPrimeryColor">Campaign</span>
             </span>
             <div className="right">
               <button
@@ -231,7 +227,7 @@ const CreateFollowUp = () => {
                   </svg>
 
                 </span>
-                <span className="text">
+                <span className="text body4Medium textPrimeryColor">
                   {selectedCampaign?.permission === "compaign"
                     ? selectedCampaign?.name
                     : selectedCampaign?.permission === "followCompaign"
@@ -243,7 +239,7 @@ const CreateFollowUp = () => {
           </label>
           <label className="item">
             <span className="left">
-              <span className="text">Markets</span>
+              <span className="text body4Medium textPrimeryColor">Markets</span>
             </span>
             <div className="right">
               {selectedCampaign !== null ?
@@ -276,7 +272,7 @@ const CreateFollowUp = () => {
                     control: (baseStyles, state) => ({
                       ...baseStyles,
                       width: "100%",
-                      height: '4rem',
+                      height: '48px',
                     }),
                   }}
                   IndicatorsContainer={false}
@@ -287,7 +283,7 @@ const CreateFollowUp = () => {
               )}
             </div>
             <span className="left">
-              <span className="text">Select Month Without Response</span>
+              <span className="text body4Medium textPrimeryColor">Select Month Without Response</span>
               <LightTooltip
                 arrow
                 placement="right"
@@ -342,7 +338,7 @@ const CreateFollowUp = () => {
           </label>
           <label className="item">
             <span className="left">
-              <span className="text">Follow up Campaign Title</span>
+              <span className="text body4Medium textPrimeryColor">Follow up Campaign Title</span>
               <LightTooltip
                 arrow
                 placement="right"
@@ -372,55 +368,24 @@ const CreateFollowUp = () => {
               )}
             </div>
           </label>
-          {/* <label className="item">
-            <span className="left">
-              <span className="text">Call Forwarding Number </span>
-              <LightTooltip
-                arrow
-                placement="right"
-                title={
-                  <>
-                    <p>Call Forwarding Number</p>
-                  </>
-                }
-              >
-                <pan className="icon">
-                  <FaInfoCircle />
-                </pan>
-              </LightTooltip>
-            </span>
-            <div className="right">
-              <input
-                type="text"
-                placeholder="Call Forwarding Number"
-                // value={formik.values.callNumber}
-                onChange={formik.handleChange}
-                name="title"
-                onBlur={formik.handleBlur}
-                disabled={true}
-              />
-              {formik.touched.callNumber && formik.errors.callNumber && (
-                <p>{formik.errors.callNumber}</p>
-              )}
-            </div>
-          </label> */}
+  
         </div>
       </form>
 
 
       <div className="Last">
-        <button className="back" type="button" onClick={() => navigate('/campaigns')}>
+        <button className="back body4Medium textSecondaryColor" type="button" onClick={() => navigate('/campaigns')}>
           Cancel
         </button>
         <button
-          className="Send"
-          // type="submit"
+          className="Send primeryBackground"
+          type="submit"
           disabled={
             !formik.isValid || !formik.dirty || selectedMonths?.length <= 0
           }
           onClick={() => { formik?.handleSubmit() }}
         >
-          <span className="text">
+          <span className="text body4Medium textWhiteColor ">
             {editId ? "Update" : "Save"} Follow Up Campaign
           </span>
         </button>

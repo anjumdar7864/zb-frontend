@@ -58,7 +58,7 @@ export default function RegisterationInfo({ open, setOpen, tenantId = "", select
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    console.log("tenantId", tenantId , "selectedRecord", selectedRecord);
+    console.log("initialState", initialState?.phoneNumber );
     
     const fetchData = async (id = "") => {
         try {
@@ -153,7 +153,7 @@ export default function RegisterationInfo({ open, setOpen, tenantId = "", select
             city
         } = initialState || {};
 
-        console.log("intial message", initialState);
+        console.log("intial message", initialState?.phoneNumber , phoneNumber);
 
 
         const errorMesages = {};
@@ -176,7 +176,7 @@ export default function RegisterationInfo({ open, setOpen, tenantId = "", select
         if (!mailingAddress || !mailingAddress.trim()) {
             errorMesages.mailingAddress = "Mailing Address should not be empty."
         }
-        if (!phoneNumber || phoneNumber.length <= 10 || !phoneNumber.trim()) {
+        if (!phoneNumber || phoneNumber.length <= 9 || !phoneNumber.trim()) {
             errorMesages.phoneNumber = "Phone number should not be empty."
         }
         if (!city || !city.trim()) {
@@ -192,7 +192,7 @@ export default function RegisterationInfo({ open, setOpen, tenantId = "", select
             errorMesages.websiteUrl = "Please enter a valid website URL."
         }
         // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
         if (!email || !emailRegex.test(email)) {
             errorMesages.email = "Please enter a valid email address."
         }
@@ -224,6 +224,8 @@ export default function RegisterationInfo({ open, setOpen, tenantId = "", select
             delete cloneData._id;
             delete cloneData.tenantId;
             delete cloneData.createdAt;
+            delete cloneData.__v;
+            delete cloneData.updatedAt;
             // Phone number validation: remove leading 1 if present
             if (cloneData?.phoneNumber && cloneData?.phoneNumber.startsWith("1")) {
                 cloneData.phoneNumber = initialState?.phoneNumber.substring(1)
@@ -269,7 +271,7 @@ export default function RegisterationInfo({ open, setOpen, tenantId = "", select
                 setErrorMessages(cloneErrorMessages);
             }
         } else if (name == "email") {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
             if (value && emailRegex.test(value) && cloneErrorMessages[name]) {
                 delete cloneErrorMessages[name];
                 setErrorMessages(cloneErrorMessages);

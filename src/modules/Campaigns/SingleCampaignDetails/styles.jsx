@@ -8,7 +8,7 @@ export const SingleCampaignDetailsStyled = styled.div`
     padding: 1.5rem 1rem;
   }
   display: grid;
-  gap: 20px;
+  gap: 16px;
   background-color: #f7f7f7;
   min-height: calc(100vh - 7rem);
   min-height: calc(100svh - 7rem);
@@ -65,7 +65,7 @@ export const SingleCampaignDetailsStyled = styled.div`
     & > .bottom {
       display: grid;
       grid-template-columns: 1;
-      gap: 0.5rem;
+      // gap: 0.5rem;
       align-items: center;
       justify-content: start;
       max-width: 80%;
@@ -83,9 +83,9 @@ export const SingleCampaignDetailsStyled = styled.div`
           margin-left: 1.5rem;
         }
         & > .text {
-          color: #012635;
-          font-size: 2.3rem;
-          font-weight:700;
+          // color: #012635;
+          // font-size: 2.3rem;
+          // font-weight:700;
           display: block;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -126,17 +126,17 @@ export const SingleCampaignDetailsStyled = styled.div`
       overflow: hidden;
       & > .Header {
         background-color: white;
-        padding: 0.8rem 1.2rem;
+        padding: 16px;
         & > h2{
-          color: #012635;
-          font-weight: 600;
-          font-size: 1.8rem;
+          // color: #012635;
+          // font-weight: 600;
+          // font-size: 1.8rem;
         }
       }
       & > .bottom {
         display: grid;
         background-color: white;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1fr;
         ${theme.queryStatement(620)} {
           grid-template-columns: 1fr;
         }
@@ -182,6 +182,7 @@ export const SingleCampaignDetailsStyled = styled.div`
         & > .center {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
+          
 
           ${theme.queryStatement(1490)} {
             grid-template-columns: 1fr 1fr 1fr;
@@ -236,16 +237,16 @@ export const SingleCampaignDetailsStyled = styled.div`
                 line-height: 0;
               }
               & > .text {
-                font-size: 1.8rem;
-                font-weight: 500;
+                // font-size: 1.8rem;
+                // font-weight: 500;
                 color: #212529;
               }
             }
             & > h6 {
               color: #212529;
               opacity: 0.7;
-              font-size: 1.3rem;
-              font-weight: 400;
+              // font-size: 1.3rem;
+              // font-weight: 400;
               text-align: center;
             }
           }
@@ -262,12 +263,13 @@ export const SingleCampaignDetailsStyled = styled.div`
       }
       & > .Header {
         background-color: white;
-        padding: 0.8rem 1.2rem;
+        padding: 16px;
+        height:56px ; 
         border-bottom:1px solid #f7f7f7;
         & > h2{
-          color: #012635;
-          font-weight: 600;
-          font-size: 1.8rem;
+          // color: #012635;
+          // font-weight: 600;
+          // font-size: 1.8rem;
         }
       }
       ${theme.queryStatement(1490)} {
@@ -393,11 +395,11 @@ export const BatchReportsStyled = styled.div`
   overflow: hidden;
   & > .Header {
         background-color: white;
-        padding: 0.8rem 1.2rem;
+        padding: 16px;
         & > h2{
-          color: #012635;
-          font-weight: 600;
-          font-size: 1.8rem;
+          // color: #012635;
+          // font-weight: 600;
+          // font-size: 1.8rem;
         }
     }
   & > .overflow {
@@ -441,11 +443,12 @@ export const BatchReportsStyled = styled.div`
           font-weight: 500 ;
         }
         & > h6 {
-            padding:1.3rem;
+            padding:8px 16px;
+            height:48px ; 
             justify-self: flex-start;
-            font-weight: 500 ;
-            color:#012635 ;
-            font-size:1.2rem;
+            // font-weight: 500 ;
+            // color:#012635 ;
+            // font-size:1.2rem;
             width: 100%;
             display: flex;
             align-items: center;
@@ -521,11 +524,11 @@ export const ImportReportsStyled = styled.div`
   overflow: hidden;
   & > .Header {
         background-color: white;
-        padding: 0.8rem 1.2rem;
+        padding: 16px;
         & > h2{
-          color: #012635;
-          font-weight: 600;
-          font-size: 1.8rem;
+          // color: #012635;
+          // font-weight: 600;
+          // font-size: 1.8rem;
         }
     }
   & > .overflow {
@@ -571,11 +574,11 @@ export const ImportReportsStyled = styled.div`
           font-weight: 500 ;
         }
         & > h6 {
-            padding:1.3rem;
+            padding: 8px 16px;
             justify-self: flex-start;
-            font-weight: 500 ;
-            color:#012635 ;
-            font-size:1.2rem;
+            // font-weight: 500 ;
+            // color:#012635 ;
+            // font-size:1.2rem;
             width: 100%;
             display: flex;
             align-items: center;
@@ -618,13 +621,13 @@ export const ImportReportsStyled = styled.div`
           border-bottom: 1px solid #80808052;
           color: #777777;
           font-weight: 500 ;
-          padding-block:1rem;
+          // padding-block:1rem;
           & > td {
             padding:1.3rem;
             padding-block:0.7rem;
             justify-self: flex-start;
-            color:#777777 ;
-            font-size:1.2rem ;
+            // color:#777777 ;
+            // font-size:1.2rem ;
             width: 100%;
             display: flex;
             align-items: center;

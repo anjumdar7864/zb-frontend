@@ -56,9 +56,13 @@ const Campaign = () => {
     const name = 'Your name'
     return (
         <div className={styles.container}>
-            <div className={styles.TopContainer} style={{ margin: "0px 0px", padding: "24px 40px" }}>
-                <h1>Campaigns</h1>
-                {(user.role === 'admin' || user.permissions.includes('Create Initial Campaign')) && (
+            <div 
+                    className="pageHeaderLayout"
+            // className={styles.TopContainer} 
+            //  style={{ margin: "0px 0px", padding: "24px 40px" }}
+             >
+                <h1  className='body1SemiBold textPrimeryColor'>Campaigns</h1>
+                {(user.role === 'admin' || user?.permissions?.includes('Create Initial Campaign')) && (
                 <div className="right" >
                 
                     <LightTooltip
@@ -68,7 +72,7 @@ const Campaign = () => {
                     >
                         <button
                             style={{ width: '187px' }}
-                            className={styles.CreateNew}
+                            className={`${styles.CreateNew} textWhiteColor primeryBackground body4Medium`}
                             onClick={() => {
                                 setIsNewCampaignModalOpen(true);
                                 setIsFollowUpCampaign(false);
@@ -85,7 +89,7 @@ const Campaign = () => {
                     >
                         <button
                             onClick={() => navigate("/campaigns/create-follow-up")}
-                            className={styles.FollowUp}
+                            className={`${styles.FollowUp} textWhiteColor primeryBackground body4Medium`}
                             style={{ width: '257px' }}
                         >
                             Create New Follow Up Campaign

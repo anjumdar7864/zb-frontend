@@ -23,7 +23,7 @@ export const TableRowStyled = styled.div`
 
     &.data {
       & > p {
-        color: #7c7c7c;
+        // color: #7c7c7c;
         font-size: 1.1rem;
         font-weight: 500;
       }
@@ -273,7 +273,7 @@ export const FollowUpTemplateStyled = styled.div`
   // display: grid;
   display: flex;
   flex-direction: column ; 
-  gap: 24px;
+  gap: 16px;
   // background-color: #f2f3f8;
   // background-color: red;
   height:100% ; 
@@ -373,8 +373,8 @@ export const FollowUpTemplateStyled = styled.div`
   & > .bottom {
       max-width:100%;
       overflow:auto;
-      margin:0px 40px;
-      margin-bottom: 40px ; 
+      margin:0px 16px;
+      margin-bottom: 16px ; 
       background-color:white ; 
        border-radius:8px ; 
       border: solid 1px #E0E0E0 ; 
@@ -453,9 +453,9 @@ export const FollowUpTemplateStyled = styled.div`
 
         & > h6 {
            justify-self: flex-start;
-           font-weight: 500 ;
-            color:#012635 ;
-            font-size:1.1rem ;
+          //  font-weight: 500 ;
+            // color:#012635 ;
+            // font-size:1.1rem ;
             width: 100%;
             display: flex;
             align-items: center;
@@ -545,7 +545,7 @@ export const FollowUpTemplateStyled = styled.div`
                 font-size:1.1rem ; 
                 font-wight: 500 ; 
                 line-height:22px ; 
-                color:#777777 ; 
+                // color:#777777 ; 
                 text-wrap:wrap !important;
               }
             }
@@ -631,7 +631,7 @@ export const FollowUpTemplateStyled = styled.div`
                 font-size:1.1rem ; 
                 font-wight: 500 ; 
                 line-height:22px ; 
-                color:#777777 ; 
+                // color:#777777 ; 
                 text-wrap:wrap !important;
               }
             }
@@ -1369,7 +1369,7 @@ export const UserEditStyled = styled.div`
 
 export const TemplateTop = styled.div`
   display: flex ;
-  padding: 24px 40px ;
+  padding: 16px ;
   padding-bottom: 0px ; 
   justify-content:space-between ; 
   align-items: center ; 
@@ -1416,7 +1416,7 @@ export const TemplateTop = styled.div`
 
 & > .searchContainer {
     width: 256px ; 
-    height:4rem ; 
+    height:40px ; 
     border: solid 1px #D3D7DD ; 
     background-color: white ; 
     border-radius: 8px ; 

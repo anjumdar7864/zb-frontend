@@ -81,7 +81,7 @@ const navigate = useNavigate();
                                         Our Support team is dedicated to helping you resolve any issues you might be facing.
                                     </div>
                                     <div>
-                                        <button style={{ backgroundColor: "#00BD82", cursor: "pointer", borderRadius: "8px", color: "white", width: "121px", height: "40px", fontSize: "16px", fontWeight: 500, lineHeight: "24px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                        <button  onClick={()=> window.open('https://zeitblast.com/#/contactus', '_blank')} style={{ backgroundColor: "#00BD82", cursor: "pointer", borderRadius: "8px", color: "white", width: "121px", height: "40px", fontSize: "16px", fontWeight: 500, lineHeight: "24px", display: "flex", justifyContent: "center", alignItems: "center" }}>
                                             Contact us
                                         </button>
                                     </div>
@@ -95,7 +95,7 @@ const navigate = useNavigate();
                                     </div>
                                     <div>
                                         
-                                        <button onClick={()=> window.open('http://localhost:5173/#/pricing', '_blank')} style={{ backgroundColor: "#3086EE", cursor: "pointer", borderRadius: "8px", color: "white", width: "121px", height: "40px", fontSize: "16px", fontWeight: 500, lineHeight: "24px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                        <button onClick={()=> window.open('https://zeitblast.com/#/pricing', '_blank')} style={{ backgroundColor: "#3086EE", cursor: "pointer", borderRadius: "8px", color: "white", width: "121px", height: "40px", fontSize: "16px", fontWeight: 500, lineHeight: "24px", display: "flex", justifyContent: "center", alignItems: "center" }}>
                                             Check plans
                                         </button>
                                     </div>

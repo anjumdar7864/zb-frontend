@@ -50,7 +50,7 @@ export const HeaderStyled = styled.header`
    
     }
 
-    & > .dlcWarning {
+    & >  .dlcWarning {
 display: flex;
 margin-right: -12%;
  ${theme.queryStatement(theme.breakpoints.xllg)} {

@@ -122,6 +122,7 @@ const TableA = ({pending , setPending}) => {
     const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
     return currentRecords;
   }
+  console.log("clonedata" , cloneData);
   // const goToNextPage = () => {
   //   if (activePage === totalPages) return false;
   //   const currentRecords = getCurrentRecords(activePage + 1);

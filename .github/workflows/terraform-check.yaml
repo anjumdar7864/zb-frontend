@@ -1,0 +1,23 @@
+name: Terraform Check
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read
+# Defining the event that triggers this workflow.
+on:
+  pull_request:
+    # On any pull requests to $default-branch
+    branches: ['main', 'develop']
+    paths:
+      - 'infra/terraform/**'
+      - '!.github/workflows/**'
+
+# Defining the jobs to be executed in the workflow.
+jobs:
+  terraform:
+    name: "Terraform"
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/terraform-check.yaml@main
+    # Defining the secrets required for the job to run.
+    secrets:
+      GH_INFRA_PAT: ${{ secrets.GH_INFRA_PAT }}
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+      AWS_SESSION_NAME: ${{ secrets.AWS_SESSION_NAME }}

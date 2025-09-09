@@ -149,7 +149,7 @@ export const CampaignsStyled = styled.div`
             padding:10px;
             gap:7px;
             width: 250px;
-            height: 48px;
+            height: 40px;
             border: 1px solid #D3D7DD;
             border-radius: 8px;
             display: flex;
@@ -270,7 +270,7 @@ export const CampaignsStyled = styled.div`
         justify-content: center;
         align-items: center;
         width: 175px;
-        height: 48px;
+        height: 40px;
         background-color: white;
         border: 1px solid #777777;
         border-radius: 8px;
@@ -622,9 +622,9 @@ export const CampaignsStyled = styled.div`
             }
         }
         & > .text {
-            color:#012635;
-            font-size: 1.2rem;
-            font-weight: 500;
+            // color:#012635;
+            // font-size: 1.2rem;
+            // font-weight: 500;
             display: inline-block;
             line-height:22px;
           }
@@ -706,10 +706,10 @@ export const CampaignsStyled = styled.div`
               text-overflow: ellipsis;
               overflow: hidden;
               margin: 0;
-              color:#777777;
-              line-height:22px;
-              font-size:14px;
-              font-weight:500;
+              // color:#777777;
+              // line-height:22px;
+              // font-size:14px;
+              // font-weight:500;
             }
             & > section {
               position: relative;
@@ -797,10 +797,10 @@ export const CampaignsStyled = styled.div`
               text-overflow: ellipsis;
               overflow: hidden;
               margin: 0;
-              color:#777777;
-              line-height:22px;
-              font-size:14px;
-              font-weight:500;
+              // color:#777777;
+              // line-height:22px;
+              // font-size:14px;
+              // font-weight:500;
             }
             }
 
@@ -851,7 +851,7 @@ export const CampaignsStyled = styled.div`
 
 export const NewCampaignModalStyled = styled.form`
   width: 95vw;
-  max-width: 74.6rem;
+  max-width: 700px;
   background-color: #fff;
   border-radius:1.2rem;
   overflow:hidden;                
@@ -863,10 +863,11 @@ export const NewCampaignModalStyled = styled.form`
     padding-inline: 1.95rem;
     padding-block: 1rem;
     border-bottom:1px solid #F0F0F0;
+    height: 56px;
     & > h2 {
-      font-size: 2rem;
-      color: #012635;
-      font-weight: 600;
+      // font-size: 2rem;
+      // color: #012635;
+      // font-weight: 600;
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -886,7 +887,7 @@ export const NewCampaignModalStyled = styled.form`
     }
   }
   & > .middle {
-    padding: 1.95rem;
+    padding: 16px;
     display: grid;
     gap: 1rem;
     & > .middleCover{
@@ -905,9 +906,9 @@ export const NewCampaignModalStyled = styled.form`
           gap: 0.25rem;
 
           & > .text {
-            color: #212529;
-            font-size: 1.3rem;
-            font-weight: 500;
+            // color: #212529;
+            // font-size: 1.3rem;
+            // font-weight: 500;
             padding-bottom: 0.2rem;
           }
 
@@ -926,7 +927,8 @@ export const NewCampaignModalStyled = styled.form`
           }
 
           & > input {
-            padding: 1.5rem 1.5rem;
+            padding: 8px 12px;
+            height: 48px;
             border: 0.1rem solid #c1c4cc;
             color: #404042;
             background-color: transparent;
@@ -949,7 +951,8 @@ export const NewCampaignModalStyled = styled.form`
           & > .SelectCover{
             position: relative;
           & > select {
-            padding: 1.5rem 4rem 1.5rem 1.5rem;
+            padding: 8px;
+            height: 48px;
             border: 0.1rem solid #c1c4cc;
             color: #575962;
             background-color: transparent;
@@ -987,9 +990,9 @@ export const NewCampaignModalStyled = styled.form`
           width:calc(50% - 0.7rem);
           & > .left {
              & > .text {
-            color: #212529;
-            font-size: 1.3rem;
-            font-weight: 500;
+            // color: #212529;
+            // font-size: 1.3rem;
+            // font-weight: 500;
             padding-bottom: 0.2rem;
           }
 
@@ -1008,7 +1011,8 @@ export const NewCampaignModalStyled = styled.form`
           }
 
           & > input {
-            padding: 1.5rem 1.5rem;
+            padding: 8px 12px;
+            height: 48px;
             border: 0.1rem solid #c1c4cc !important;
             color: #404042;
             background-color: transparent;
@@ -1043,13 +1047,15 @@ export const NewCampaignModalStyled = styled.form`
     padding-block: 1rem;
     border-top:1px solid #F0F0F0;
     & > .buttonSave{
-      padding: 0.85rem 2.3rem;
-      font-size: 1.5rem;
+      // padding: 0.85rem 2.3rem;
+      height: 40px;
+      width: 100px;
+      // font-size: 1.5rem;
       border: 0.1rem solid #c1c4cc;
       font-weight: 500;
       border-radius: 0.8rem;
-      color:#FFFFFF;
-      background-color:#00BD82;
+      // color:#FFFFFF;
+      // background-color:#00BD82;
       transition: background-color 0.3s ease-in-out;
       & > .text {
           font-size: 1.5rem;
@@ -1061,12 +1067,14 @@ export const NewCampaignModalStyled = styled.form`
     }
 
     & > button:first-of-type {
-      padding: 0.85rem 1.5rem;
-      font-size: 1.5rem;
+      // padding: 0.85rem 1.5rem;
+         height: 40px;
+      width: 100px;
+      // font-size: 1.5rem;
       border: 0.1rem solid #c1c4cc;
-      font-weight: 500;
+      // font-weight: 500;
       border-radius: 0.8rem;
-      color:#777777;
+      // color:#777777;
       transition: background-color 0.3s ease-in-out;
       & > .text {
               font-size: 1.5rem;

@@ -9,6 +9,7 @@ import { IoMdAlert } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateNewUser } from "@/store/actions";
 import toast from "react-hot-toast";
+import { GoDotFill } from "react-icons/go";
 const initialValues = {
   firstName: "",
   lastName: "",
@@ -222,7 +223,7 @@ const CreateAdminModal = ({ onClose, handleDismiss, isAlertVisible, roles = [] }
                     and/or dashboard.
                   </p> */}
                 </div>
-                <div>
+                <div >
                   {roles.map((item) => (
                     <div key={item?.name} style={{ marginBottom: "8px" }}>
                       <MyCheckbox
@@ -239,10 +240,12 @@ const CreateAdminModal = ({ onClose, handleDismiss, isAlertVisible, roles = [] }
                           fontWeight: "500",
                           color: "#777",
                           marginLeft: "38px",
+                          display:"flex",
+                          flexWrap:"wrap"
                         }}
                       >
                         {item?.permissions && item?.permissions.length
-                          ? item?.permissions.map((per) => <span key={per}>{per}, </span>)
+                          ? item?.permissions.map((per) => <span style={{display:"flex" , alignItems:"center"}} key={per}> <GoDotFill style={{ color: "#00bd82" }} />{per}, </span>)
                           : ""}
                       </p>
                     </div>

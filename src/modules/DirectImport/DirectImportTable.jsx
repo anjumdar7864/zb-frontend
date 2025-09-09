@@ -151,19 +151,21 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
         }}
       >
 
-        <Table sx={{ minWidth: 1200, overflowX: 'auto' }} aria-label="simple table" >
-          <TableHead sx={{ position: "sticky", top: "0px", zIndex: 100, backgroundColor: "white" }}>
+        {/* <Table sx={{ minWidth: 1230, overflowX: 'auto' }} aria-label="simple table" >
+          <TableHead sx={{ position: "sticky", top: "0px", zIndex: 100, backgroundColor: "white" , }}>
             <TableRow >
               <TableCell
-                sx={{ width: "288px", minWidth: "288px" }}
+                sx={{ width: "210px" , maxWidth:"210px", minWidth: "210px" , maxWidth:"210px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px", 
+                  minHeight:"48px",
+                  height:"48px"
                 }}
               >
                 <p style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px"
                 }}>
@@ -171,15 +173,15 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 </p>
               </TableCell>
               <TableCell
-                sx={{ width: "100px", minWidth: "100px" }}
+                sx={{ width: "110px", minWidth: "110px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <div style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -206,12 +208,12 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 sx={{ width: "129px", minWidth: "129px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <div style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -235,12 +237,12 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 sx={{ width: "90px", minWidth: "90px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <div style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -264,12 +266,12 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 sx={{ width: "94px", minWidth: "94px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <p style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -298,12 +300,12 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 sx={{ width: "64px", minWidth: "64px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <div style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -322,17 +324,48 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
 
                   </LightTooltip>
                 </div>
+                
               </TableCell>
               <TableCell
                 sx={{ width: "64px", minWidth: "64px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <div style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  fontFamily: 'fellix', lineHeight: "21.5px",
+                  display: "flex",
+                  alignItems: "center"
+                }}>
+              Litigator
+                  <LightTooltip
+                    title="Litigator identified and removed"
+                    arrow
+                    placement="top"
+                  >
+                    <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+                      <IoIosInformationCircleOutline size={18} />
+
+                    </div>
+
+                  </LightTooltip>
+                </div>
+                
+              </TableCell>
+              <TableCell
+                sx={{ width: "64px", minWidth: "64px" }}
+                style={{
+
+                  padding:"4px 12px" 
+                }}
+              >
+                <div style={{
+                  color: "#012635",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -353,15 +386,15 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 </div>
               </TableCell>
               <TableCell
-                sx={{ width: "100px", minWidth: "100px" }}
+                sx={{ width: "110px", minWidth: "110px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <p style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px" , 
                       display: "flex",
@@ -385,12 +418,12 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 sx={{ width: "140px", minWidth: "140px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <div style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px",
                   display: "flex",
@@ -411,15 +444,15 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                 </div>
               </TableCell>
               <TableCell
-                sx={{ width: "94px", minWidth: "94px" }}
+                sx={{ width: "60px", minWidth: "60px" }}
                 style={{
 
-                  paddingBlock: '13px'
+                  padding:"4px 12px" 
                 }}
               >
                 <p style={{
                   color: "#012635",
-                  fontSize: "13px",
+                  fontSize: "14px",
                   fontWeight: 500,
                   fontFamily: 'fellix', lineHeight: "21.5px"
                 }}>
@@ -428,15 +461,15 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
               </TableCell>
               {(user.role === 'admin' || user.permissions.includes('Delete') || user.permissions.includes('Download File')) && (
                 <TableCell
-                  sx={{ width: "117px", minWidth: "115px" }}
+                  sx={{ width: "60px", minWidth: "60px" }}
                   style={{
 
-                    paddingBlock: '13px',
+                    padding:"4px 12px" ,
                   }}
                 >
                   <p style={{
                     color: "#012635",
-                    fontSize: "13px",
+                    fontSize: "14px",
                     fontWeight: 500,
                     fontFamily: 'fellix', lineHeight: "21.5px"
                   }}>
@@ -474,11 +507,11 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
               >
                 <TableCell
                   style={{
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                   // sx={{ border: 0, paddingBottom: "5px" }}
-                  sx={{ minWidth: "288px", minWidth: "288px" }}
+                  sx={{  minWidth: "210px" , maxWidth:"210px" }}
                   component="th"
                   scope="row"
                 >
@@ -492,6 +525,7 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
 
                       }}
                     >
+                      <div className="textSecondaryColor body4Medium">
                       {singleDirectImport.listName
                         ? singleDirectImport.listName.endsWith(".csv")
                           ? singleDirectImport.listName.slice(
@@ -500,16 +534,16 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                           )
                           : singleDirectImport.listName
                         : "--"}
+                      </div>
+                
                     </div>
                     {(user.role === 'admin' || user.permissions.includes('Assign to Campaign')) && (
                       <div>
                         {singleDirectImport?.status === "pending" ? (
                           <p className="info">In Queue</p>
                         ) : singleDirectImport?.isCampaignAssigned ? (
-                          <div  style={{ backgroundColor:"#C2FFEC" ,  border: "solid 1px #5BF1B2 ", borderRadius: "12px", width: "fit-content", fontSize: "12px", fontWeight: 500, lineHeight: "20px", height: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0px 8px", minWidth: "80px", marginTop: "5px" }} className={styles.tableButton}>
-                            {/* <span className="icon">
-                            <FaBullhorn />
-                          </span> */}
+                          <div  style={{ backgroundColor:"#C2FFEC" ,  border: "solid 1px #5BF1B2 ", borderRadius: "12px", width: "fit-content", fontSize: "12px", fontWeight: 500, lineHeight: "20px", height: "24px", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0px 8px", minWidth: "80px", marginTop: "3px" }} className={styles.tableButton}>
+                     
                             <span
                               className="text"
                               onClick={() =>
@@ -617,8 +651,9 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
+                    
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -626,7 +661,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#6955DA" }} />
                     </span>{" "}
-                    <div>
+               
+                    <div className="textSecondaryColor body4Medium">
                       {singleDirectImport?.totalRows
                         ? singleDirectImport?.totalRows
                         : 0}
@@ -640,8 +676,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -649,7 +685,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#3086EE" }} />
                     </span>{" "}
-                    <div>
+                 
+                    <div className="textSecondaryColor body4Medium">
                       {" "}
                       {singleDirectImport?.totalPropspects &&
                         singleDirectImport.totalPropspects}
@@ -663,8 +700,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -672,7 +709,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#06AB78" }} />
                     </span>{" "}
-                    <div>
+                  
+                    <div className="textSecondaryColor body4Medium">
                       {singleDirectImport?.mobile && singleDirectImport.mobile}
                     </div>{" "}
                   </div>
@@ -684,8 +722,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -693,7 +731,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#E0E0E0" }} />
                     </span>{" "}
-                    <div>
+                  
+                    <div className="textSecondaryColor body4Medium">
                       {singleDirectImport?.landlines &&
                         singleDirectImport.landlines}
                     </div>{" "}
@@ -706,8 +745,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -715,10 +754,10 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#FF5D3E" }} />
                     </span>{" "}
-                    <div>
+                    <div className="textSecondaryColor body4Medium">
                       {" "}
-                      {singleDirectImport?.litigators &&
-                        singleDirectImport.litigators}
+                      {singleDirectImport?.voip ?
+                        singleDirectImport.voip : 0}
                     </div>{" "}
                   </div>
                 </TableCell>
@@ -729,8 +768,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -738,7 +777,31 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#FF5D3E" }} />
                     </span>{" "}
-                    <div>
+                    <div className="textSecondaryColor body4Medium">
+                      {" "}
+                      {singleDirectImport?.litigators &&
+                        singleDirectImport.litigators}
+                    </div>{" "}
+                  </div>
+                </TableCell>
+              
+                <TableCell
+                  style={{
+                    color: "#777777",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    lineHeight: "22px",
+                    border: 0,
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
+                  }}
+                >
+                  <div style={{ display: "flex", gap: "5px" }}>
+                    {" "}
+                    <span style={{ display: "flex", alignItems: "center" }}>
+                      <GoDotFill style={{ color: "#FF5D3E" }} />
+                    </span>{" "}
+                    <div className="textSecondaryColor body4Medium">
                       {singleDirectImport?.dnc && singleDirectImport.dnc}
                     </div>{" "}
                   </div>
@@ -751,8 +814,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -760,7 +823,7 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#3086EE" }} />
                     </span>{" "}
-                    <div>
+                    <div className="textSecondaryColor body4Medium">
                       {singleDirectImport.duplicates ?? "0"}
                     </div>{" "}
                   </div>
@@ -772,8 +835,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
                   <div style={{ display: "flex", gap: "5px" }}>
@@ -781,7 +844,7 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     <span style={{ display: "flex", alignItems: "center" }}>
                       <GoDotFill style={{ color: "#FFC000" }} />
                     </span>{" "}
-                    <div>{singleDirectImport.excistingMatches ?? "0"}</div>{" "}
+                    <div className="textSecondaryColor body4Medium">{singleDirectImport.excistingMatches ?? "0"}</div>{" "}
                   </div>
                 </TableCell>
                 <TableCell
@@ -791,13 +854,16 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                     fontWeight: 500,
                     lineHeight: "22px",
                     border: 0,
-                    paddingInline: "16px",
-                    paddingBlock: "8px",
+                    paddingInline: "12px",
+                    paddingBlock: "4px",
                   }}
                 >
-                  {formatDateToShort(
+                     <div className="textSecondaryColor body4Medium">
+                     {formatDateToShort(
                     singleDirectImport?.createdAt ?? "-/-/----"
                   )}
+                     </div>
+             
                 </TableCell>
                 {(user.role === 'admin' || user.permissions.includes('Delete') || user.permissions.includes('Download File')) && !singleDirectImport.preDefined && (
                   <TableCell
@@ -807,8 +873,8 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
                       fontWeight: 500,
                       lineHeight: "22px",
                       border: 0,
-                      paddingInline: "16px",
-                      paddingBlock: "8px",
+                      paddingInline: "12px",
+                      paddingBlock: "4px",
                     }}
                   >
                     <div style={{ display: "flex" }}>
@@ -858,55 +924,820 @@ export default function DirectImportTable({ directImportData, numberOfRowsShowin
               </TableRow>
             ))}
           </TableBody>
-        </Table>
-        {/* <div
+        </Table> */}
+       <Table sx={{ minWidth: 1230, overflowX: 'auto' }} aria-label="simple table">
+  <TableHead sx={{ position: "sticky", top: "0px", zIndex: 100, backgroundColor: "white" }}>
+    <TableRow>
+      <TableCell
+        sx={{ width: "210px", minWidth: "210px", maxWidth: "210px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          minHeight: "48px",
+          height: "48px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <p style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          List Name
+        </p>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          Rows
+          <LightTooltip title="Total number of rows in your list" arrow placement="top">
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          Prospects
+          <LightTooltip
+            title="Total number of Prospects with atleast one mobile phone number"
+            arrow
+            placement="top"
+          >
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+         Mobile
+          <LightTooltip
+            title={<>Total Mobile phone numbers that you Prospects have.<br /><i>Hint: ZeitBlast texts the first 3 mobiles</i> </>}
+            arrow
+            placement="top"
+          >
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <p style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          Landline
+          <LightTooltip
+            title={
+              <>
+                Total Landline numbers identified. <br />
+                <i>Hint: ZeitBlast texts mobiles only.</i>
+              </>
+            }
+            arrow
+            placement="top"
+          >
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </p>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          VoIP
+          <LightTooltip title="VOIP identified and removed" arrow placement="top">
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+         Litig.
+          <LightTooltip title="Litigator identified and removed" arrow placement="top">
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+         DNC
+          <LightTooltip
+            title="Prospects already on the internal. Do Not Call list"
+            arrow
+            placement="top"
+          >
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <p style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          Dup
+          <LightTooltip
+            title="This indicates that there are duplicate entries within the file."
+            arrow
+            placement="top"
+          >
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </p>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <div style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          display: "flex",
+          alignItems: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          Matches
+          <LightTooltip title="Prevously imported Prospects." arrow placement="top">
+            <div style={{ maxHeight: "20px", display: "flex", paddingLeft: "10px" }}>
+              <IoIosInformationCircleOutline size={18} />
+            </div>
+          </LightTooltip>
+        </div>
+      </TableCell>
+
+      <TableCell
+        sx={{ width: "100px", minWidth: "100px" }}
+        style={{
+          paddingBlock: "4px",
+          paddingInline: "10px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}
+      >
+        <p style={{
+          color: "#012635",
+          fontSize: "14px",
+          fontWeight: 500,
+          fontFamily: "fellix",
+          lineHeight: "21.5px",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis"
+        }}>
+          Created
+        </p>
+      </TableCell>
+
+      {(user.role === 'admin' || user.permissions.includes('Delete') || user.permissions.includes('Download File')) && (
+        <TableCell
+          sx={{ width: "60px", minWidth: "60px" }}
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            height: "56px",
-            backgroundColor: "white",
-            borderTop: "1px solid var(--Extra-Grey, #e0e0e0)",
-            minWidth: '1278px',
-            padding: "0px 16px",
-            alignItems: "center",
-            paddingTop: "10px ",
-            paddingBottom: "10px",
-            position: "sticky",
-            bottom: "0px",
-            zIndex: 100,
-            backgroundColor: "white"
+            paddingBlock: "4px",
+            paddingInline: "10px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis"
           }}
         >
-          <p style={{ color: '#012635', lineHeight: '22px', fontSize: '14px', fontWeight: 500 }}>
-            Total:{" "}
-            {directImportData?.totalResults ? directImportData.totalResults : 0}
+          <p style={{
+            color: "#012635",
+            fontSize: "14px",
+            fontWeight: 500,
+            fontFamily: "fellix",
+            lineHeight: "21.5px",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+          }}>
+            Action
           </p>
+        </TableCell>
+      )}
+    </TableRow>
+  </TableHead>
 
+  <TableBody>
+    {directImportData?.results?.length === 0 && (
+      <tr>
+        <td colSpan={11} className="error">
+          <center>No Record Found</center>
+        </td>
+      </tr>
+    )}
+
+    {directImportData?.results?.map((singleDirectImport, index) => (
+      <TableRow
+        key={index}
+        ref={index === 0 ? elementRef : null}
+        onDelete={() => setSelectedDeleteId(singleDirectImport?._id)}
+        singleDirectImport={singleDirectImport}
+        limit={numberOfRowsShowing}
+        page={numberOfRowsShowing}
+        search={searchText}
+        sx={{
+          "&:last-child td, &:last-child th": { border: 0 },
+          "&:hover": { backgroundColor: "#F7F7F7" },
+          borderBottom: "solid 1px #E0E0E0"
+        }}
+      >
+        <TableCell
+          style={{
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+          sx={{ minWidth: "210px", maxWidth: "210px" }}
+          component="th"
+          scope="row"
+        >
           <div>
-            <PaginationComp
-              totalPages={directImportData?.totalPages || 1}
-              currentPage={currentPage}
-              onPageChange={handlePageChange}
-            />
-          </div>
-
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <p
+            <div
               style={{
+                color: "#777777",
                 fontSize: "14px",
-                lineHeight: "22px",
                 fontWeight: 500,
-                color: "#333333",
+                lineHeight: "22px"
               }}
             >
-              Entries
-            </p>
+              <div className="textSecondaryColor body4Medium">
+                {singleDirectImport.listName
+                  ? singleDirectImport.listName.endsWith(".csv")
+                    ? singleDirectImport.listName.slice(
+                        0,
+                        singleDirectImport.listName.length - 4
+                      )
+                    : singleDirectImport.listName
+                  : "--"}
+              </div>
+            </div>
 
-            <div>
-              <PaginationDropDown limit={numberOfRowsShowing} onLimitChange={handleLimitChange} />
+            {(user.role === 'admin' || user.permissions.includes('Assign to Campaign')) && (
+              <div>
+                {singleDirectImport?.status === "pending" ? (
+                  <p className="info">In Queue</p>
+                ) : singleDirectImport?.isCampaignAssigned ? (
+                  <div
+                    style={{
+                      backgroundColor: "#C2FFEC",
+                      border: "solid 1px #5BF1B2",
+                      borderRadius: "12px",
+                      width: "fit-content",
+                      fontSize: "12px",
+                      fontWeight: 500,
+                      lineHeight: "20px",
+                      height: "24px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      padding: "0px 8px",
+                      minWidth: "80px",
+                      marginTop: "3px"
+                    }}
+                    className={styles.tableButton}
+                  >
+                    <span
+                      className="text"
+                      onClick={() =>
+                        navigate(`/campaigns/${singleDirectImport?.assignCampaign?._id}`)
+                      }
+                    >
+                      {singleDirectImport?.assignCampaign?.name ?? "--"}
+                    </span>
+                    <LightTooltip
+                      title={
+                        singleDirectImport?.sentCount == 0
+                          ? "Remove list from campaign"
+                          : <span style={{ color: "red" }}>
+                              This list cannot be removed as messages have already been sent.
+                            </span>
+                      }
+                      placement="top"
+                      arrow
+                    >
+                      <button
+                        style={{ height: "15px" }}
+                        className={styles.TableIconClose}
+                        onClick={() => {
+                          if (singleDirectImport?.sentCount == 0) {
+                            dispatch(
+                              directImportUnAssignCampaign(
+                                {
+                                  _id: singleDirectImport._id,
+                                  limit: 10,
+                                  page: 1,
+                                  search: searchText || ""
+                                },
+                                () => {},
+                                (e) => {
+                                  if (e?.response?.status === 400) {
+                                    setErrorModalError({
+                                      title: `List ${
+                                        singleDirectImport.listName
+                                          ? singleDirectImport.listName.endsWith(".csv")
+                                            ? singleDirectImport.listName.slice(
+                                                0,
+                                                singleDirectImport.listName.length - 4
+                                              )
+                                            : singleDirectImport.listName
+                                          : "--"
+                                      } contains prospects you have already texted and cannot be removed from the assigned Campaign`,
+                                      details: ""
+                                    });
+                                  }
+                                }
+                              )
+                            );
+                          }
+                        }}
+                      >
+                        <FaTimes />
+                      </button>
+                    </LightTooltip>
+                  </div>
+                ) : (
+                  singleDirectImport?.totalPropspects !== 0 && (
+                    <CompaignModal
+                      singleDirectImport={singleDirectImport}
+                      currentPage={currentPage}
+                      numberOfRowsShowing={numberOfRowsShowing}
+                    >
+                      <div className={styles.tableButton}>
+                        <span
+                          style={{ display: campaignSelected == index ? "" : "none" }}
+                          className={styles.firstText}
+                        />
+                        <span />
+                        <span style={{ display: "block" }} className={styles.secText}>
+                          Assign to Campaign
+                        </span>
+                        <IoIosArrowDown className={styles.TableIcon} />
+                      </div>
+                    </CompaignModal>
+                  )
+                )}
+              </div>
+            )}
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#6955DA" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.totalRows ? singleDirectImport?.totalRows : 0}
             </div>
           </div>
-        </div> */}
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#3086EE" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.totalPropspects && singleDirectImport.totalPropspects}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#06AB78" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.mobile && singleDirectImport.mobile}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#E0E0E0" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.landlines && singleDirectImport.landlines}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#FF5D3E" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.voip ? singleDirectImport.voip : 0}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#FF5D3E" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.litigators && singleDirectImport.litigators}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#FF5D3E" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport?.dnc && singleDirectImport.dnc}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#3086EE" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport.duplicates ?? "0"}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div style={{ display: "flex", gap: "5px" }}>
+            <span style={{ display: "flex", alignItems: "center" }}>
+              <GoDotFill style={{ color: "#FFC000" }} />
+            </span>
+            <div className="textSecondaryColor body4Medium">
+              {singleDirectImport.excistingMatches ?? "0"}
+            </div>
+          </div>
+        </TableCell>
+
+        <TableCell
+          style={{
+            color: "#777777",
+            fontSize: "14px",
+            fontWeight: 500,
+            lineHeight: "22px",
+            border: 0,
+            paddingBlock: "4px",
+            paddingInline: "10px"
+          }}
+        >
+          <div className="textSecondaryColor body4Medium">
+            {formatDateToShort(singleDirectImport?.createdAt ?? "-/-/----")}
+          </div>
+        </TableCell>
+
+        {(user.role === 'admin' || user.permissions.includes('Delete') || user.permissions.includes('Download File')) && !singleDirectImport.preDefined && (
+          <TableCell
+            style={{
+              color: "#777777",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "22px",
+              border: 0,
+              paddingBlock: "4px",
+              paddingInline: "10px"
+            }}
+          >
+            <div style={{ display: "flex" }}>
+              {(user.role === 'admin' || user.permissions.includes('Download File')) && (
+                <DownloadPopover singleDirectImport={singleDirectImport}>
+                  <img
+                    style={{ cursor: "pointer" }}
+                    src={Assets.Images.download}
+                    alt="Download"
+                  />
+                </DownloadPopover>
+              )}
+
+              {(user.role === 'admin' || user.permissions.includes('Delete')) && (
+                singleDirectImport?.status != "pending" && (
+                  singleDirectImport.sentCount == 0 ? (
+                    <img
+                      onClick={() => handleDeleteClick(singleDirectImport._id)}
+                      style={{ cursor: "pointer" }}
+                      src={Assets.Images.dellTable}
+                      alt="Delete"
+                    />
+                  ) : (
+                    <LightTooltip
+                      placement="top"
+                      title={<span style={{ color: "red" }}>
+                        Text messages have been sent out on this file, you can't delete it
+                      </span>}
+                    >
+                      <img
+                        onClick={() => {
+                          if (singleDirectImport?.assignCampaign?.sentALL === 0) {
+                            handleDeleteClick(singleDirectImport._id);
+                          }
+                        }}
+                        style={{ cursor: "pointer" }}
+                        src={Assets.Images.dellTable}
+                        alt="Delete"
+                      />
+                    </LightTooltip>
+                  )
+                )
+              )}
+            </div>
+          </TableCell>
+        )}
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>
       </TableContainer>
       <Components.Common.DeleteModal
         onClose={() => {

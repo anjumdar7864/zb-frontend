@@ -33,7 +33,7 @@ export const TableRowStyled = styled.div`
     &.data {
       padding:8px 16px 18px 16px;
       & > p {
-        color: #777777;
+        // color: #777777;
         font-size: 1.1rem;
         font-weight: 400;
         line-height: 22px;
@@ -202,7 +202,7 @@ export const QuickTemplateStyled = styled.div`
   // display: grid;
   display: flex;
   flex-direction: column ; 
-  gap: 24px;
+  gap: 16px;
   // background-color: #f2f3f8;
   // background-color: red;
   height:100% ; 
@@ -302,16 +302,16 @@ export const QuickTemplateStyled = styled.div`
   & > .bottom {
    max-width:100%;
       overflow:auto;
-      margin:0px 40px;
-      margin-bottom: 40px ; 
+      margin:0px 16px;
+      margin-bottom: 16px ; 
       background-color:white ; 
        border-radius:8px ; 
       border: solid 1px #E0E0E0 ; 
  ${theme.queryStatement(460)} {
-            margin-top:2rem !important;
+            margin-top:8px !important;
         }
        ${theme.queryStatement(theme.breakpoints.tab)} {
-   margin:0px 20px;
+   margin:0px 16px;
     }
       & > div  { 
     &::-webkit-scrollbar {
@@ -368,10 +368,10 @@ export const QuickTemplateStyled = styled.div`
             width:100%;
             justify-content: space-between; 
             & > span {
-              font-weight: 500 ;
-              color:#012635 ;
-              font-size:14px ;
-              line-height:22px;
+              // font-weight: 500 ;
+              // color:#012635 ;
+              // font-size:14px ;
+              // line-height:22px;
               padding:13px 16px;
               width:100%;
             } 
@@ -458,7 +458,7 @@ export const QuickTemplateStyled = styled.div`
                 font-wight: 500 ; 
                 line-height:22px ; 
                 // color: #212529;
-                color:#777777 ; 
+                // color:#777777 ; 
                 text-wrap:wrap !important;
               }
             }
@@ -1197,7 +1197,7 @@ export const UserEditStyled = styled.div`
 
 export const TemplateTop = styled.div`
   display: flex ;
-  padding: 24px 40px ;
+  padding: 16px;
   padding-bottom: 0px ; 
   justify-content:space-between ; 
   align-items: center ; 
@@ -1209,7 +1209,7 @@ export const TemplateTop = styled.div`
     display:none;
   }
   ${theme.queryStatement(theme.breakpoints.tab)} {
-    padding: 15px 20px ;
+    padding: 16px;
     padding-bottom: 0px ;
   }
 
@@ -1242,7 +1242,7 @@ export const TemplateTop = styled.div`
 }
 & > .searchContainer {
     width: 256px ; 
-    height:4rem ; 
+    height:40px ; 
     border: solid 1px #D3D7DD ; 
     background-color: white ; 
     border-radius: 8px ; 

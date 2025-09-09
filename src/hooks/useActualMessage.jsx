@@ -403,7 +403,7 @@ const useActualMessage = () => {
       setIsDone(false);
     }
   }, [message, length, html, errors, validations, variations]);
-
+  console.log("chec variation" , variations ,  "2nd" ,  message);
   return {
     message,
     setMessage,

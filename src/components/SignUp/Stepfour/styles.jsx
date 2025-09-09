@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 
 export const StyledForm = styled.form`
-  
+  color:white  ; 
 `;
 export const ButtonContainer = styled.div`
   display: flex;

@@ -835,6 +835,25 @@ export const removeWrongNumber = (id, body, onSuccess, onError) => {
   );
 };
 
+
+export const removeWrongNumberList = (id, body, onSuccess, onError) => {
+  return asyncAction(
+    async (authHeaders) => {
+      let { data } = await axios.post(
+        `inbox/v1/api/inbox/remove/to/wrong/number/${id}`,
+        body,
+        { ...authHeaders }
+      );
+      return data;
+    },
+    inboxMessageConstants.sendWrongNumberList,
+    onSuccess
+      ? onSuccess
+      : () => toast.success(`Removed wrong number mark for ${body?.phone}`),
+    onError
+  );
+};
+
 // export const removeWrongNumber = (id, body, onSuccess, onError) => {
 //   return asyncAction(
 //     async (authHeaders, dispatch) => {

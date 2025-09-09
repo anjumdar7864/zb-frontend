@@ -231,51 +231,17 @@ const Campaigns = (props) => {
       tableWidth={windowWidth - remToPixels(7) - remToPixels(2.6)}
       isShowOnlyFollowUp={isShowOnlyFollowUp}
     >
-      {/* <div className="top">
-        <div
-          className="top"
-          style={{ margin: "0px 0px", padding: "24px 40px" }}
-        >
-          <h1>Campaigns</h1>
-          <div className="right">
-            <LightTooltip
-              arrow
-              placement="top"
-              title="Creates a new Campaign for sending initial messages"
-            >
-              <button
-                style={{ width: '187px' }}
-                onClick={() => {
-                  setIsNewCampaignModalOpen(true);
-                  setIsFollowUpCampaign(false);
-                }}
-              >
-                Create New Campaign
-              </button>
-            </LightTooltip>
-
-            <LightTooltip
-              arrow
-              placement="top"
-              title="Picking out the campaigns where the people we contacted haven't answered for at least a week."
-            >
-              <button onClick={() => navigate("create-follow-up")}>
-                Create New Follow Up Campaign
-              </button>
-            </LightTooltip>
-          </div>
-        </div>
-      </div> */}
+   
 
       <div
         className="bottom"
-        style={{ padding: "24px 40px 24px 40px", overflow: "hidden" }}
+        style={{ padding: "16px", overflow: "hidden" }}
       >
         <div className="left">
           {(user.role === "admin" ||
             user.permissions.includes("Search Campaign")) && (
             <form className="search-form" onSubmit={handleSearchSubmit}>
-              <img style={{ height: 22, width: 22 }} src={Search}></img>
+              <img style={{ height: 18, width: 18 }} src={Search}></img>
               <input
                 className="input"
                 type="text"
@@ -305,7 +271,7 @@ const Campaigns = (props) => {
           </button>
         </div>
       </div>
-      <div style={{ padding: "0px 40px 20px 40px", flexGrow: 1 }}>
+      <div style={{ padding: "0px 16px 16px 16px", flexGrow: 1 }}>
         <div
           className="bottomTable"
           style={{ border: "1px solid var(--Extra-Grey, #e0e0e0)" }}
@@ -331,20 +297,20 @@ const Campaigns = (props) => {
             >
               <h6>
                 <span
-                  className="text"
-                  style={{ fontSize: "1.2", fontWeight: "500", padding: 0 }}
+                  className="text body4Medium textPrimeryColor "
+                  style={{ padding: 0 }}
                 >
                   Campaign Name
                 </span>
               </h6>
               <h6 className="col info">
-                <span className="text">Market</span>
+                <span       className="text body4Medium textPrimeryColor">Market</span>
               </h6>
               <h6 className="col info">
-                <span className="text">Sent</span>
+                <span       className="text body4Medium textPrimeryColor">Sent</span>
               </h6>
               <h6 className="col info">
-                <span className="text">Remaining</span>
+                <span       className="text body4Medium textPrimeryColor">Remaining</span>
               </h6>
               <h6 className="col info">
                 <span className="icon">
@@ -353,7 +319,7 @@ const Campaigns = (props) => {
                     src={Fire}
                   ></img>
                 </span>
-                <span className="text" style={{ paddingInline: 6 }}>
+                <span       className="text body4Medium textPrimeryColor" style={{ paddingInline: 6 }}>
                   Hot
                 </span>
                 <span className="info">
@@ -374,7 +340,7 @@ const Campaigns = (props) => {
                     src={Fire}
                   ></img>
                 </span>
-                <span className="text" style={{ paddingInline: 6 }}>
+                <span       className="text body4Medium textPrimeryColor" style={{ paddingInline: 6 }}>
                   Drip
                 </span>
                 <span className="info">
@@ -393,7 +359,7 @@ const Campaigns = (props) => {
                 </span>
               </h6>
               <h6 className="col info">
-                <span className="text" style={{ paddingRight: 6 }}>
+                <span       className="text body4Medium textPrimeryColor" style={{ paddingRight: 6 }}>
                   Deliverability
                 </span>
                 <span className="info">
@@ -423,7 +389,7 @@ const Campaigns = (props) => {
                 {/* <span className="icon">
                 <FaTint />
               </span> */}
-                <span className="text" style={{ paddingRight: 6 }}>
+                <span       className="text body4Medium textPrimeryColor" style={{ paddingRight: 6 }}>
                   Response
                 </span>
                 <span className="info">
@@ -451,7 +417,7 @@ const Campaigns = (props) => {
               </h6>
               <h6>
                 <span
-                  className="text"
+                        className="text body4Medium textPrimeryColor"
                   style={{ fontSize: "1.2", fontWeight: "500" }}
                 >
                   Created
@@ -470,7 +436,7 @@ const Campaigns = (props) => {
                   }}
                 >
                   <span
-                    className="text"
+                          className="text body4Medium textPrimeryColor"
                     style={{ fontSize: "1.2", fontWeight: "500" }}
                   >
                     Actions
@@ -497,25 +463,25 @@ const Campaigns = (props) => {
               <div
                 className="row body"
                 key={i}
-                onClick={() =>
-                  user.role === "admin" ||
-                  user.permissions.includes("Edit Initial Campaign")
-                    ? navigate(
-                        `${singleCampaign?._id}${
-                          isShowOnlyFollowUp ||
-                          singleCampaign?.permission === "followCompaign"
-                            ? "?followUp=true"
-                            : ""
-                        }`
-                      )
-                    : ""
-                }
+                // onClick={() =>
+                //   user.role === "admin" ||
+                //   user.permissions.includes("Edit Initial Campaign")
+                //     ? navigate(
+                //         `${singleCampaign?._id}${
+                //           isShowOnlyFollowUp ||
+                //           singleCampaign?.permission === "followCompaign"
+                //             ? "?followUp=true"
+                //             : ""
+                //         }`
+                //       )
+                //     : ""
+                // }
               >
                 <div className="col data" style={{ cursor: "pointer" }}>
-                  <p>{singleCampaign?.title ?? singleCampaign?.name ?? "--"}</p>
+                  <p className="body4Medium textSecondaryColor">{singleCampaign?.title ?? singleCampaign?.name ?? "--"}</p>
                 </div>
                 <div className="col data">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     {singleCampaign?.permission === "followCompaign" ||
                     singleCampaign?.permission === "followCompaign2" ||
                     singleCampaign?.permission === "followCompaign3"
@@ -525,7 +491,7 @@ const Campaigns = (props) => {
                   </p>
                 </div>
                 <div className="col dot">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     <span className="dot"></span>
                     <span className="text">
                       {singleCampaign?.sent ?? singleCampaign?.sent ?? "--"}
@@ -533,21 +499,21 @@ const Campaigns = (props) => {
                   </p>
                 </div>
                 <div className="col data">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     {Math.abs(singleCampaign?.remaning) ??
                       Math.abs(singleCampaign?.remaning) ??
                       "--"}
                   </p>
                 </div>
                 <div className="col data">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     {Math.abs(singleCampaign?.hot) ??
                       Math.abs(singleCampaign?.hot) ??
                       "--"}
                   </p>
                 </div>
                 <div className="col dot">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     <span className="dot"></span>
                     <span className="text">
                       {Math.abs(singleCampaign?.drip) ??
@@ -557,7 +523,7 @@ const Campaigns = (props) => {
                   </p>
                 </div>
                 <div className="col dot">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     <span className="dot"></span>
                     <span
                       className="text"
@@ -581,14 +547,14 @@ const Campaigns = (props) => {
                   </p>
                 </div>
                 <div className="col data">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     {singleCampaign?.response &&
                       parseFloat(singleCampaign?.response).toFixed(2)}
                     %
                   </p>
                 </div>
                 <div className="col data">
-                  <p>
+                  <p className="body4Medium textSecondaryColor">
                     {singleCampaign?.createdAt
                       ? formatDate(singleCampaign?.createdAt)
                       : "--"}
@@ -879,7 +845,7 @@ const NewCampaignModal = ({
           dispatch(editSingleCampaign({ ...payload, _id: editCampaign?._id }));
         }
       } else {
-        dispatch(createCampaign(payload));
+        dispatch(createCampaign(payload , "",(e)=>toast.error(e?.response?.data?.message)));
       }
       onClose();
     },
@@ -919,7 +885,7 @@ const NewCampaignModal = ({
       onSubmit={formik.handleSubmit}
     >
       <div className="top">
-        <h2>{editCampaign ? "Edit" : "Create New"} Campaign</h2>
+        <h2 className="body3Medium textPrimeryColor">{editCampaign ? "Edit" : "Create New"} Campaign</h2>
         <button type="button" onClick={onClose}>
           <IoMdClose />
         </button>
@@ -928,7 +894,7 @@ const NewCampaignModal = ({
         <div className="middleCover">
           <div className="item">
             <div className="right">
-              <span className="text">Campaign name</span>
+              <span className="text body4Medium textPrimeryColor ">Campaign name</span>
               <input
                 type="text"
                 placeholder="Enter name"
@@ -944,7 +910,7 @@ const NewCampaignModal = ({
           </div>
           <div className="item">
             <div className="right">
-              <span className="text">Select Market</span>
+              <span className="text body4Medium textPrimeryColor">Select Market</span>
               <div className="SelectCover">
                 <select
                   value={formik.values.market}
@@ -994,7 +960,7 @@ const NewCampaignModal = ({
             <div style={{ display: "flex" }} className="left">
               <span
                 style={{ display: "flex", alignItems: "center" }}
-                className="text"
+                className="text body4Medium textPrimeryColor"
               >
                 Call Forwarding Number
               </span>
@@ -1053,11 +1019,11 @@ const NewCampaignModal = ({
         </div>
       </div>
       <div className="bottom">
-        <button type="button" onClick={onClose}>
+        <button type="button body4Medium textSecondaryColor primeryBackground" onClick={onClose}>
           Cancel
         </button>
         <button
-          className="buttonSave"
+          className="buttonSave body4Medium textWhiteColor primeryBackground"
           disabled={!formik.isValid || !formik.dirty}
           type="submit"
           onClick={onClose}

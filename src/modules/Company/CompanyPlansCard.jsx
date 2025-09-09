@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { HiArrowRight } from "react-icons/hi";
 import SubscribeModal from "./SubscribeModal";
 import JvTermsModal from "./JvTermsModal";
-
+import HomeData from "@/data/HomeData.json";
 const CompanyPlansCard = ({ planDetail ,activeCycle ,   setSubscribe , handleContinue=()=>{} , user }) => {
     const { _id, title, heading, price, monthlyPrice , yearlyPrice ,  features, color, bgColor, subscriptionType, monthlyOutBoundNumber } = planDetail || {};
     console.log("bg color", bgColor);
@@ -27,6 +27,9 @@ const CompanyPlansCard = ({ planDetail ,activeCycle ,   setSubscribe , handleCon
     
     
     };
+
+    const filterFeature = (id)=> HomeData?.pricing?.cards?.filter((data)=> data?.subscriptionId == id)
+console.log("HomeData" , filterFeature);
 
     const confirmTerm = async() => {
         setOpenJv(false)
@@ -76,10 +79,7 @@ const CompanyPlansCard = ({ planDetail ,activeCycle ,   setSubscribe , handleCon
                     <div style={{ color: bgColor != "white" && bgColor != "#D6E7FC" ? "white" : "" }} className={styles.cardShortDis}>
                         {heading}
                     </div>
-                    {/* <div className={styles.card_package}>
-            3License: $30 / user / month
-          </div>
-          <div className={styles.card_package}>Number: $6 / number / month</div> */}
+         
                 </div>
 
                 {features && features.length ? <div style={{ color: bgColor != "white" && bgColor != "#D6E7FC" ? "white" : "" }} className={styles.cardDis}>
@@ -87,8 +87,13 @@ const CompanyPlansCard = ({ planDetail ,activeCycle ,   setSubscribe , handleCon
                 </div> : ""}
 
                 <div style={{ color: bgColor != "white" && bgColor != "#D6E7FC" ? "white" : "" }} className={styles.cardList}>
-                    <ul>
+                    {/* <ul>
                         {features.map((data, index) => {
+                            return <li>{data}</li>;
+                        })}
+                    </ul> */}
+                      <ul>
+                        {filterFeature(_id)[0]?.features.map((data, index) => {
                             return <li>{data}</li>;
                         })}
                     </ul>

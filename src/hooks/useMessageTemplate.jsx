@@ -219,6 +219,8 @@ const useMessageTemplate = () => {
 
     setAllVariations(variats.filter((variation) => variation));
   }, [variations]);
+ 
+   
 
   useEffect(() => {
     findDuplicateStrings(variations);

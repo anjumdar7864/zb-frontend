@@ -21,7 +21,7 @@ const PieChart = ({ data }) => {
           color: color,
         })),
     legend: {
-      position: "bottom",
+      position: "right",
    
       alignment: "center",
       textStyle: {

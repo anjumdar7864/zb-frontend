@@ -239,39 +239,7 @@ export default function SubmissionTable({
               {/* <div>EIN</div> */}
               <div>Tenant Status</div>
             </TableCell>
-            {/* <TableCell
-              style={{
-                color: "#012635",
-                fontWeight: 500,
-                fontSize: "14px",
-                lineHeight: "22px",
-                width: "20%",
-              }}
-            >
-              <div>Website URL</div>
-            </TableCell> */}
-            {/* <TableCell
-              style={{
-                color: "#012635",
-                fontWeight: 500,
-                fontSize: "14px",
-                lineHeight: "22px",
-                width: "20%",
-              }}
-            >
-              <div>Email</div>
-            </TableCell> */}
-            {/* <TableCell
-              style={{
-                color: "#012635",
-                fontWeight: 500,
-                fontSize: "14px",
-                lineHeight: "22px",
-                width: "20%",
-              }}
-            >
-              <div>Phone</div>
-            </TableCell> */}
+     
             <TableCell
               style={{
                 color: "#012635",
@@ -483,6 +451,7 @@ export default function SubmissionTable({
                                 changeStatusHandlerPassAccept(row?.tenDlcId?._id, {
                                   adminId: row?.tenDlcId?.tenantId,
                                   status: "Accept",
+
                                 })}
                               }
                             >

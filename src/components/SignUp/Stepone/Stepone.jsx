@@ -2,6 +2,7 @@ import Components from "@/components";
 import { Flex, H1, P, Paragraph } from "@/styles/CommonStyles";
 import theme from "@/theme";
 import React, { useEffect } from "react";
+import toast from "react-hot-toast";
 
 export default function Stepone({
   nextStep,
@@ -21,6 +22,8 @@ export default function Stepone({
       behavior: "smooth", // Optional: Add smooth scrolling
     });
   }, []);
+  console.log("formData.phoneNumber", formData.phoneNumber?.length);
+
   return (
     <>
       <Flex
@@ -37,9 +40,9 @@ export default function Stepone({
           family={'Fellix'}
           align="center"
           lineHeight={`46px`}
-          
+
         >
-          Get started with<br/> ZeitBlast now
+          Get started with<br /> ZeitBlast now
         </Paragraph>
         <Flex
           gap={`1.5rem`}
@@ -59,7 +62,7 @@ export default function Stepone({
               borderRadius: "0.8rem",
               padding: "19px 20px",
               fontSize: "18px",
-              height:"64px"
+              height: "64px"
             }}
             error={errors.email}
           />
@@ -106,7 +109,7 @@ export default function Stepone({
               width: "100%",
               padding: "19px 20px",
               fontSize: "18px",
-              height:"64px"
+              height: "64px"
             }}
             error={errors.firstName}
           />
@@ -131,7 +134,7 @@ export default function Stepone({
               width: "100%",
               padding: "19px 20px",
               fontSize: "18px",
-              height:"64px"
+              height: "64px"
             }}
             error={errors.lastName}
           />
@@ -148,8 +151,8 @@ export default function Stepone({
             border: !errors.companyName && "none",
             borderRadius: "0.8rem",
             padding: "19px 20px",
-              fontSize: "18px",
-              height:"64px"
+            fontSize: "18px",
+            height: "64px"
           }}
           error={errors.companyName}
         />
@@ -178,7 +181,14 @@ export default function Stepone({
           text={`Next`}
           color={`black`}
           disabled={isClickedFirstStep}
-          onClick={nextStep}
+          onClick={() => {
+
+            if (formData.phoneNumber?.length < 11) {
+              toast.error("Please enter the correct number.")
+              return
+            }
+            nextStep()
+          }}
           style={{
             paddingTop: "15px",
             marginTop: "10px",

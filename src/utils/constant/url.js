@@ -72,7 +72,7 @@ export const addSecurity = (id = "") => {
   return `${API_BASE_URL}user/v1/api/admin/add/security/${id}`;
 };
 
-export const addNotification = (id = "") => {
-  return `${API_BASE_URL}user/v1/api/admin/master/notification
+export const addNotification = (numberOfRowsShowing , currentPage , search ) => {
+  return `${API_BASE_URL}user/v1/api/admin/master/notification${numberOfRowsShowing ? `?limit=${numberOfRowsShowing}&` : ""}${ currentPage ? `page=${currentPage}` : ""}${search ? `&search=${search}` : ""}
 `;
 };

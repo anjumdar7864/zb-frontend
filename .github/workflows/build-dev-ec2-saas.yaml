@@ -1,0 +1,54 @@
+name: Build UI
+
+# Setting permissions for the workflow
+permissions:
+  id-token: write  # This is required for requesting the JWT
+  contents: read
+
+# Triggering the workflow on a push event to the 'bootstrap' branch
+on:
+  push:
+    branches: ['dev-saas']
+    paths-ignore:
+      - 'infra/terraform/*'
+
+# Jobs to be executed in the workflow
+jobs:
+  # Build Job for Dev
+  Build-Node-Dev:
+    name: "Build Node Dev"  # Conditional execution based on branch name
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/build-node.yaml@main
+    # Input parameters for the build job
+    with:
+      upload_artifact: 'true'
+      env: dev-saas  # Using the environment from the workflow input
+    secrets:
+      ENV: ${{ secrets.ENV }}
+
+  # S3 Deployment Job for Dev
+  Deploy-To-Dev-S3:
+    name: "S3 Deploy Dev"
+    needs: Build-Node-Dev
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/s3-deploy.yaml@main
+    # Input parameters for the s3 deployment
+    with:
+      env: dev-saas  # Using the environment from the workflow input
+    # Secrets needed for the s3 deployment job
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+      AWS_SESSION_NAME: ${{ secrets.AWS_SESSION_NAME }}
+      AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+
+  # CloudFront Invalidation Job for Dev
+  Cloudfront-Invalidation-Dev:
+    name: "Cloudfront Invalidation Dev"
+    needs: Deploy-To-Dev-S3
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/cloudfront-invalidation.yaml@main
+    # Input parameters for CloudFront invalidation
+    with:
+      env: dev-saas  # Using the environment from the workflow input
+    # Secrets needed for the CloudFront invalidation job
+    secrets:
+      AWS_ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+      AWS_SESSION_NAME: ${{ secrets.AWS_SESSION_NAME }}
+      CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}

@@ -1223,7 +1223,7 @@ const TableRow = ({
         </p>
       </div>
       {(user.role === "superAdmin" ||
-        user.permissions.includes("FC_Tenant")) && (
+        user?.permissions?.includes("FC_Tenant")) && (
           <div className="col actions" onClick={(e) => e.stopPropagation()}>
             {/* <ActionButton onClick={() => toggleDropdown(1)}>
               <FiMoreVertical size={20} />

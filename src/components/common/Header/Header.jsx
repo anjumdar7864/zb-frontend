@@ -72,6 +72,7 @@ import { ENDPOINTS, REQUEST_TYPES } from "@/utils/constant/url";
 import { DlcModel } from "@/modules/Settings/MarketLists/MarketLists";
 import { IoWarning } from "react-icons/io5";
 import PreviewModal from "@/modules/Notification/NotificationPopUp";
+import { useLocalStorageListener } from "@/hooks";
 
 const authUser = getUserAuth();
 // const user = JSON.parse(authUser.user);
@@ -95,7 +96,11 @@ const Header = ({ setSidebarOpen }) => {
   const [tenantAgent, setTenantAgent] = useState(false)
   const [isdlcModelOpen, setIsDlcModelOpen] = useState(false)
   const [isNotificationOpen, setisNotificationOpen] = useState(false)
+  const [dlcStatus, setDlcStatus] = useState(null)
+  const [marketAndLimitStatusStatus, setMarketAndLimitStatusStatus] = useState()
   const user = JSON.parse(localStorage.getItem("user")) ?? JSON.parse(localStorage.getItem("user")) ?? {};
+
+  console.log("cjasdkj ----", dlcStatus);
 
   const FeedbackList = [
     { title: "Knowledge base" },
@@ -158,7 +163,7 @@ const Header = ({ setSidebarOpen }) => {
   }, []);
 
   useEffect(() => {
-    if (NotificationData != null && storedType != "superAdmin" ) {
+    if (NotificationData != null && storedType != "superAdmin") {
       setisNotificationOpen(true)
     }
   }, [NotificationData])
@@ -252,24 +257,60 @@ const Header = ({ setSidebarOpen }) => {
   // }, [singleUser, pathSegments])
 
 
+  // useEffect(() => {
+
+
+
+  //   if (singleUser?.marketAndLimitStatus == false && singleUser?.isTenDlcSubmit != undefined && pathSegments == "/dashboard") {
+
+  //     setIsModelOpen(true)
+
+
+
+  //   } else if (singleUser?.marketAndLimitStatus == false && singleUser?.isTenDlcSubmit != undefined && pathSegments == "/settings/market-lists" && !searchParams.get("form")) {
+  //     setIsModelOpen(true)
+
+  //   }
+
+
+
+  // }, [singleUser, pathSegments])
+  console.log("akdshfkajdsfhakdj =====", dlcStatus);
   useEffect(() => {
-    // console.log("isTenDlcSubmit", singleUser?.isTenDlcSubmit);
+
+    if (dlcStatus == null) {
+      console.log("akdshfkajdsfhakdj", dlcStatus);
+
+      if (singleUser?.marketAndLimitStatus == false && (singleUser?.isTenDlcSubmit == "N/S" || singleUser?.isTenDlcSubmit == "Reject") && pathSegments == "/dashboard") {
+
+        setIsModelOpen(true)
 
 
-    if (singleUser?.marketAndLimitStatus == false && singleUser?.isTenDlcSubmit != undefined && pathSegments == "/dashboard") {
 
-      setIsModelOpen(true)
+      } else if (singleUser?.marketAndLimitStatus == false && (singleUser?.isTenDlcSubmit == "N/S" || singleUser?.isTenDlcSubmit == "Reject") && pathSegments == "/settings/market-lists" && !searchParams.get("form")) {
+        setIsModelOpen(true)
 
-      // setIsDlcModelOpen(true)
+      }
+    } else {
+      console.log("akdshfkajdsfhakdj -----", dlcStatus);
+      if (marketAndLimitStatusStatus == false && (dlcStatus == "N/S" || dlcStatus == "Reject") && pathSegments == "/dashboard") {
 
-    } else if (singleUser?.marketAndLimitStatus == false && singleUser?.isTenDlcSubmit != undefined && pathSegments == "/settings/market-lists" && !searchParams.get("form")) {
-      setIsModelOpen(true)
+        setIsModelOpen(true)
 
+
+
+      } else if (marketAndLimitStatusStatus == false && (dlcStatus == "N/S" || dlcStatus == "Reject") && pathSegments == "/settings/market-lists" && !searchParams.get("form")) {
+        setIsModelOpen(true)
+
+      }
     }
 
 
 
+
+
   }, [singleUser, pathSegments])
+
 
   const handleDLCWarning = () => {
     // console.log("adsfadfasdfasdfadsfasdfas");
@@ -372,6 +413,15 @@ const Header = ({ setSidebarOpen }) => {
     return `${hours}h ${minutes}m ${seconds}s`;
   }
 
+
+  useLocalStorageListener("user", (newValue) => {
+    const parsedNewValue = typeof newValue === "string" ? JSON.parse(newValue) : newValue;
+    setDlcStatus(parsedNewValue?.isTenDlcSubmit)
+    setMarketAndLimitStatusStatus(parsedNewValue?.marketAndLimitStatus)
+    // console.log("cjasdkj" , user);
+    console.log("cjasdkj ++++", parsedNewValue?.isTenDlcSubmit);
+
+  });
 
   return (
     <div style={{ borderBottom: "solid 1px #E0E0E0" }}>
@@ -487,13 +537,33 @@ const Header = ({ setSidebarOpen }) => {
             }
 
           </div>
+
           {
-            // type === "admin"     && <div className="dlcWarning" style={{  alignItems: "center" , backgroundColor: user?.isTenDlcSubmit != "Accept"  ? "#fdecea" :  "#F0FFFC" , padding:"5px 10px" , borderRadius:"5px" , fontSize:"16px"}}>{user?.isTenDlcSubmit == "Accept" ? <FaCheckCircle style={{ color: "#00BD82" , marginRight:"5px" }} /> : <IoWarning style={{ color: "#d93025" , marginRight:"5px" }} />}10DLC Registration Status:<span style={{ color: user?.isTenDlcSubmit == "Accept" ? "#00BD82" : "#c62828" , fontWeight:500}}>{user?.isTenDlcSubmit == "Accept" ? "Complete" : "Incomplete"}</span> </div>
+            dlcStatus == null ?
+              <div className=" dlcWarning ">
+                {
+                  // type === "admin"     && <div className="dlcWarning" style={{  alignItems: "center" , backgroundColor: user?.isTenDlcSubmit != "Accept"  ? "#fdecea" :  "#F0FFFC" , padding:"5px 10px" , borderRadius:"5px" , fontSize:"16px"}}>{user?.isTenDlcSubmit == "Accept" ? <FaCheckCircle style={{ color: "#00BD82" , marginRight:"5px" }} /> : <IoWarning style={{ color: "#d93025" , marginRight:"5px" }} />}10DLC Registration Status:<span style={{ color: user?.isTenDlcSubmit == "Accept" ? "#00BD82" : "#c62828" , fontWeight:500}}>{user?.isTenDlcSubmit == "Accept" ? "Complete" : "Incomplete"}</span> </div>
 
-            type === "admin" && <div className="dlcWarning body4Regular"
-              style={{ alignItems: "center", backgroundColor: user?.isTenDlcSubmit == "Accept" ? "#F0FFFC" : user?.marketAndLimitStatus && user?.isTenDlcSubmit != "Rejected " ? "#FFF4E5" : "#fdecea", padding: "5px 10px", borderRadius: "5px" }} >{user?.isTenDlcSubmit == "Accept" ? <FaCheckCircle style={{ color: "#00BD82", marginRight: "5px" }} /> : <IoWarning style={{ color: user?.marketAndLimitStatus && user?.isTenDlcSubmit != "Rejected " ? "#D17B0F" : "#d93025", marginRight: "5px" }} />}10DLC Registration Status :&thinsp;<span style={{ color: user?.isTenDlcSubmit == "Accept" ? "#00BD82" : user?.marketAndLimitStatus && user?.isTenDlcSubmit != "Rejected " ? "#D17B0F" : "#c62828", fontWeight: 500 }}>{user?.isTenDlcSubmit == "N/S" && user?.marketAndLimitStatus == false ? " Not Submitted" : user?.isTenDlcSubmit == "Accept" ? " Approved" : user?.marketAndLimitStatus && user?.isTenDlcSubmit == "N/A" ? " Under Review" : " Rejected"}</span> </div>
+                  type === "admin" && <div className="  body4Regular"
+                    style={{ alignItems: "center", backgroundColor: user?.isTenDlcSubmit == "Accept" ? "#F0FFFC" : user?.isTenDlcSubmit == "N/A" ? "#FFF4E5" : "#fdecea", padding: "5px 10px", borderRadius: "5px" }} >{user?.isTenDlcSubmit == "Accept" ? <FaCheckCircle style={{ color: "#00BD82", marginRight: "5px" }} /> : <IoWarning style={{ color: user?.isTenDlcSubmit == "N/A" ? "#D17B0F" : "#d93025", marginRight: "5px" }} />}10DLC Registration Status :&thinsp;<span style={{ color: user?.isTenDlcSubmit == "Accept" ? "#00BD82" : user?.isTenDlcSubmit == "N/A" ? "#D17B0F" : user?.isTenDlcSubmit == "N/S" ? "#c62828" : "#c62828", fontWeight: 500 }}>{user?.isTenDlcSubmit == "N/S" ? " Not Submitted" : user?.isTenDlcSubmit == "Accept" ? " Approved" : user?.marketAndLimitStatus && user?.isTenDlcSubmit == "N/A" ? " Under Review" : " Rejected"}</span> </div>
 
+                }
+              </div>
+              :
+              <div>
+                {
+                  // type === "admin"     && <div className="dlcWarning" style={{  alignItems: "center" , backgroundColor: user?.isTenDlcSubmit != "Accept"  ? "#fdecea" :  "#F0FFFC" , padding:"5px 10px" , borderRadius:"5px" , fontSize:"16px"}}>{user?.isTenDlcSubmit == "Accept" ? <FaCheckCircle style={{ color: "#00BD82" , marginRight:"5px" }} /> : <IoWarning style={{ color: "#d93025" , marginRight:"5px" }} />}10DLC Registration Status:<span style={{ color: user?.isTenDlcSubmit == "Accept" ? "#00BD82" : "#c62828" , fontWeight:500}}>{user?.isTenDlcSubmit == "Accept" ? "Complete" : "Incomplete"}</span> </div>
+
+                  type === "admin" && <div className="  body4Regular"
+                    style={{ alignItems: "center", backgroundColor: dlcStatus == "Accept" ? "#F0FFFC" : dlcStatus == "N/A" ? "#FFF4E5" : "#fdecea", padding: "5px 10px", borderRadius: "5px" }} >{dlcStatus == "Accept" ? <FaCheckCircle style={{ color: "#00BD82", marginRight: "5px" }} /> : <IoWarning style={{ color: dlcStatus == "N/A" ? "#D17B0F" : "#d93025", marginRight: "5px" }} />}10DLC Registration Status :&thinsp;<span style={{ color: dlcStatus == "Accept" ? "#00BD82" : dlcStatus == "N/A" ? "#D17B0F" : dlcStatus == "N/S" ? "#c62828" : "#c62828", fontWeight: 500 }}>{dlcStatus == "N/S" ? " Not Submitted" : dlcStatus == "Accept" ? " Approved" : user?.marketAndLimitStatus && dlcStatus == "N/A" ? " Under Review" : " Rejected"}</span> </div>
+
+                }
+
+              </div>
           }
+
+
+
 
           <div className="right">
             {
@@ -718,7 +788,7 @@ const Header = ({ setSidebarOpen }) => {
                             color="#012635"
                             fontSize="16px"
                             fontweight="500"
-                          >{`${user.firstName} ${user.lastName[0]}.`}</P>
+                          >{`${user?.firstName} ${user?.lastName && user?.lastName[0]}.`}</P>
                         </div>
                         <IoIosArrowDown size={20} />
                       </Flex>

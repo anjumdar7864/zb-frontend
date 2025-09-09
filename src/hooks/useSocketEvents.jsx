@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import { io } from "socket.io-client";
 
 // const socketUrl = "https://dev3-api.zeitblast.com"; // Update with the correct server URL
-const socketUrl = "https://dev2-api.zeitblast.com"; // Update with the correct server URL
-// const socketUrl = "https://api.zeitblast.com"; // Update with the correct server URL
+// const socketUrl = "https://dev2-api.zeitblast.com"; // Update with the correct server URL
+const socketUrl = "https://api.zeitblast.com"; // Update with the correct server URL
 //const socketUrl = import.meta.env.VITE_APP_BACKEND_WS_URL;
 const socketPath = "/app-socket";
 // const socketUrl = "http://localhost:9004";

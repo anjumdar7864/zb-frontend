@@ -2,7 +2,7 @@ import theme from "@/theme";
 import styled from "@emotion/styled";
 
 export const CreateFollowUpStyled = styled.div`
-  padding: 1.3rem 3.5rem;
+  padding: 16px;
   display: grid;
   background-color: #f7f7f7;
   min-height: calc(100vh - 7rem);
@@ -21,26 +21,28 @@ export const CreateFollowUpStyled = styled.div`
       justify-content: end;
       & >.back {
         border:1px solid #777777;
-        padding-inline: 2.4rem;
-        padding-block: 1rem;
+        width:100px ; 
+        padding-inline: 12px;
+        padding-block: 8px;
         border-radius: 0.8rem;
-        color: #777777;
-        font-weight: 500;
+        // color: #777777;
+        // font-weight: 500;
       margin-right: 1rem;
 
       }
       
 & >.Send {
-      padding: 0.85rem 2.3rem;
-      font-size: 1.5rem;
+      padding: 8px 12px;
+      height:40px ;
+      // font-size: 14px;
       border: 0.1rem solid #c1c4cc;
-      font-weight: 500;
+      // font-weight: 500;
       border-radius: 0.8rem;
-      color:#FFFFFF;
-      background-color:#00BD82;
+      // color:#FFFFFF;
+      // background-color:#00BD82;
       transition: background-color 0.3s ease-in-out;
       & > .text {
-          font-size: 1.5rem;
+          // font-size: 14px;
       }
 
       &:not(:disabled):hover {
@@ -57,12 +59,12 @@ export const CreateFollowUpStyled = styled.div`
     justify-content: space-between;
     gap: 2rem;
     overflow: hidden;
-    padding-bottom: 1.3rem ;
+    padding-bottom: 8px ;
 
     & > h1 {
-      font-size: 1.95rem;
-      font-weight: 700;
-      color: #012635;
+      // font-size: 1.95rem;
+      // font-weight: 700;
+      // color: #012635;
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -100,7 +102,7 @@ export const CreateFollowUpStyled = styled.div`
     max-width: 80rem;
     background-color: #fff;
     border:1px solid #E0E0E0;
-    padding: 2rem 2rem;
+    padding: 16px;
     border-radius: 0.8rem;
     display: grid;
     gap: 3rem;
@@ -109,7 +111,7 @@ export const CreateFollowUpStyled = styled.div`
       display: grid;
       align-items: center;
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 12px;
 
       & > label {
         display: grid;
@@ -131,9 +133,9 @@ export const CreateFollowUpStyled = styled.div`
           justify-items: start;
 
           & > .text {
-            color: #012635;
-            font-size: 1.3rem;
-            font-weight: 500;
+            // color: #012635;
+            // font-size: 1.3rem;
+            // font-weight: 500;
             opacity: 0.8;
           }
           & > .icon {

@@ -22,6 +22,7 @@ import Divider from '@mui/material/Divider';
 import Chip from '@mui/material/Chip';
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from "axios";
+import { useGlobalContext } from "@/hooks";
 
 const LoginComponent = () => {
   const [isPassShow, setIsPassShow] = useState(false);
@@ -31,6 +32,8 @@ const LoginComponent = () => {
   const navigate = useNavigate();
   const [ipGettingLoading, setIpGettingLoading] = useState(false);
   const dispatch = useDispatch();
+  const { setIsLoaderShowing } = useGlobalContext();
+
   const {
     message,
     errors: error,
@@ -161,7 +164,9 @@ const LoginComponent = () => {
     );
   }, [dispatch]);
 
-
+useEffect(()=>{
+  setIsLoaderShowing(false)
+},[])
 
   return (
 

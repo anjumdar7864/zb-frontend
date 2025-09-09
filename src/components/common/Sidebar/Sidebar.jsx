@@ -114,22 +114,22 @@ const getMarketRoute = (user) => {
 }
 
 const getTemplateRoute = (user) => {
-  if (user.permissions.includes('Create Initial Template') || user.permissions.includes('Edit Initial Template')
-    || user.permissions.includes('Delete Initial Template') || user.permissions.includes('Initial Template List Table')) {
+  if (user?.permissions?.includes('Create Initial Template') || user?.permissions?.includes('Edit Initial Template')
+    || user?.permissions?.includes('Delete Initial Template') || user?.permissions?.includes('Initial Template List Table')) {
 
     return "/templates/initial-templates";
   }
 
   if (
-    user.permissions.includes('Create Quick Replies') || user.permissions.includes('Edit Quick Replies')
-    || user.permissions.includes('Delete Quick Replies') || user.permissions.includes('Drag and Drop quick reply in the list to change position of quick reply')
+    user?.permissions?.includes('Create Quick Replies') || user?.permissions?.includes('Edit Quick Replies')
+    || user?.permissions?.includes('Delete Quick Replies') || user?.permissions?.includes('Drag and Drop quick reply in the list to change position of quick reply')
   ) {
     return "/templates/quick-replies";
   }
 
   if (
-    user.permissions.includes('Create Follow-up Template') || user.permissions.includes('Edit Follow-up Template')
-    || user.permissions.includes('Delete Follow-up Templat') || user.permissions.includes('Follow-up Template Table') || user.permissions.includes('Follow-up Template Search')
+    user?.permissions?.includes('Create Follow-up Template') || user?.permissions?.includes('Edit Follow-up Template')
+    || user?.permissions?.includes('Delete Follow-up Templat') || user?.permissions?.includes('Follow-up Template Table') || user?.permissions?.includes('Follow-up Template Search')
   ) {
     return "/templates/follow-up-messages";
   }
@@ -139,38 +139,38 @@ const getTemplateRoute = (user) => {
 
 const getTenantSettingsRoute = (user) => {
 
-  if (user.permissions.includes('Create User') || user.permissions.includes('View User')) {
+  if (user?.permissions?.includes('Create User') || user?.permissions?.includes('View User')) {
     console.log("here");
     return "/settings/users";
   }
 
   if (
-    user.permissions.includes('Request New Market') || user.permissions.includes('View Market and Limit Stats') ||
-    user.permissions.includes('Search Market') || user.permissions.includes('View 10 DLC Registration Details')
+    user?.permissions?.includes('Request New Market') || user?.permissions?.includes('View Market and Limit Stats') ||
+    user?.permissions?.includes('Search Market') || user?.permissions?.includes('View 10 DLC Registration Details')
   ) {
     return "/settings/market-lists";
   }
 
   if (
-    user.permissions.includes('Create New DNC') || user.permissions.includes('Import or Drag & Drop DNC List') || user.permissions.includes('Export New DNC List') ||
-    user.permissions.includes('DNC Table') || user.permissions.includes('DNC Number Edit/Delete option')
+    user?.permissions?.includes('Create New DNC') || user?.permissions?.includes('Import or Drag & Drop DNC List') || user?.permissions?.includes('Export New DNC List') ||
+    user?.permissions?.includes('DNC Table') || user?.permissions?.includes('DNC Number Edit/Delete option')
   ) {
     return "/settings/do-not-calls";
   }
   if (
-    user.permissions.includes('Create New Tag') || user.permissions.includes('Edit Tag') || user.permissions.includes('Delete Tag') ||
-    user.permissions.includes('Tag Table Stats')
+    user?.permissions?.includes('Create New Tag') || user?.permissions?.includes('Edit Tag') || user?.permissions?.includes('Delete Tag') ||
+    user?.permissions?.includes('Tag Table Stats')
   ) {
     return "/settings/tags";
   }
   if (
-    user.permissions.includes('Export Prospect') || user.permissions.includes('Email Export Results to Admin')
+    user?.permissions?.includes('Export Prospect') || user?.permissions?.includes('Email Export Results to Admin')
   ) {
     return "/settings/export-prospects";
   }
   if (
-    user.permissions.includes('Webhook Active') || user.permissions.includes('Webhook Deactive') || user.permissions.includes('Webhook Connect') ||
-    user.permissions.includes('Webhook Edit')
+    user?.permissions?.includes('Webhook Active') || user?.permissions?.includes('Webhook Deactive') || user?.permissions?.includes('Webhook Connect') ||
+    user?.permissions?.includes('Webhook Edit')
   ) {
     return "/settings/integrations";
   }

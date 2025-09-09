@@ -1224,6 +1224,9 @@ button {
 .textLightColor {
   color: #FFFFFF99;
 }
+.textThemePrimery{
+  color: #00BD82;
+}
 
 .buttonHeight {
   height: 40px;

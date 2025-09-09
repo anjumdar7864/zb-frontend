@@ -164,6 +164,11 @@ const Batches = () => {
     messageSendData?.dailyMessageLimit
   );
 
+  console.log("check issue in disable" , messageSendData?.dailyMessageLimit ,  reportSendAndQueue?.totalMessagesInQueue,  messageSendData?.totalSendDailyMessageCount ,  reportSendAndQueue?.totalMessagesInQueue +
+    messageSendData?.totalSendDailyMessageCount >=
+    messageSendData?.dailyMessageLimit);
+  
+
   return (
     <BatchesStyled style={{ display: "flex", flexDirection: "column" }}>
       <div className="top">
@@ -2896,6 +2901,7 @@ const BatchSelectPart = ({
   );
 
 
+
   const userRemainingContent =
     messageSendData?.dailyMessageLimit -
     messageSendData?.totalSendDailyMessageCount;
@@ -3791,6 +3797,9 @@ const BatchProcesingModal = ({ onClose, payLoad }) => {
       window.removeEventListener("beforeunload", handleBeforeUnload);
     };
   }, [isSendingStart]);
+
+  console.log("displayMessage" , displayMessage);
+  
 
   return (
     <BatchProcesingModalStyled>

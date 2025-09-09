@@ -69,6 +69,7 @@ export const inboxMessageConstants = {
     success: "SEND_WRONG_NUMBER_SUCCESS",
     error: "SEND_WRONG_NUMBER_FAILURE",
   },
+  
   sendWrongNumberList: {
     request: "SEND_WRONG_NUMBER_LIST_REQUEST",
     success: "SEND_WRONG_NUMBER_LIST_SUCCESS",

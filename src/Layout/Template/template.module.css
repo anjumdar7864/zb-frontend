@@ -8,7 +8,7 @@
 
 .top {
     background-color: white;
-    padding: 24px 40px;
+    padding: 16px 16px;
     padding-bottom: 0px;
     border-top: 1px solid #E0E0E0;
 }
@@ -16,13 +16,13 @@
 @media only screen and (max-width:900px) {
     .top {
         background-color: white;
-        padding:24px 2rem;
+        padding:16px;
         padding-bottom: 0px;
         border-top: 1px solid #E0E0E0;
     }
     .breadcrumbsTop {
-        padding-block: 15px;
-        padding-inline: 1rem !important;
+        padding-block: 12px;
+        padding-inline: 16 !important;
         width: 100%;
         border-bottom: 1px solid #E0E0E0;
     }
@@ -30,11 +30,11 @@
 }
 
 .title {
-    color: #012635;
+    /* color: #012635;
     font-size: 32px;
     line-height: 40px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-weight: 700; */
+    /* margin-bottom: 8px; */
 }
 
 .tabLayout {
@@ -43,15 +43,15 @@
 
 .tabItems {
     padding: 8px 16px;
-    color: #012635;
+    /* color: #012635;
     font-size: 1.2rem;
     line-height: 22px;
-    font-weight: 500;
+    font-weight: 500; */
 }
 
 .breadcrumbsTop {
-    padding-block: 15px;
-    padding-inline: 4rem;
+    padding-block: 12px;
+    padding-inline: 16px;
     width: 100%;
     border-bottom: 1px solid #E0E0E0;
 }

@@ -220,6 +220,7 @@ const Submission = () => {
 
         }
         if (isError) {
+          setLoading1(false);
           return toast.error(message);
         }
         fetchData();

@@ -50,12 +50,12 @@
 }
 
 .breadcrumbsTop {
-    padding-block: 14px;
-    padding-inline: 40px;
+    padding-block: 12px;
+    padding-inline: 16px;
     width: 100%;
     border-bottom: 1px solid #E0E0E0;
     background-color: #f7f7f7;
-    height: 50px;
+    height: 46px;
 }
 
 .breadcrumbsTop .innerBreadcrumbs {
@@ -97,16 +97,16 @@
     font-size: 32px;
 }
 .CreateNew{
-    background-color: #00BD82;
-    color: white;
+    /* background-color: #00BD82;
+    color: white; */
     line-height: 24px;
     padding-block: 8px;
     border-radius: 8px;
     margin-right: 8px;
 }
 .FollowUp{
-    background-color: #00BD82;
-    color: white;
+    /* background-color: #00BD82;
+    color: white; */
     line-height: 24px;
     padding-block: 8px;
     border-radius: 8px;

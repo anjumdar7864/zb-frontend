@@ -1,0 +1,15 @@
+name: "Call Delete Old Artifacts"
+# Triggering the workflow on a push event
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+# Jobs to be executed in the workflow
+jobs:
+  call-delete-artifacts:
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/delete-artifacts.yaml@main # Ensure the path and branch are correct
+    secrets:
+      # Pass the secret to the reusable workflow
+      GH_INFRA_PAT: ${{ secrets.GH_INFRA_PAT }} # Pass the secret to the reusable workflow

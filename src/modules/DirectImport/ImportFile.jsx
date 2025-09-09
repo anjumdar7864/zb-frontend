@@ -33,11 +33,13 @@ const ImportFile = ({ closeFunc, handleFile, width }) => {
   return (
     <div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: width < 1024 ? '26px' : '24px', }}>
-        <h6 style={{
-          lineHeight: '26px',
-          color: "#012635",
-          fontSize: "18px",
-          fontWeight: 600
+        <h6 
+        className="body3Medium textPrimeryColor "
+        style={{
+          // lineHeight: '26px',
+          // color: "#012635",
+          // fontSize: "18px",
+          // fontWeight: 600
         }}>Import</h6>
         <AiOutlineClose onClick={closeFunc} size={24} color="#012635" />
       </div>

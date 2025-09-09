@@ -181,7 +181,7 @@ const DirectImportModal = ({ children, title, comp, wid = "700px", isDisabled })
                         // setStep(1);
                         parseCSV(content);
 
-                    } else if (rows.length <= 30000) {
+                    } else if (rows.length <= 100000) {
                         // setStep(1);
                         parseCSV(content);
 

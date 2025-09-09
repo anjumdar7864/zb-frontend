@@ -47,6 +47,7 @@ const StatusUpdateMenu = ({
   const [isEdit, setIsEdit] = useState(false);
   const [name, setName] = useState("");
 
+
   const {
     _id: id,
     userName,
@@ -620,6 +621,7 @@ const StatusUpdateMenu = ({
             setPhone={setPhone}
             selectedUserInbox={selectedUserInbox}
             selectedId={selectedId}
+            chatbox={chatbox}
           />
         </ModalTop>
         <ModalTop open={openDripAutomationModal} onClose={() => { }}>

@@ -25,7 +25,7 @@ const style = {
     paddingTop:"0px"
 };
 
-const SubscribeModal = ({handleOpen , open , setOpen ,  children ,  setSubscribe , disable=false ,  selectPackage , planDetail={} ,  handleContinue=()=>{} , selectedType}) => {
+const SubscribeModal = ({handleOpen , open , setOpen ,  children ,  setSubscribe , disable=false ,  selectPackage , planDetail={} ,  handleContinue=()=>{} , selectedType , currentPackageId , tenantSubscriptionType}) => {
 
 
 const navigate = useNavigate();
@@ -61,7 +61,7 @@ const navigate = useNavigate();
                     </div>
                     <div style={{display:"flex" , justifyContent:"center" }}>
                         {/* <SubscribeCom/> */}
-                        <SubscribeCom planDetail={planDetail} selectedType={selectedType} setSubscribeMain={ setSubscribe} handleContinue={handleContinue} selectPackageMain={selectPackage} onClose={handleClose} />
+                        <SubscribeCom currentPackageId={currentPackageId} planDetail={planDetail} selectedType={selectedType} setSubscribeMain={ setSubscribe} handleContinue={handleContinue} selectPackageMain={selectPackage} onClose={handleClose} tenantSubscriptionType={tenantSubscriptionType} />
                     </div>
                 </Box>
             </Modal>

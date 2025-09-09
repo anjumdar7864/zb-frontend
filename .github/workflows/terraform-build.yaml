@@ -1,0 +1,46 @@
+name: Build
+# Setting permissions for the workflow
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read
+# Triggering the workflow on a push event to the 'bootstrap' branch
+on:
+  push:
+    branches: ["main", "develop"]
+    paths:
+      - "infra/terraform/**"
+      - "!.github/workflows/**"
+
+# Jobs to be executed in the workflow
+jobs:
+  # Job to apply Terraform in the 'dev' environment if there are Terraform changes
+  terraform-apply-dev:
+    name: "Terraform apply Dev"
+    if: ${{ github.ref_name == 'develop' }}
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/workflow-trigger.yaml@main
+    # Input parameters for the job
+    with:
+      workflow: terraform-apply # Triggering the 'apply' workflow
+      ref: ${{ github.ref }} # Using the Git reference from the push event
+      inputs: |
+        env: dev # Using the environment from the push event
+        ref: ${{ github.sha }} # Using the Git SHA from the push event
+    # Secrets needed for the job (GH_INFRA_PAT)
+    secrets:
+      GH_INFRA_PAT: ${{ secrets.GH_INFRA_PAT }}
+
+  # Job to apply Terraform in the 'Prod' environment if there are Terraform changes.
+  terraform-apply-Prod:
+    name: "Terraform apply Prod"
+    if: ${{ github.ref_name == 'main'}}
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/workflow-trigger.yaml@main
+    # Input parameters for the job
+    with:
+      workflow: terraform-apply # Triggering the 'apply' workflow
+      ref: ${{ github.ref }} # Using the Git reference from the push event
+      inputs: |
+        env: prod # Using the environment from the push event
+        ref: ${{ github.sha }} # Using the Git SHA from the push event
+    # Secrets needed for the job (GH_INFRA_PAT)
+    secrets:
+      GH_INFRA_PAT: ${{ secrets.GH_INFRA_PAT }}

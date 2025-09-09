@@ -83,13 +83,13 @@ export const DashboardStyled = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 16px;
     gap: 16px;
-    padding: 0rem 2rem;
+    padding: 0rem 16px;
 
     & .section1 {
       display: grid;
-      grid-template-columns: 387px 1fr 351px;
+      grid-template-columns: 350px 1fr 351px;
       gap: 16px;
       width: 100%;
       max-width: 100%;
@@ -103,7 +103,7 @@ export const DashboardStyled = styled.div`
     }
     & .section3 {
       display: grid;
-      grid-template-columns: 760px 1fr;
+      grid-template-columns:  minmax(0, 760px) 1fr;
       gap: 16px;
       width: 100%;
       max-width: 100%;
@@ -123,7 +123,7 @@ export const DashboardStyled = styled.div`
       .itemsWrapper {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 8px;
         border-top: 1px solid #f4f5f8;
       }
 
@@ -167,9 +167,9 @@ export const DashboardStyled = styled.div`
           flex-direction: column;
 
           h5 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 0.3rem;
+            // font-size: 1.1rem;
+            // font-weight: 500;
+            // margin-bottom: 0.3rem;
           }
 
           div {
@@ -177,9 +177,9 @@ export const DashboardStyled = styled.div`
             align-items: center;
 
             span {
-              font-size: 0.9rem;
+              // font-size: 0.9rem;
               margin-right: 0.4rem;
-              color: #6d6d6d;
+              // color: #6d6d6d;
             }
           }
         }
@@ -190,13 +190,13 @@ export const DashboardStyled = styled.div`
       // }
 
       & > h1 {
-        font-size: 18px;
-        font-weight: 500;
+        // font-size: 18px;
+        // font-weight: 500;
         display: flex;
         align-items: center;
-        line-height: 1.6rem;
-        color: #012635;
-        height: 64px;
+        // line-height: 1.6rem;
+        // color: #012635;
+        height: 56px;
         /* margin-bottom: 18px; */
         & > .info {
           margin-left: 0.3rem;
@@ -255,9 +255,9 @@ export const DashboardStyled = styled.div`
               }
               & > .subHeading {
                 & > h5 {
-                  font-size: 1.4rem;
-                  font-weight: 500;
-                  line-height: 1.2rem;
+                  // font-size: 1.4rem;
+                  // font-weight: 500;
+                  // line-height: 1.2rem;
                   padding: 0.7rem 0rem;
                   @media (max-width: 1772px) {
                     font-size: 1.3rem;
@@ -325,12 +325,12 @@ export const DashboardStyled = styled.div`
         margin-bottom: 8px;
 
         & > h1 {
-          font-size: 18px;
-          font-weight: 500;
+          // font-size: 18px;
+          // font-weight: 500;
           display: flex;
           align-items: center;
-          line-height: 1.6rem;
-          color: #012635;
+          // line-height: 1.6rem;
+          // color: #012635;
 
           & > .info {
             margin-left: 0.3rem;
@@ -367,7 +367,7 @@ export const DashboardStyled = styled.div`
           align-items: center;
           width: 100%;
           max-width: 100%;
-          gap: 2rem;
+          gap: 12px;
           padding: 16px;
           border-radius: 16px;
           background-color: #F7F8FC;
@@ -489,7 +489,7 @@ export const DashboardStyled = styled.div`
             }
           }
           .verticalLine {
-            height: 122px;
+            height: 94px;
             width: 1px;
             background-color: #e0e0e0;
           }
@@ -500,7 +500,7 @@ export const DashboardStyled = styled.div`
             }
             & > * {
               &:not(:last-child) {
-                margin-bottom: 0.4rem;
+                // margin-bottom: 0.4rem;
               }
             }
             & > .subitem {
@@ -557,12 +557,12 @@ export const DashboardStyled = styled.div`
             display: flex;
             flex-direction: column;
             & > h1 {
-              font-size: 18px;
-              font-weight: 500;
+              // font-size: 18px;
+              // font-weight: 500;
               display: flex;
               align-items: center;
-              line-height: 1.6rem;
-              color: #012635;
+              // line-height: 1.6rem;
+              // color: #012635;
 
               & > .info {
                 margin-left: 0.3rem;
@@ -782,12 +782,12 @@ export const DashboardStyled = styled.div`
         justify-content: space-between;
         /* margin-bottom: 10px; */
         & > h1 {
-          font-size: 18px;
-          font-weight: 500;
+          // font-size: 18px;
+          // font-weight: 500;
           display: flex;
           align-items: center;
-          line-height: 1.6rem;
-          color: #012635;
+          // line-height: 1.6rem;
+          // color: #012635;
 
           & > .info {
             margin-left: 0.3rem;
@@ -946,16 +946,16 @@ export const DashboardStyled = styled.div`
       justify-content: space-between;
       border-bottom: 1px solid #E0E0E0;
       padding: 16px;
-      height: 64px;
+      height: 56px;
     }
 
     .item6 .head h1 {
-      font-size: 18px;
-      font-weight: 500;
+      // font-size: 18px;
+      // font-weight: 500;
       display: flex;
       align-items: center;
-      line-height: 1.6rem;
-      color: #012635;
+      // line-height: 1.6rem;
+      // color: #012635;
     }
 
     .item6 .head .info {
@@ -1052,7 +1052,7 @@ export const DashboardStyled = styled.div`
         background-color: #ffffff;
         border-radius: 8px;
         border: 1px solid #e0e0e0;
-        justify-content: space-between;
+        // justify-content: space-between;
         position: relative;
         .horizantalLine {
           height: 1px;
@@ -1066,12 +1066,12 @@ export const DashboardStyled = styled.div`
           width: 100%;
           flex-direction: row;
           justify-content: space-between;
-          height: 64px;
+          height: 56px;
           & > h1 {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 26px;
-            color: #012635;
+            // font-size: 18px;
+            // font-weight: 500;
+            // line-height: 26px;
+            // color: #012635;
             gap: 0.3rem;
 
             & > .info {
@@ -1131,6 +1131,7 @@ export const DashboardStyled = styled.div`
     background-color: #ffffff !important;
     border-radius: 8px !important;
     border: 1px solid #e0e0e0 !important;
+    min-width: 0;
   }
   .horizantalLine {
     height: 1px;
@@ -1164,9 +1165,9 @@ padding: 16px;
   }
 
   .graphbody .head h1 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #012635;
+    // font-size: 18px;
+    // font-weight: 500;
+    // color: #012635;
   }
 
   .graphbody .head h1 .info {
@@ -1245,9 +1246,9 @@ padding: 16px;
   }
 
   .tagsHeader h1 {
-    font-size: 18px;
-    font-weight: 500;
-    color: #012635;
+    // font-size: 18px;
+    // font-weight: 500;
+    // color: #012635;
     display: flex;
     align-items: center;
   }
@@ -1312,13 +1313,13 @@ padding: 16px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 16px;
     gap: 16px;
-    padding: 0rem 2rem;
+    padding: 0rem 16px;
   }
 
   .cards .section1{
-    grid-template-columns: 387px 1fr 351px;
+    grid-template-columns: 350px 1fr 351px;
   }
   .cards .section2 {
     display: grid;
@@ -1539,14 +1540,14 @@ padding: 16px;
 
   @media (min-width: 1281px) and (max-width: 1440px) {
     .cards {
-      padding: 0 2rem;
+      padding: 0 16px;
     }
 
     .cards .section1{
-      grid-template-columns: 387px 1fr 351px;
+      grid-template-columns: 350px 1fr 351px;
     }
     .cards .section2 {
-      grid-template-columns: 1fr 315px 351px;
+      grid-template-columns: 351px  315px 1fr ;
     }
 
     .cards .section3 {
@@ -1562,10 +1563,10 @@ padding: 16px;
     }
 
     .cards .section1{
-      grid-template-columns: 387px 1fr 351px;
+      grid-template-columns: 350px 1fr 351px;
     }
     .cards .section2 {
-      grid-template-columns: 1fr 315px 351px;
+      grid-template-columns: 351px  315px 1fr;
     }
 
     .cards .section3 {
@@ -1580,7 +1581,7 @@ export const Item9Container = styled.div`
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1334px;
   margin: auto;
 `;
 
@@ -1590,13 +1591,14 @@ export const TagsHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  height: 56px ; 
 `;
 
 // Title within the header
 export const HeaderTitle = styled.h1`
-  font-size: 20px;
-  font-weight: 600;
-  color: #012635;
+  // font-size: 20px;
+  // font-weight: 600;
+  // color: #012635;
   display: flex;
   align-items: center;
   line-height: 28px;
@@ -1647,7 +1649,7 @@ export const StyledTable = styled.table`
 
   th,
   td {
-    padding: 12px 16px;
+    padding: 8px 16px;
     width: 127px;
     text-align: left;
     font-size: 14px;

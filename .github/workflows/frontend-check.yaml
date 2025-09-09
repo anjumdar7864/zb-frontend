@@ -1,0 +1,24 @@
+name: Check UI
+# Setting permissions for the workflow
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read
+# Triggering the workflow on a push event to the 'bootstrap' branch
+on:
+  pull_request:
+    branches: [dev-saas]
+    paths-ignore:
+      - "infra/terraform/**"
+
+# Jobs to be executed in the workflow
+jobs:
+  # Build Job
+  Build-Node:
+    name: "Build Node"
+    uses: Golden-Capital-Holdings/zb-shared-workflows/.github/workflows/build-node.yaml@main
+    # Input parameters for the build job
+    with:
+      upload_artifact: "false"
+      env: dev # Using the environment from the workflow input
+    secrets:
+      ENV: ${{ secrets.ENV }}

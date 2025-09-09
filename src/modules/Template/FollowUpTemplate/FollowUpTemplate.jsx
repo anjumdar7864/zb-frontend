@@ -93,6 +93,7 @@ const InitialTemplate = () => {
   const [templateType, setTemplateType] = useState("all");
   const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading , setIsLoading] = useState(false)
   const dispatch = useDispatch();
 
   const [limit, setLimit] = useState(50);
@@ -102,7 +103,13 @@ const InitialTemplate = () => {
   const user = JSON.parse(
     localStorage.getItem("user") ?? localStorage.getItem("user") ?? "{}"
   );
-  console.log("check total", templatesData, countData);
+
+
+  useEffect(()=>{
+    if(templatesData?.results?.length > 0 ){
+      setIsLoading(false)
+    }
+  },[templatesData])
 
   const [sortingInfo, setSortingInfo] = useState({
     direction: 0,
@@ -188,6 +195,7 @@ const InitialTemplate = () => {
 
   useLayoutEffect(() => {
     dispatch(getAllTemplates({ ...queryParams, search: searchText }));
+    setIsLoading(true)
   }, [dispatch, queryParams, searchText]);
 
   useEffectWithDependency(() => {
@@ -318,10 +326,10 @@ const InitialTemplate = () => {
           style={{ display: "flex", alignItems: "center" }}
         >
           <div
-            className="TemplateC"
-            style={{ color: "#777777", cursor: "pointer", marginRight: "10px" }}
+            className="TemplateC body4Medium textSecondaryColor"
+            style={{  cursor: "pointer", marginRight: "10px" }}
           >
-            Template category
+            Template Type
           </div>
           <Select
             components={{
@@ -346,7 +354,7 @@ const InitialTemplate = () => {
               control: (baseStyles, state) => ({
                 ...baseStyles,
                 width: 300,
-                height: "4rem",
+                height: "40px",
               }),
             }}
             IndicatorsContainer={false}
@@ -367,15 +375,16 @@ const InitialTemplate = () => {
                 <div
                   style={{
                     width: "111px",
-                    height: "4rem",
-                    backgroundColor: "#00BD82",
+                    height: "40px",
+                    // backgroundColor: "#00BD82",
                     borderRadius: "8px",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    color: "white",
+                    // color: "white",
                     cursor: "pointer",
                   }}
+                  className="primeryBackground  textWhiteColor"
                 >
                   <span className="text">Create New</span>
                 </div>
@@ -404,7 +413,7 @@ const InitialTemplate = () => {
                 }`}
                 // onClick={() => handleSort("name")}
               >
-                <span className="text">Name</span>
+                <span className="text body4Medium textPrimeryColor">Name</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -436,7 +445,7 @@ const InitialTemplate = () => {
                 }`}
                 // onClick={() => handleSort("messages")}
               >
-                <span className="text">Messages</span>
+                <span className="text body4Medium textPrimeryColor">Messages</span>
 
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
@@ -469,7 +478,7 @@ const InitialTemplate = () => {
                 }`}
                 // onClick={() => handleSort("type")}
               >
-                <span className="text">Type</span>
+                <span className="text body4Medium textPrimeryColor">Type</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -501,7 +510,7 @@ const InitialTemplate = () => {
                 }`}
                 // onClick={() => handleSort("delivery")}
               >
-                <span className="text">Delivery %</span>
+                <span className="text body4Medium textPrimeryColor">Delivery %</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -533,7 +542,7 @@ const InitialTemplate = () => {
                 }`}
                 // onClick={() => handleSort("response")}
               >
-                <span className="text">Response %</span>
+                <span className="text body4Medium textPrimeryColor">Response %</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -565,7 +574,7 @@ const InitialTemplate = () => {
                 }`}
                 // onClick={() => handleSort("response")}
               >
-                <span className="text">Date</span>
+                <span className="text body4Medium textPrimeryColor">Date</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -595,14 +604,26 @@ const InitialTemplate = () => {
                 className={`col sort info ${
                   sortingInfo.sortedBy === "response" ? "select" : ""
                 }`}
-              ></h6>
+              ><span className="text body4Medium textPrimeryColor">Action</span></h6>
             </div>
 
-            {templatesData?.results?.length === 0 && (
+            {/* {templatesData?.results?.length === 0 && (
               <div className="row body">
                 <p className="error">No Record Found!</p>
               </div>
-            )}
+            )} */}
+
+{isLoading &&  templatesData?.results?.length === 0 ? (
+              <div className="row body">
+                <p className="error">Loading...</p>
+              </div>
+            ) : templatesData?.results?.length === 0 ? (
+              <div className="row body">
+                <p className="error">No Record Found!</p>
+              </div>
+            ) : null}
+
+
             {templatesData?.results?.map((data, i) => (
               <TableRow
                 key={i}
@@ -696,7 +717,7 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
         className="col2 data"
         style={{ paddingLeft: isOpen ? "1rem" : "0rem" }}
       >
-        <p style={{ color: "#777777", fontWeight: 500 }}>
+        <p style={{  fontWeight: 500 }} className="textSecondaryColor">
           {singleTemplate?.name}
         </p>
       </div>
@@ -726,7 +747,7 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
         </button>
       </div>
       <div className="col data">
-        <p style={{ color: "#777777" }}>{singleTemplate?.type}</p>
+        <p className="textSecondaryColor">{singleTemplate?.type}</p>
       </div>
       <div className="col data">
         <p
@@ -747,12 +768,12 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
         </p>
       </div>
       <div className="col data">
-        <p style={{ color: "#777777" }}>
+        <p className="textSecondaryColor">
           {parseFloat(singleTemplate?.responsePercentage).toFixed(2)}%
         </p>
       </div>
       <div className="col data">
-        <p style={{ color: "#777777" }}>
+        <p className="textSecondaryColor">
           {formatDate(singleTemplate?.createdAt)}
         </p>
       </div>

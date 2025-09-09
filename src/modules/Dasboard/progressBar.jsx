@@ -46,7 +46,7 @@ export const CustomCircularProgress = ({
         y="50%"
         dominantBaseline="central"
         textAnchor="middle"
-        fontSize="18"
+        fontSize="14"
         fontWeight={600}
         fill={textColor}
       >

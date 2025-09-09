@@ -49,7 +49,7 @@ const MasterSettings = () => {
       <div className={styles.top} style={{ backgroundColor: "white" }}>
         <div className={styles.title}>Settings </div>
         <div className={styles.tabLayout}>
-        {(user.role === 'superAdmin' || user.permissions.includes('FC_Admin User') || user.permissions.includes('View_Admin User')) && (
+        {(user.role === 'superAdmin' || user?.permissions?.includes('FC_Admin User') || user?.permissions?.includes('View_Admin User')) && (
           <NavLink
             onClick={() => hundleMenuBar(0)}
             to="/master_setting/Adminuser"
@@ -68,8 +68,8 @@ const MasterSettings = () => {
             </div>
           </NavLink>
         )}
-          {(user.role === 'superAdmin' || user.permissions.includes('FC_Roles & Permissions -Admin') || user.permissions.includes('FC_Roles & Permissions -Tenant')
-          || user.permissions.includes('View_Roles & Permissions -Admin') || user.permissions.includes('View_Roles & Permissions -Tenant')) && (
+          {(user.role === 'superAdmin' || user?.permissions?.includes('FC_Roles & Permissions -Admin') || user?.permissions?.includes('FC_Roles & Permissions -Tenant')
+          || user?.permissions?.includes('View_Roles & Permissions -Admin') || user?.permissions?.includes('View_Roles & Permissions -Tenant')) && (
           <NavLink
             onClick={() => hundleMenuBar(1)}
             to="master_setting/Rols&permission"
@@ -89,7 +89,7 @@ const MasterSettings = () => {
             </div>
           </NavLink>
            )}
-           {(user.role === 'superAdmin' || user.permissions.includes('FC_10Dlc Submission') || user.permissions.includes('View_10Dlc Submission')) && (
+           {(user.role === 'superAdmin' || user?.permissions?.includes('FC_10Dlc Submission') || user?.permissions?.includes('View_10Dlc Submission')) && (
           <NavLink
             onClick={() => hundleMenuBar(2)}
             to="/master_setting/Subscription"

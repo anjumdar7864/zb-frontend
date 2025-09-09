@@ -16,9 +16,8 @@ import PaginationDropDown from "./PaginationDropDown";
 import { addNotification, REQUEST_TYPES } from "@/utils/constant/url";
 import { commonAPICall } from "@/services/api/common";
 
-const TableComponent = () => {
-    const [currentPage, setCurrentPage] = useState(2)
-    const [numberOfRowsShowing, setNumberOfRowsShowing] = useState(25);
+const TableComponent = ({debouncedSearchTerm , currentPage , setCurrentPage}) => {
+    const [numberOfRowsShowing, setNumberOfRowsShowing] = useState(10);
     const [loader, setLoader] = useState(false)
     const [response , setResponse] = useState([])
     // Dummy data for the table
@@ -41,8 +40,8 @@ const TableComponent = () => {
 
 
             const { data, isError, message, sessionExpired } = await commonAPICall(
-                REQUEST_TYPES.GET,
-                addNotification(),
+                `${REQUEST_TYPES.GET}`,
+                addNotification(numberOfRowsShowing ,currentPage , debouncedSearchTerm ),
 
             );
             setLoader(false);
@@ -69,11 +68,13 @@ const TableComponent = () => {
     };
 
 useEffect(()=>{
+    
+ 
     GetNotification()
-},[])
+},[currentPage , numberOfRowsShowing , debouncedSearchTerm])
 
-    const totalResults = data?.length
-    const totalPages = 2
+    const totalResults = response?.totalResults
+    const totalPages = response?.totalPages
 
     const handlePageChange = (event, value) => {
         setCurrentPage(value)
@@ -128,15 +129,13 @@ useEffect(()=>{
                                 <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textPrimeryColor">Category</div></TableCell>
                                 <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textPrimeryColor">Notification Title</div></TableCell>
                                 <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textPrimeryColor">Description</div></TableCell>
-                                {/* <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textPrimeryColor">Status</div></TableCell> */}
-                                {/* <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textPrimeryColor">Notification Type</div></TableCell>
-                                <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textPrimeryColor">Actions</div></TableCell> */}
+                               
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {response?.results?.map((row, index) => (
                                 <TableRow key={row.id}>
-                                    <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor">{index + 1}</div></TableCell>
+                                    <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor">{index + 1 + (numberOfRowsShowing * (currentPage - 1))}</div></TableCell>
                                     <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor">{convertTimestampToDate(row.createdAt)}</div></TableCell>
                                     <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor" style={{
                                         border: `solid 1px ${row.category == "general" ? "#5BF1B2" : row.category == "Warning" ? "#FFC107" : "#EA3815"
@@ -154,26 +153,7 @@ useEffect(()=>{
                                     }}>{row.category}</div></TableCell>
                                     <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor">{row.title}</div></TableCell>
                                     <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor">{row.description}</div></TableCell>
-                                    {/* <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor" style={{
-                                        border: `solid 1px ${row.status == "Active" ? "#5BF1B2" : "#EA3815"
-                                            }`,
-                                        backgroundColor:
-                                            row.status == "Active" ? "#C2FFEC" : "#FFEEEE",
-
-                                        color: row.status == "Active" ? "#00724E" : "#EA3815",
-                                        width: "fit-content",
-                                        borderRadius: "13px",
-                                        padding: "0px 8px",
-                                        fontSize: "12px",
-                                        fontWeight: "500",
-                                        lineHeight: "22px",
-                                    }}>{row.status}</div></TableCell> */}
-                                    {/* <TableCell sx={{ padding: "8px 16px" }}><div className="body4Medium textSecondaryColor">{row.notificationType}</div></TableCell>
-                                    <TableCell sx={{ padding: "8px 16px" }}>
-                                        <IconButton>
-                                            <BiArrowBack />
-                                        </IconButton>
-                                    </TableCell> */}
+                                  
                                 </TableRow>
                             ))}
                         </TableBody>
@@ -193,8 +173,7 @@ useEffect(()=>{
                         borderTop: '0px',
                         borderEndEndRadius: "8px",
                         borderEndStartRadius: "8px",
-                        // borderTop: "1px solid var(--Extra-Grey, #e0e0e0)",
-                        // minWidth: '1278px',
+        
                         padding: "0px 16px",
                         alignItems: "center",
                         paddingTop: "10px ",

@@ -271,6 +271,7 @@ const UserNew = ({ onClose, refreshUsers }) => {
                 type="text"
                 placeholder="Enter name"
                 value={formik.values.firstName}
+                maxLength={20}
                 name="firstName"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -296,7 +297,7 @@ const UserNew = ({ onClose, refreshUsers }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 style={{ width: "100%" }}
-
+                maxLength={20}
               />
               {formik.touched.lastName && formik.errors.lastName && (
                 <p style={{color:"#EA3815"}}>{formik.errors.lastName}</p>
@@ -326,7 +327,7 @@ const UserNew = ({ onClose, refreshUsers }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 style={{ width: "100%" }}
-
+   
               />
               {formik.touched.email && formik.errors.email && (
                 <p style={{color:"#EA3815"}}>{formik.errors.email}</p>
@@ -368,7 +369,7 @@ const UserNew = ({ onClose, refreshUsers }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 style={{ width: "100%" }}
-
+                maxLength={20}
               />
               {formik.touched.aliasRepName && formik.errors.aliasRepName && (
                 <p style={{color:"#EA3815"}}>{formik.errors.aliasRepName}</p>
@@ -421,7 +422,7 @@ const UserNew = ({ onClose, refreshUsers }) => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 style={{ width: "100%" }}
-
+                maxLength={20}
               />
               {formik.touched.companyName && formik.errors.companyName && (
                 <p style={{color:"#EA3815"}}>{formik.errors.companyName}</p>
@@ -443,7 +444,7 @@ const UserNew = ({ onClose, refreshUsers }) => {
                 onChange={handlePhoneChange}
                 onBlur={formik.handleBlur}
                 style={{ width: "100%" }}
-
+    
               />
               {formik.touched.phoneNumber && formik.errors.phoneNumber && (
                 <p style={{ textWrap: "wrap", maxWidth: "240px" , color:"#EA3815"}}>

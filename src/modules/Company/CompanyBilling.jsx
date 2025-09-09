@@ -341,7 +341,12 @@ const CompanyBilling = () => {
                                                         >
                                                             <Typography onClick={() => {
                                                                 popupState.close();
-                                                                deleteHandler(data, index)
+                                                                if(invoices?.length > 1){
+                                                                    deleteHandler(data, index)
+
+                                                                }else{
+                                                                    toast.error("At least one email must remain.")
+                                                                }
                                                             }} sx={{ p: 2 }}><span style={{ cursor: 'pointer' }}>Delete email recipient</span></Typography>
                                                         </Popover>
                                                     </div>

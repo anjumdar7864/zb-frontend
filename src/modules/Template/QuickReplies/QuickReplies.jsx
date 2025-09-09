@@ -96,6 +96,7 @@ const QuickReplies = () => {
   const [searchText, setSearchText] = useState("");
   const [selectedCategory, setSelectedCategory] = useState();
   const [isCategoriesGot, setIsCategoriesGot] = useState(false);
+  const [isLoading, setIsLoading] = useState(true)
   const [sortingInfo, setSortingInfo] = useState({
     direction: 0,
     sortedBy: "",
@@ -152,25 +153,7 @@ const QuickReplies = () => {
     ]
   );
 
-  // useEffect(() => {
-  //   if (!isCategoriesGot) return;
-  //   dispatch(getAllRepliesTemplates({ ...queryParams, search: searchText }));
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [dispatch, isCategoriesGot, selectedCategory, searchText, queryParams]);
-
-  // useEffect(() => {
-    // dispatch(getAllReplyTemplateCategories());
-    // if (replyTemplateCategories.length > 0) {
-    //   dispatch(
-    //     getAllRepliesTemplates({
-    //       ...queryParams,
-    //       limit: limit,
-    //       page: currentPage,
-    //       search: searchText,
-    //     })
-    //   );
-    // }
-  // }, [dispatch, selectedCategory, searchText, queryParams, limit, currentPage]);
+ 
 
   useEffect(() => {
     if (user?.subscriptionId === "6744617ea4d142ed16ea9c9e") {
@@ -180,8 +163,13 @@ const QuickReplies = () => {
   }, [user?.subscriptionId]);
 
   useEffect(() => {
+  
+
     if (!isCategoriesGot) return;
     dispatch(getAllRepliesTemplates({ ...queryParams, search: searchText }));
+   
+      setIsLoading(true)
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, isCategoriesGot, selectedCategory, searchText, queryParams]);
 
@@ -193,45 +181,7 @@ const QuickReplies = () => {
       }
     }
   }, [replyTemplateCategories]);
-  // useEffect(() => {
-  //   if (replyTemplateCategories?.length > 0) {
-      
-  //     if(!selectedCategory){
-  //       dispatch(
-  //         getAllRepliesTemplates({
-  //           searchByCategory: replyTemplateCategories[0]?._id,
-  //           limit: limit,
-  //           page: currentPage,
-  //           search: searchText,
-  //         })
-  //       );
-  //     }else{
-  //       dispatch(
-  //         getAllRepliesTemplates({
-  //           ...queryParams,
-  //           limit: limit,
-  //           page: currentPage,
-  //           search: searchText,
-  //         })
-  //       );
-  //     }
-    
-  //   }
-  // }, [replyTemplateCategories]);
-
-
-  // useLayoutEffect(() => {
-  //   setIsLoaderShowing(loading);
-  // }, [loading, setIsLoaderShowing]);
-
-  // useEffectWithDependency(() => {
-  //   dispatch(
-  //     getAllRepliesTemplatesWithoutLoader({
-  //       ...queryParams,
-  //       search: searchText,
-  //     })
-  //   );
-  // }, [searchText]);
+  
 
   const [dataTable, setDataTable] = useState(templatesData?.results);
 
@@ -252,6 +202,7 @@ const QuickReplies = () => {
 
   useEffect(() => {
     setDataTable(templatesData?.results);
+    setIsLoading(false)
   }, [templatesData?.results]);
 
   useEffect(() => {
@@ -306,7 +257,7 @@ const QuickReplies = () => {
       >
         <TemplateTop>
           <div className="left">
-          {/* {(user.role === 'admin' || user.permissions.includes('Follow-up Template Search')) && ( */}
+     
             <div className="searchContainer">
               <input
                 name="search"
@@ -319,7 +270,7 @@ const QuickReplies = () => {
           {/* )} */}
           </div>
           <div className="right" style={{ display: 'flex', alignItems: 'center' }}>
-            <div className="TemplateC" style={{ color: "#777777", cursor: "pointer", marginRight: '10px' }}>Template Type</div>
+            <div className="TemplateC body4Medium textSecondaryColor" style={{  cursor: "pointer", marginRight: '10px' }}>Template category</div>
             <Select
               components={{
                 DropdownIndicator,
@@ -343,7 +294,7 @@ const QuickReplies = () => {
                 control: (baseStyles, state) => ({
                   ...baseStyles,
                   width: 300,
-                  height: '4rem',
+                  height: '40px',
                 }),
               }}
               IndicatorsContainer={false}
@@ -359,7 +310,7 @@ const QuickReplies = () => {
               }
             >
               <Link to="/templates/create-replies">
-                <div style={{ width: "111px", height: "4rem", backgroundColor: "#00BD82", borderRadius: "8px", display: "flex", justifyContent: "center", alignItems: "center", color: "white", cursor: "pointer" }}>
+                <div className="primeryBackground textWhiteColor" style={{ width: "111px", height: "40px", borderRadius: "8px", display: "flex", justifyContent: "center", alignItems: "center",  cursor: "pointer" }}>
                   <span className="text">Create New</span>
                 </div>
               </Link>
@@ -375,29 +326,33 @@ const QuickReplies = () => {
                 <div className="row" style={{ position: "sticky", top: "0px", zIndex: 100, backgroundColor: "white", borderBottom: "1.5px solid #80808052" }}>
                   <h6
                     className={`col sort`}>
-                    <span className="text">No</span>
+                    <span className="text body4Medium textPrimeryColor">No</span>
                   </h6>
                   <h6
-                    className={`col sort`}>
+                    className={`col sort body4Medium textPrimeryColor`}>
                     <span className="text">Title</span>
                   </h6>
                   <h6
-                    className={`col sort`}>
+                    className={`col sort body4Medium textPrimeryColor`}>
                     <span className="text">Category</span>
                   </h6>
                   <h6
-                    className={`col sort`}>
+                    className={`col sort body4Medium textPrimeryColor`}>
                     <span className="text">Message</span>
                   </h6>
                   {(user.role === 'admin' || user.permissions.includes('Edit Quick Replies') || user.permissions.includes('Delete Quick Replies')) && (
                   <h6
-                    className={`col sort`}>
+                    className={`col sort body4Medium textPrimeryColor`}>
                     <span className="text">Action</span>
                   </h6>
                   )}
                 </div>
                 <>
-                  {dataTable.length <= 0 ? (
+                  {isLoading ? (
+                         <div className="row body">
+                         <p className="error">Loading!</p>
+                       </div>
+                  ) : dataTable.length <= 0 ? (
                     <div className="row body">
                       <p className="error">No Record Found!</p>
                     </div>
@@ -536,7 +491,7 @@ const TableRow = ({
   return (
     <TableRowStyled className="row body">
       <div className="col data">
-        <p style={{ color: "#777777" }}> {displayIndex} </p>
+        <p  className="textSecondaryColor"> {displayIndex} </p>
       </div>
       <div
         className="col data"
@@ -546,7 +501,7 @@ const TableRow = ({
           justifyContent: "start",
         }}
       >
-        <p style={{ color: "#777777" }}>
+        <p  className="textSecondaryColor">
           {singleReply?.title
             ? singleReply?.title
             : singleReply?.name

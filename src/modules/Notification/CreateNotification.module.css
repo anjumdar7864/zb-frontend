@@ -18,6 +18,10 @@
   .previewContainer {
     flex: 0 0 50%;
     max-width: 50%;
+    background-color: white;
+    padding: 16px;
+    border: solid 1px #E0E0E0;
+    border-radius: 8px;
   }
   
   .card {

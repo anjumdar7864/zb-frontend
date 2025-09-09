@@ -1,4 +1,4 @@
-import { HashRouter, Routes as RouterRoutes, Route } from "react-router-dom";
+import { HashRouter, Routes as RouterRoutes, Route, useNavigate, Navigate } from "react-router-dom";
 import Modules from "@/modules";
 import Components from "./components";
 import Layout from "./Layout";
@@ -18,6 +18,40 @@ import {
 } from "@/store/constants";
 import { GetAllTenets } from "@/store/actions/tenets.action";
 import { GetCompleteStatusBatch, GetSingleUser } from "./store/actions";
+import { useEffect } from "react";
+import { AuthWatcher } from "./components/AuthWatcher";
+
+
+
+
+
+(function setupLocalStorageBroadcast() {
+  if (window.__lsPatched) return;
+  window.__lsPatched = true;
+
+  const _set = localStorage.setItem.bind(localStorage);
+  const _remove = localStorage.removeItem.bind(localStorage);
+  const _clear = localStorage.clear.bind(localStorage);
+
+  localStorage.setItem = function (key, value) {
+    const r = _set(key, value);
+    window.dispatchEvent(new CustomEvent("ls-changed", { detail: { key, value } }));
+    return r;
+  };
+  localStorage.removeItem = function (key) {
+    const r = _remove(key);
+    window.dispatchEvent(new CustomEvent("ls-changed", { detail: { key, removed: true } }));
+    return r;
+  };
+  localStorage.clear = function () {
+    const r = _clear();
+    window.dispatchEvent(new CustomEvent("ls-changed", { detail: { clear: true } }));
+    return r;
+  };
+})();
+
+
+
 
 
 const Routes = () => {
@@ -25,7 +59,9 @@ const Routes = () => {
   const user = JSON.parse(
     localStorage.getItem("user") ?? localStorage.getItem("user") ?? "{}"
   );
-  // console.log("user", user);
+
+  
+console.log("user", user);
   const dispatch = useDispatch();
 console.log("VITE_APP_STRIPE_PUBLISHABLE_KEY", import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY?.replace(/\/$/, ''));
   const events = [
@@ -673,6 +709,7 @@ console.log("VITE_APP_STRIPE_PUBLISHABLE_KEY", import.meta.env.VITE_APP_STRIPE_P
 
   return (
     <HashRouter>
+      <AuthWatcher />
       <Toaster
         toastOptions={{
           style: {
@@ -702,6 +739,7 @@ console.log("VITE_APP_STRIPE_PUBLISHABLE_KEY", import.meta.env.VITE_APP_STRIPE_P
         </Route>
 
         <Route element={<ProtectedRoutes />}>
+   
           <Route element={<Layout.HeaderSidebar />}>
             {Object.keys(protectedRoutes).map((key, ind) =>
               protectedRoutes[key].map((route, index) =>

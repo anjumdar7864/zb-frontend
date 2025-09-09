@@ -2,7 +2,7 @@ import theme from "@/theme";
 import styled from "@emotion/styled";
 
 export const CreateRepliesStyled = styled.div`
-  padding: 0rem 4rem 3rem 4rem;
+  padding: 0rem 16px 16px 16px;
   display: grid;
   gap:2rem;
   grid-template-columns: 3fr 2fr;
@@ -25,7 +25,8 @@ export const CreateRepliesStyled = styled.div`
               justify-content: center;
               grid-template-columns: auto auto;
               transition: background-color 300ms;
-              padding: 1.1rem 2rem;
+              padding: 0px 2rem;
+              height:40px ; 
               border-radius: 0.8rem;
               margin-right: 1rem;
               border:1px solid #777777;
@@ -54,11 +55,11 @@ export const CreateRepliesStyled = styled.div`
               align-items: center;
               justify-content: center;
               grid-template-columns: auto auto;
-              background-color: #00BD82;
+              // background-color: #00BD82;
               transition: background-color 300ms;
-              padding: 1.1rem 5rem;
+              padding: 0rem 5rem;
               border-radius: 0.8rem;
-
+height:40px ; 
               & > .icon {
                 font-size: 1.5rem;
                 line-height: 0;
@@ -111,7 +112,7 @@ export const CreateRepliesStyled = styled.div`
                     transition: background-color 300ms;
                     padding: 0.6rem 1.05rem;
                     border-radius: 0.5rem;
-                    font-size: 1.1375rem;
+                    font-size: 12px;
                     font-weight: 500;
                     color: #012635;
 
@@ -193,7 +194,7 @@ export const CreateRepliesStyled = styled.div`
   & > .bottom {
     border-top:1px solid #E0E0E0;
     border-inline:1px solid #E0E0E0;
-    padding: 1.5rem;
+    padding: 16px;
     background-color: #FFFFFF;
     border-top-left-radius:0.8rem;
     border-top-right-radius:0.8rem;
@@ -216,9 +217,9 @@ export const CreateRepliesStyled = styled.div`
           justify-content: space-between;
 
           & > h2 {
-            font-size: 2rem;
-            color: #012635;
-            font-weight: 700;
+            // font-size: 2rem;
+            // color: #012635;
+            // font-weight: 700;
           }
           & > .right {
             display: grid;
@@ -234,9 +235,9 @@ export const CreateRepliesStyled = styled.div`
               gap: 0.7rem;
               background-color:red;
               transition: background-color 300ms;
-              padding: 1rem 3rem;
+              padding: 0px 12px;
               border-radius: 0.5rem;
-
+height:40px ; 
               & > .icon {
                 font-size: 1rem;
                 line-height: 0;
@@ -244,8 +245,8 @@ export const CreateRepliesStyled = styled.div`
               }
 
               & > .text {
-                font-size: 1.3rem;
-                color: #012635;
+                // font-size: 1.3rem;
+                // color: #012635;
               }
 
               &:hover {
@@ -254,7 +255,7 @@ export const CreateRepliesStyled = styled.div`
 
               &:last-of-type {
                 background-color: #F0F0F0;
-                padding-inline:1.5rem;
+                // padding-inline:1.5rem;
                 & > .icon {
                   color: #000;
                   display: inline-block;
@@ -379,12 +380,12 @@ export const CreateRepliesStyled = styled.div`
                 display: grid;
                 align-items: center;
                 justify-content: center;
-                padding: 1.105rem 1.495rem;
+                padding: 0px 1.495rem;
                 grid-template-columns: auto auto;
                 border-radius: 0.7rem;
                 border: 0.1rem solid #00BD82;
                 transition: background-color 300ms;
-                height:4rem;
+                height:40px;
                 ${theme.queryStatement(theme.breakpoints.sm)} {
                   grid-template-columns: auto;
                 }
@@ -397,8 +398,8 @@ export const CreateRepliesStyled = styled.div`
                 }
 
                 & > .text {
-                  color: #00BD82;
-                  font-size: 1.3rem;
+                  // color: #00BD82;
+                  // font-size: 1.3rem;
                   transition: color 300ms;
                 }
 
@@ -428,10 +429,10 @@ export const CreateRepliesStyled = styled.div`
                 border-radius:0.7rem;
                 transition: background-color 300ms, color 300ms,
                   border-color 300ms;
-                font-size: 1.3rem;
-                font-size: 1.3rem;
+                font-size: 14px;
+                font-size: 14px;
                 width: 100%;
-                height:4rem;
+                height:40px;
                 &:focus {
                   border-color: #00BD82;
                   color: #575962;

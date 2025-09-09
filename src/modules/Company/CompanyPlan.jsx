@@ -75,7 +75,7 @@ const CompanyPlan = () => {
     const fetchDataGetUser = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_APP_BACKEND_BASE_URL}/user/v1/api/admin/${user?._id
+          `${import.meta.env.VITE_APP_BACKEND_BASE_URL}user/v1/api/admin/${user?._id
           }`,  {
         method: "GET",
         headers: {
@@ -103,7 +103,7 @@ const CompanyPlan = () => {
   const fetchDataGetUser = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_APP_BACKEND_BASE_URL}/user/v1/api/admin/${user._id
+        `${import.meta.env.VITE_APP_BACKEND_BASE_URL}user/v1/api/admin/${user._id
         }`, {
         method: "GET",
         headers: {
@@ -209,8 +209,8 @@ const CompanyPlan = () => {
         return toast.error(message);
       }
       setSubscribePackage(data || {});
-      console.log("subscribePackage", shadowUser);
-
+      console.log("shadow user ", shadowUser);
+      console.log("subscribePackage before", data);
       shadowUser.isCanceledSubscription = data?.isCanceledSubscription
       // localStorage.setItem("user", JSON.stringify(shadowUser));
     } catch (error) {

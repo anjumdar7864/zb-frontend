@@ -45,31 +45,31 @@ const Template = () => {
   }, [showMenu]);
   return (
     <div className={styles.container}>
-      <div className={styles.top} style={{ backgroundColor: "white" }}>
-        <div className={styles.title}>Templates</div>
+      <div className={styles.top} style={{ backgroundColor: "white" , display:"flex" , flexDirection:"column" , gap:"8px"}}>
+        <div className={`${styles.title} body1Medium textPrimeryColor`}>Templates</div>
         <div className={styles.tabLayout}>
-        {(user.role === 'admin' || user.permissions.includes('Create Initial Template') || user.permissions.includes('Edit Initial Template') 
-        || user.permissions.includes('Delete Initial Template') || user.permissions.includes('Initial Template List Table')
+        {(user.role === 'admin' || user?.permissions?.includes('Create Initial Template') || user?.permissions?.includes('Edit Initial Template') 
+        || user?.permissions?.includes('Delete Initial Template') || user?.permissions?.includes('Initial Template List Table')
         ) && (
           <NavLink onClick={() => hundleMenuBar(0)} to="/templates/initial-templates" style={{ textDecoration: "none" }}>
             <div
               // style={{borderBottom:tab == 0 && "solid 2px #00BD82"}} 
               style={{ borderBottom: location.pathname == "/templates/initial-templates" && "solid 2px #00BD82" }}
-              className={styles.tabItems}>Initial Templates</div>
+              className={`${styles.tabItems} bodyRegular textPrimeryColor`}>Initial Templates</div>
           </NavLink>
         )}
-        {(user.role === 'admin' || user.permissions.includes('Create Quick Replies') || user.permissions.includes('Edit Quick Replies') 
-        || user.permissions.includes('Delete Quick Replies') || user.permissions.includes('Drag and Drop quick reply in the list to change position of quick reply')
+        {(user.role === 'admin' || user?.permissions?.includes('Create Quick Replies') || user?.permissions?.includes('Edit Quick Replies') 
+        || user?.permissions?.includes('Delete Quick Replies') || user?.permissions?.includes('Drag and Drop quick reply in the list to change position of quick reply')
         ) && (
           <NavLink onClick={() => hundleMenuBar(1)} to="/templates/quick-replies" style={{ textDecoration: "none" }}>
-            <div style={{ borderBottom: location.pathname == "/templates/quick-replies" && "solid 2px #00BD82" }} className={styles.tabItems}>Quick Replies</div>
+            <div style={{ borderBottom: location.pathname == "/templates/quick-replies" && "solid 2px #00BD82" }}  className={`${styles.tabItems} bodyRegular textPrimeryColor`}>Quick Replies</div>
           </NavLink>
         )}
-        {(user.role === 'admin' || user.permissions.includes('Create Follow-up Template') || user.permissions.includes('Edit Follow-up Template') 
-        || user.permissions.includes('Delete Follow-up Templat') || user.permissions.includes('Follow-up Template Table') || user.permissions.includes('Follow-up Template Search')
+        {(user.role === 'admin' || user?.permissions?.includes('Create Follow-up Template') || user?.permissions?.includes('Edit Follow-up Template') 
+        || user?.permissions?.includes('Delete Follow-up Templat') || user?.permissions?.includes('Follow-up Template Table') || user?.permissions?.includes('Follow-up Template Search')
         ) && (
           <NavLink onClick={() => hundleMenuBar(2)} to="/templates/follow-up-messages" style={{ textDecoration: "none" }}>
-            <div style={{ borderBottom: location.pathname == "/templates/follow-up-messages" && "solid 2px #00BD82" }} className={styles.tabItems}>Follow Up Templates</div>
+            <div style={{ borderBottom: location.pathname == "/templates/follow-up-messages" && "solid 2px #00BD82" }}  className={`${styles.tabItems} bodyRegular textPrimeryColor`}>Follow Up Templates</div>
           </NavLink>
         )}
         </div>

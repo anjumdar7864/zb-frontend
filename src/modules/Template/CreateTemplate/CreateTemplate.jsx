@@ -414,8 +414,8 @@ const CreateTemplate = () => {
       isNegativeWordsShowing={isNegativeWordsShowing}
       isTextSpinnerShowing={isTextSpinnerShowing}
     >
-      <div className="top">
-        <h1>
+      <div className="top ">
+        <h1 className="body1Medium textPrimeryColor">
           {templateId ? "Edit " : "Create"}{" "}
           {isFollowUp ? "Follow Up" : "Initial"} Template
         </h1>
@@ -426,7 +426,7 @@ const CreateTemplate = () => {
             <label className="item">
               <p className="title">
                 <div className="wrapper">
-                  <span className="text">Template Name</span>
+                  <span className="text body4Medium textPrimeryColor">Template Name</span>
                   <span className="icon">
                     <LightTooltip
                       arrow
@@ -443,7 +443,7 @@ const CreateTemplate = () => {
                         <GoInfo
                           style={{
                             color: "#012635",
-                            fontSize: "1.8rem",
+                            fontSize: "16px",
                           }}
                         />
                       </span>
@@ -466,7 +466,7 @@ const CreateTemplate = () => {
             <label className="item">
               <p className="title">
                 <div className="wrapper">
-                  <span className="text">Template Type</span>
+                  <span className="text body4Medium textPrimeryColor">Template Type</span>
                   <span className="icon">
                     <LightTooltip
                       arrow
@@ -482,7 +482,7 @@ const CreateTemplate = () => {
                         <GoInfo
                           style={{
                             color: "#012635",
-                            fontSize: "1.8rem",
+                            fontSize: "16px",
                           }}
                         />
                       </span>
@@ -515,8 +515,18 @@ const CreateTemplate = () => {
                   control: (baseStyles, state) => ({
                     ...baseStyles,
                     width: "100%",
-                    height: "4rem",
+                    height: "40px",
                   }),
+
+
+                  dropdownIndicator: (base, state) => ({
+                    ...base,
+            
+                    padding: "4px !important",
+                
+                  }),
+
+
                 }}
                 IndicatorsContainer={false}
               />
@@ -531,8 +541,8 @@ const CreateTemplate = () => {
               <div className="top">
                 <div className="right">
                   <div className="inner">
-                    <h2>Messages</h2>
-                    <p>
+                    <h2 className="body3Medium textPrimeryColor">Messages</h2>
+                    <p className="body4Regular textSecondaryColor">
                       Follow our
                       <span> Best Practices </span>
                       to build high-converting content
@@ -600,7 +610,7 @@ const CreateTemplate = () => {
               <div className="top">
                 <div className="topHeader">
                   <div className="messageUnderHeader">
-                    <h5>{`Message ${currentIndex + 1}`}</h5>
+                    <h5 className="body3Medium textPrimeryColor">{`Message ${currentIndex + 1}`}</h5>
                   </div>
                   <div className="track">
                     <div className="trackChild">
@@ -805,7 +815,7 @@ const CreateTemplate = () => {
                     onKeyUp={(e) => cursorPosition()}
                     onMouseMove={(e) => cursorPosition()}
                     onInput={handleTextAreaInput}
-                    style={{ height: 200 }}
+                    style={{ height: 200 ,}}
                   ></textarea>
                   <div className="container">
                     <p
@@ -834,11 +844,11 @@ const CreateTemplate = () => {
 
                 <div className="menuSection">
                   <section>
-                    {/* <p>Beta AI</p> */}
-                    <button>
-                      {/* <FaMagic /> */}
+             
+                    {/* <button>
+                  
                       Generate Template
-                    </button>
+                    </button> */}
                   </section>
                   <div>
                     <LightTooltip arrow placement="top" title="Insert Emoji">
@@ -853,7 +863,10 @@ const CreateTemplate = () => {
                           gap: "0.5rem",
                           fontSize: "1.1rem",
                           fontWeight: 500,
-                          padding: "0.8rem 0.8rem",
+                          // padding: "0.8rem 0.8rem",
+                          height:"32px" , 
+                          width:"32px" , 
+                          justifyContent:"center" , 
                           borderRadius: "0.8rem",
                         }}
                       >
@@ -898,6 +911,7 @@ const CreateTemplate = () => {
                         style={{
                           backgroundColor: isTextSpinnerShowing && "#C2FFEC",
                         }}
+                           className="body5Medium textPrimeryColor"
                       >
                         <LuCode2 color="#012635" />
                         Add Text Spinner
@@ -906,6 +920,7 @@ const CreateTemplate = () => {
 
                     <section>
                       <button
+                      className="body5Medium textPrimeryColor"
                         onClick={() => setIsDropDownOpen(!isDropDownOpen)}
                       >
                         <PiStack color="#012635" />
@@ -1053,7 +1068,7 @@ const CreateTemplate = () => {
                     <span />
                   )} */}
                   <p className="info">
-                    <span className="text">
+                    <span className="text body3Medium textSecondaryColor">
                       Total Variations{" "}
                       {messages[currentIndex].variations.length}
                     </span>
@@ -1100,7 +1115,7 @@ const CreateTemplate = () => {
                           background: "#3086EE",
                         }}
                       >
-                        <span className="text">Next Message</span>
+                        <span className="text body5Medium textWhiteColor">Next Message</span>
                       </button>
                     </LightTooltip>
                   ) : (
@@ -1123,7 +1138,7 @@ const CreateTemplate = () => {
                   }
                   className="cancelBtn"
                 >
-                  <span className="text">Cancel</span>
+                  <span className="text body4Medium textSecondaryColor">Cancel</span>
                 </button>
                 <button
                   type="submit"
@@ -1150,7 +1165,7 @@ const CreateTemplate = () => {
 
                   <div className="successHeaderInner">
                     <div className="top">
-                      <span className="text">
+                      <span className="text body3Medium textPrimeryColor">
                         {index === 4 ? "Message 5" : `Message ${index + 1}`}
                       </span>
                     </div>
@@ -1179,7 +1194,7 @@ const CreateTemplate = () => {
                             <BiCircle />
                           )}
                         </span>
-                        <span className="text">{validation.name}</span>
+                        <span className=" body4Regular textPrimeryColor">{validation.name}</span>
                       </div>
                     ))}
                   </div>

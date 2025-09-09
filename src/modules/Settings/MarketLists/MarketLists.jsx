@@ -82,6 +82,7 @@ import { SlArrowDown } from "react-icons/sl";
 import { Note } from "@/modules/Tenat/CreateUserModel/styles";
 import { Flex, Paragraph } from "@/styles/CommonStyles";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import PreviewModal from "@/modules/Notification/NotificationPopUp";
 
 
 const CustomDropdownIndicator = (props) => (
@@ -384,7 +385,7 @@ const MarketLists = () => {
           limit={numberOfRowsShowing}
           page={currentPage}
           search={searchText}
-          extraMarket={marketsData?.extraNumber}
+          extraMarket={marketsData?.extraNumber < 0 ? 0 : marketsData?.extraNumber}
           requestMarketCount={marketsData?.requestMarketCount}
           countOfOutBoundNumber={marketsData?.countOfOutBoundNumber}
           marketIncluded={marketsData?.tenantSubscription?.marketIncluded}
@@ -1194,10 +1195,12 @@ export const DlcModel = (props) => {
     // .email("Invalid email address").required("Required")
     // .matches(/^.$/, "Must be numeric"),
     email: Yup.string()
+      // .email("Invalid email address")
+      // .required("Required")
+      // .test("has-dot", "Invalid email address", (value) => value && value.includes('.')),
       .email("Invalid email address")
       .required("Required")
-      .test("has-dot", "Invalid email address", (value) => value && value.includes('.')),
-
+      .matches(/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,6}$/, "Invalid email address"),
     phoneNumber: Yup.string()
       .matches(/^[0-9]+$/, "Must be numeric")
       .min(5, "Too short, minimum 5 characters")
@@ -1344,8 +1347,10 @@ export const DlcModel = (props) => {
                   }, () => {
                     props.onClose()
                     const shadowUser = { ...user }
-                    shadowUser.marketAndLimitStatus = true
+                    shadowUser.marketAndLimitStatus = true ;
+                    shadowUser.isTenDlcSubmit = "N/A"
                     localStorage.setItem('user', JSON.stringify(shadowUser));
+                    // window.location.reload();
                   })
                 );
                 resetForm({ values: "" });
@@ -1358,6 +1363,7 @@ export const DlcModel = (props) => {
                     props.onClose()
                     const shadowUser = { ...user }
                     shadowUser.marketAndLimitStatus = true
+                          shadowUser.isTenDlcSubmit = "N/A"
                     localStorage.setItem('user', JSON.stringify(shadowUser));
                   })
                 );
@@ -1792,7 +1798,9 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
   const [isModelOpen, setIsModelOpen] = useState(false)
   const [loading, setIsLoading] = useState(false)
   const [showNotes, setShowNotes] = useState(true);
+  const [warning , setWarning] = useState(false)
   const sessionData = JSON.parse(localStorage.getItem('user'));
+
   // const sessionDataType = JSON.parse(localStorage.getItem('type'));
   const sessionDataType = localStorage.getItem('type');
   const navigate = useNavigate();
@@ -1833,7 +1841,8 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
 
     onSubmit: (values) => {
       dispatch(
-        createNewMarket({
+        createNewMarket(
+          {
           body: {
             name: values.name,
             areaCode: values.areaCode,
@@ -1852,9 +1861,10 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
           limit,
           page,
           search,
-        },)
+        },
+        )
       );
-
+     
       onClose();
 
       formik.resetForm();
@@ -1984,7 +1994,7 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
           borderRadius: " 12px 12px 0 0 ",
         }}
       >
-        <h2>Request New Market</h2>
+        <h2>Request New Marke</h2>
         <div
           onClick={(e) => {
             onClose(e);
@@ -2097,7 +2107,7 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
 
             <div style={{ padding: "3px 0px" }}>
               <label style={{ display: "block", marginBottom: "8px", color: "#333" }}>
-                <span style={{ display: "block", marginBottom: "5px", color: "#012635", font: "14px", fontWeight: 500 }}>Time Zone</span>
+                <span style={{ display: "block", marginBottom: "3px", color: "#012635", font: "14px" }}>Time Zone</span>
                 <input
                   disabled
                   type="text"
@@ -2117,13 +2127,13 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
                   }}
                 />
                 {formik.touched.timeZone && formik.errors.timeZone && (
-                  <p style={{ color: "red", marginTop: "5px", fontSize: "14px" }}>{formik.errors.timeZone}</p>
+                  <p style={{ color: "#f4516c", marginTop: "5px", fontSize: "1.1rem" }}>{formik.errors.timeZone}</p>
                 )}
               </label>
             </div>
-            {formik.touched.timeZone && formik.errors.timeZone && (
+            {/* {formik.touched.timeZone && formik.errors.timeZone && (
               <p>{formik.errors.timeZone}</p>
-            )}
+            )} */}
 
           </div>
         </div>
@@ -2160,15 +2170,34 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
             // disabled={!formik.isValid || !formik.dirty}
             // type="submit"
             onClick={() => {
+
+              const v = (formik?.values ?? formik?.values) || {};
+              const phonePrefix = String(v.callForwardingNumber || "").replace(/\D/g, "").slice(1, 4);
+              const areaPrefix  = String(v.areaCode || "").replace(/\D/g, "").slice(0, 3);
+            console.log("phonePrefix",phonePrefix , areaPrefix , extraMarket);
+            
+              if (phonePrefix && areaPrefix && phonePrefix !== areaPrefix) {
+                setWarning(true);
+               
+                return; // stop further actions
+              }
+if(!formik.values.name || !formik.values.callForwardingNumber || !formik.values.timeZone){
+  formik.submitForm()
+  return
+}
+
               if ((sessionData?.subscriptionId === "67445e5cf4d8d6cff7dbde85" || sessionData?.subscriptionId === "6744617ea4d142ed16ea9c9e" ||
                 sessionData?.subscriptionId === "67445d36f4d8d6cff7dbde60") && (parseInt(requestMarketCount) + parseInt(countOfOutBoundNumber) >= parseInt(marketIncluded))) {
                 toast.error("You are not allowed to request extra market, please Upgrade your subscription plan.");
 
               } else if (extraMarket > 0) {
+                console.log("phonePrefix",phonePrefix , areaPrefix);
                 setIsModelOpen(true)
               } else if (parseInt(requestMarketCount) + parseInt(countOfOutBoundNumber) >= parseInt(marketIncluded)) {
+                console.log("phonePrefix",phonePrefix , areaPrefix);
                 setIsModelOpen(true)
               } else if (extraMarket == 0) {
+                console.log("phonePrefix",phonePrefix , areaPrefix);
                 formik.submitForm()
 
               }
@@ -2189,7 +2218,43 @@ const CreateNewModal = ({ onClose, limit, page, search, extraMarket, requestMark
             Save
           </button>
         </div>
+        <PreviewModal
+        isOpen={warning}
+        onClose={() =>{
+           setWarning(false)
+          //  formik.submitForm()
+          }}
+          onOk={async () =>{
+            const errors = await formik.validateForm();
+            if (Object.keys(errors).length) {
+              formik.setTouched(
+                Object.keys(formik.values).reduce((acc, k) => ({ ...acc, [k]: true }), {})
+              );
+              toast.error("Please fix the highlighted fields.");
+              return;
+            }
+
+            if ((sessionData?.subscriptionId === "67445e5cf4d8d6cff7dbde85" || sessionData?.subscriptionId === "6744617ea4d142ed16ea9c9e" ||
+              sessionData?.subscriptionId === "67445d36f4d8d6cff7dbde60") && (parseInt(requestMarketCount) + parseInt(countOfOutBoundNumber) >= parseInt(marketIncluded))) {
+              toast.error("You are not allowed to request extra market, please Upgrade your subscription plan.");
+
+            } else if (extraMarket > 0) {
+              setIsModelOpen(true)
+            } else if (parseInt(requestMarketCount) + parseInt(countOfOutBoundNumber) >= parseInt(marketIncluded)) {
+              setIsModelOpen(true)
+            } else if (extraMarket == 0) {
+              formik.submitForm()
+
+            }
+          }}
+        // form={form}
+        previewText={"Warning"}
+        previewSub={"The outbound area code does not match the preset configuration. Do you wish to proceed?"}
+        category={"Warning"}
+      />
       </form>
+
+    
       {/* </CustomScroll> */}
       <Components.Common.WarningModal
         onClose={() => {

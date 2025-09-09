@@ -2,7 +2,7 @@ import React from "react";
 // import styles from './NotificationPopUp.module.css';
 import styles from './Popup.module.css';
 
-export default function PreviewModal({ isOpen, onClose, form, previewText, previewSub , category }) {
+export default function PreviewModal({ isOpen, onClose, form, previewText, previewSub , category , onOk=()=>{} }) {
   if (!isOpen) return null;
 
   return (
@@ -39,7 +39,10 @@ export default function PreviewModal({ isOpen, onClose, form, previewText, previ
             {previewSub || "Please be aware of this important notification."}
           </p>
 
-          <button className={styles.okButton} onClick={onClose}>
+          <button className={styles.okButton} onClick={()=>{
+            onClose()
+            onOk()
+            }}>
             OK
           </button>
         </div>

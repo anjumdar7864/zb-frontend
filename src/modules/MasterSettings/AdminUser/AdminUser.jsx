@@ -263,7 +263,7 @@ const navigate = useNavigate();
         </div>
 
         {/* Right-aligned Create Admin button */}
-        {(user.role === 'superAdmin' || user.permissions.includes('FC_Admin User')) && (
+        {(user.role === 'superAdmin' || user?.permissions?.includes('FC_Admin User')) && (
         <div onClick={handleCreateClick} className={styles.creatAdmin}>Create Admin</div>
         )}
       </div>

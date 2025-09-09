@@ -376,7 +376,7 @@ const CreateReplies = () => {
           <div className="top">
             <div className="top">
               <div className="top">
-                <h2> {templateId ? "Edit " : "Create"}{" "} Quick Reply</h2>
+                <h2 className="body1Medium textPrimeryColor"> {templateId ? "Edit " : "Create"}{" "} Quick Reply</h2>
                 <div className="right">
                   <LightTooltip
                     placement="top"
@@ -398,7 +398,7 @@ const CreateReplies = () => {
                       <span className="icon">
                         <GoChevronDown size={'2rem'} color="#012635" />
                       </span>
-                      <span className="text">Negative Keywords</span>
+                      <span className="body4Medium textPrimeryColor">Negative Keywords</span>
                     </button>
                   </LightTooltip>
                 </div>
@@ -439,7 +439,7 @@ const CreateReplies = () => {
             <div className="top">
               <label className="item">
                 <div className="left">
-                  <span className="text">Category</span>
+                  <span className=" body4Medium textPrimeryColor">Category</span>
                 </div>
                 <div className="right select">
                   <div className="top">
@@ -476,7 +476,7 @@ const CreateReplies = () => {
                         control: (baseStyles) => ({
                           ...baseStyles,
                           width: "100%",
-                          height: "4rem",
+                          height: "40px",
                         }),
                       }}
                     />
@@ -485,7 +485,7 @@ const CreateReplies = () => {
                       type="button"
                       onClick={() => setIsCreateNewCategoryModalOpen(true)}
                     >
-                      <span className="text">Create New Category</span>
+                      <span className="text body4Medium textThemePrimery ">Create New Category</span>
                     </button>
                   </div>
                   <div className="bottom">
@@ -497,7 +497,7 @@ const CreateReplies = () => {
               </label>
               <label className="item">
                 <div className="left">
-                  <span className="text">Title</span>
+                  <span className="body4Medium textPrimeryColor">Title</span>
                 </div>
                 <div className="right input">
                   <div className="top">
@@ -519,7 +519,7 @@ const CreateReplies = () => {
               </label>
               <label className="item">
                 <div className="left">
-                  <span className="text">Reply</span>
+                  <span className="body4Medium textPrimeryColor">Reply</span>
                 </div>
                 <div className="right textarea">
                   <div className="top">
@@ -681,9 +681,10 @@ const CreateReplies = () => {
             }}
             className="cancelBtn"
           >
-            <span className="text">Cancel</span>
+            <span className="body4Medium textSecondaryColor">Cancel</span>
           </button>
           <button
+          className="primeryBackground"
             type="submit"
             onClick={formik.handleSubmit}
             disabled={
@@ -693,7 +694,7 @@ const CreateReplies = () => {
               validations.find((val) => val.isDone === false)
             }
           >
-            <span className="text">Save Quick Replay </span>
+            <span className="body4Medium textWhiteColor">Save Quick Replay </span>
           </button>
         </div>
       </div>

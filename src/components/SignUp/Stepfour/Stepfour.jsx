@@ -34,10 +34,10 @@ export default function StepFour({
   const [stripeDataComplete, setStripeDataComplete] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenTerms, setIsOpenTerms] = useState(false);
-  const [dlcCheck, setDlcCheck] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
   const { setIsLoaderShowing } = useGlobalContext();
+  const [dlcCheck, setDlcCheck] = useState(false);
 
   const points = [
     "15,000 monthly initial outbound messages",
@@ -90,7 +90,7 @@ export default function StepFour({
       confirmParams: {},
       redirect: "if_required",
     });
-
+   
 
     if (error) {
       toast.error(error?.message);
@@ -111,6 +111,7 @@ export default function StepFour({
       behavior: "smooth", // Optional: Add smooth scrolling
     });
   }, []);
+console.log("selectedSubcriptionData" , selectedSubcriptionData);
 
   return (
     <Flex width={`100%`} direction={`column`} gap={`1rem`} paddingX={`1rem`}>
@@ -133,8 +134,8 @@ export default function StepFour({
         weight={`600`}
       //paddingX={"2rem"}
       >
-        Order Details: {selectedSubcriptionData.title} -Plan
-        <span style={{ color: "#5BF1B2" }}> ${selectedSubcriptionData.price}</span>
+        Order Details: {selectedSubcriptionData?.title} -Plan
+        <span style={{ color: "#5BF1B2" }}> ${selectedSubcriptionData?.price}</span>
       </H2>
       <Flex width={`100%`} direction={`column`} gap={`1rem`}>
         {selectedSubcriptionData?.features?.map((item, index) => (
@@ -156,6 +157,7 @@ export default function StepFour({
         value={formData.billingStreet}
         onChange={(e) => handleChange(e)}
         type="text"
+        maxLength={100}
         style={{
           backgroundColor: `rgba(255, 255, 255, 0.1)`,
           color: "white",
@@ -173,6 +175,7 @@ export default function StepFour({
         value={formData.billingCity}
         onChange={(e) => handleChange(e)}
         type="text"
+        maxLength={100}
         style={{
           backgroundColor: `rgba(255, 255, 255, 0.1)`,
           color: "white",
@@ -189,8 +192,8 @@ export default function StepFour({
         name={`billingZip`}
         value={formData.billingZip}
         onChange={(e) => handleChange(e)}
-        maxLength={10}
-        type="text"
+        maxLength={6}
+        type="number"
         style={{
           backgroundColor: `rgba(255, 255, 255, 0.1)`,
           color: "white",
@@ -269,23 +272,6 @@ export default function StepFour({
         <Flex color="white" gap={`0.5rem`}>
           <div style={{ color: theme.colors.primary, paddingTop: "5px" }}>
             <CustomCheckbox
-              isChecked={dlcCheck}
-              onClick={() =>
-                setDlcCheck(!dlcCheck)
-              }
-            />
-          </div>{" "}
-          <Paragraph color="white" fontSize={`16px`}>
-            To begin your <b>10DLC compliance process</b> — a required step before sending messages — a $50 registration fee is due today. Once your registration is approved (typically within 5 business days), the remaining <span style={{ color: "#00BD82" }}> ${selectedSubcriptionData.price - 50}</span> of your subscription will be charged, and your billing cycle will officially begin — ensuring you don’t lose any days of service. <br /> <br />
-            While you wait, feel free to import your lead lists, set up outbound markets, and build your drip campaigns and templates. <Link target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "#00BD82", textDecoration: "underline" }} to="">Learn more</Link>
-          </Paragraph>
-        </Flex>
-
-        <Flex color="white" gap={`0.5rem`}>
-          <div style={{ color: theme.colors.primary, paddingTop: "5px" }}>
-            <CustomCheckbox
               isChecked={formData.marketing}
               onClick={() =>
                 handleCheckboxChange("marketing", !formData.marketing)
@@ -297,15 +283,28 @@ export default function StepFour({
             ZeitBlast products, knowledge content and events.
           </Paragraph>
         </Flex>
-
-
         {errors?.marketing && (
           <Paragraph color="#f4516c" fontSize={`1.04rem`} paddingY="0.5rem">
             {errors.marketing}
           </Paragraph>
         )}
       </Flex>
-
+      <Flex color="white" gap={`0.5rem`}>
+          <div style={{ color: theme.colors.primary, paddingTop: "5px" }}>
+            <CustomCheckbox
+              isChecked={dlcCheck}
+              onClick={() =>
+                setDlcCheck(!dlcCheck)
+              }
+            />
+          </div>{" "}
+          <Paragraph color="white" fontSize={`16px`}>
+            To begin your <b>10DLC compliance process</b> — a required step before sending messages — a $50 registration fee is due today. Once your registration is approved (typically within 5 business days), the remaining <span style={{ color: "#00BD82" }}> ${selectedSubcriptionData?.price - 50}</span> of your subscription will be charged, and your billing cycle will officially begin — ensuring you don’t lose any days of service. <br /> <br />
+            While you wait, feel free to import your lead lists, set up outbound markets, and build your drip campaigns and templates. <Link target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#00BD82", textDecoration: "underline" }} to="">Learn more</Link>
+          </Paragraph>
+        </Flex>
       <Flex width={`100%`} gap="1.5rem" mdGap="1rem" align="center">
         <div style={{ width: "10%" }}>
           <RoundButton onClick={prevStep}>

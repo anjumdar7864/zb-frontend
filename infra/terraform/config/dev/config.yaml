@@ -1,0 +1,11 @@
+# Cloudfront variable values
+service_name: "ui-saas"
+cloudfront_description: "Cloudfront for dev ui"
+default_root_object: "index.html"
+allowed_methods: ["GET", "HEAD"]
+aliases: ["dev4.zeitblast.com"]
+acm_certificate_arns: "arn:aws:acm:us-east-1:982353710718:certificate/df052abd-256d-4a5e-8b24-fdbbccf8a12f"
+
+# ACM certificate variable values
+acm_certificate_domains:
+  "dev4.zeitblast.com": []

@@ -77,7 +77,7 @@ const user = JSON.parse(
 
         <div className={styles.title}>Markets and Limits </div>
         <div className={styles.tabLayout}>
-        {(user.role === 'superAdmin' || user.permissions.includes('FC_General') || user.permissions.includes('View_General')) && (user.role) && (
+        {(user.role === 'superAdmin' || user?.permissions?.includes('FC_General') || user?.permissions?.includes('View_General')) && (user.role) && (
           <NavLink onClick={() => hundleMenuBar(0)} to="/market/General" style={{ textDecoration: "none" }}>
             <div
               // style={{borderBottom:tab == 0 && "solid 2px #00BD82"}} 
@@ -85,14 +85,14 @@ const user = JSON.parse(
               className={styles.tabItems}>General</div>
           </NavLink>
         )}
-          {(user.role === 'superAdmin' || user.permissions.includes('FC_New Request') || user.permissions.includes('View_New Request')) && (
+          {(user.role === 'superAdmin' || user?.permissions?.includes('FC_New Request') || user?.permissions?.includes('View_New Request')) && (
           <NavLink onClick={() => hundleMenuBar(1)} to="/market/NewRequest" style={{ textDecoration: "none" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <div style={{ borderBottom: location.pathname == "/market/NewRequest" && "solid 2px #00BD82" }} className={styles.tabItems}>New Request</div>
               <span style={{ fontSize: "12px", fontWeight: 500, color: "white", backgroundColor: "#06AB78", borderRadius: "12px", width: "24px", height: "24px", display: "flex", alignItems: "center", justifyContent: "center" }}>{getData?.newRequestCount ? getData?.newRequestCount : 0 }</span>
             </div>
           </NavLink>)}
-          {(user.role === 'superAdmin' || user.permissions.includes('FC_10Dlc Submission') || user.permissions.includes('View_10Dlc Submission')) && (
+          {(user.role === 'superAdmin' || user?.permissions?.includes('FC_10Dlc Submission') || user?.permissions?.includes('View_10Dlc Submission')) && (
           <NavLink onClick={() => hundleMenuBar(2)} to="/market/Submission" style={{ textDecoration: "none" }}>
             <div style={{ display: "flex", alignItems: "center" }}>
               <div style={{ borderBottom: location.pathname == "/market/Submission" && "solid 2px #00BD82" }} className={styles.tabItems}>10DLC Submission</div>

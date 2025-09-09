@@ -15,7 +15,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
 import styled from '@emotion/styled';
-const SubscribeCom = ({ onClose, setSubscribeMain, selectPackageMain, planDetail = { planDetail }, handleContinue = () => { }, selectedType }) => {
+const SubscribeCom = ({ onClose, setSubscribeMain, currentPackageId ,  selectPackageMain, planDetail = { planDetail }, handleContinue = () => { }, selectedType , tenantSubscriptionType }) => {
   const [activeStep, setActiveStep] = useState(1);
   const [isAgreed, setIsAgreed] = useState(false);
   const [packages, setPackages] = useState([]);
@@ -33,6 +33,21 @@ const SubscribeCom = ({ onClose, setSubscribeMain, selectPackageMain, planDetail
   const user = JSON.parse(
     localStorage.getItem("user") ?? localStorage.getItem("user") ?? "{}"
   );
+
+
+  const packageTypeValidation =  selectedPackage?._id == currentPackageId && packageType != tenantSubscriptionType
+  // const packageTypePValidation =  selectedPackage?._id == currentPackageId && packageType != selectedType
+  const packageTypePValidation =  selectedPackage?._id == currentPackageId && packageType == tenantSubscriptionType
+  
+console.log("tenantSubscriptionType" , tenantSubscriptionType , packageType);
+
+  useEffect(()=>{
+    if(packageTypePValidation){
+setPackageType(packageType == "yearly" ? "monthly" : "yearly")
+    }
+  } , [selectedPackage])
+
+  console.log("selectPackage" , packageTypeValidation);
 
 
   const idList = [
@@ -553,6 +568,7 @@ const SubscribeCom = ({ onClose, setSubscribeMain, selectPackageMain, planDetail
                   packageType={packageType}
                   numberList={numberList}
                   downGradeData={downGradeData}
+                  packageTypeValidation={packageTypeValidation}
 
 
 

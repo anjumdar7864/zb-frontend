@@ -24,7 +24,7 @@ const DoughnutPieChart = ({ data , singleCampaign }) => {
       { color: "#D3D7DD" }, // Color for "Remaining"
     ],
     legend: {
-      position: "bottom",
+      position: "right",
       alignment: "center",
       textStyle: {
         fontSize: 14,
@@ -36,12 +36,12 @@ const DoughnutPieChart = ({ data , singleCampaign }) => {
     },
     pieSliceText: "none", // Hide slice text (use custom text in center instead)
     chartArea: {
-      width: "90%",
-      height: "60%",
+      width: "100%",
+      height: "95%",
     },
   };
   return (
-    <div style={{ position: "relative", width: "300px", height: "300px" }}>
+    <div style={{ position: "relative", width: "400px", height: "176px" }}>
       {/* Render the Google Charts PieChart */}
       <Chart
         chartType="PieChart"
@@ -55,7 +55,7 @@ const DoughnutPieChart = ({ data , singleCampaign }) => {
         style={{
           position: "absolute",
           top: "50%",
-          left: "50%",
+          left: "30%",
           transform: "translate(-50%, -50%)",
           textAlign: "center",
           fontSize: "14px",

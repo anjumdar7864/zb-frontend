@@ -55,6 +55,8 @@ import { set } from "date-fns";
 import { LuRotateCcw } from "react-icons/lu";
 import { CustomCircularProgress } from "./progressBar";
 
+import HorizontalBarChart from "./CustomGraph";
+
 function Dashboard() {
   const width = useResponsiveWidth();
   const dispatch = useDispatch();
@@ -73,9 +75,9 @@ function Dashboard() {
   const [avgFilterText, setAvgFilterText] = useState("This week");
   const [avgReplyDate, setAvgReplyDate] = useState("");
   const [avgTodayDate, setAvgTodayDate] = useState("");
-  const [tagList , setTagList] = useState([])
+  const [tagList, setTagList] = useState([])
   const allTagsData = useSelector((state) => state.tagReducer);
-  const [selectedTag , setSelectedTag] = useState("All") ; 
+  const [selectedTag, setSelectedTag] = useState("All");
   const [filterTag, setFilterTag] = useState([]);
   const [selectedProspectsOption, setselectedProspectsOption] =
     useState("Today");
@@ -113,25 +115,25 @@ function Dashboard() {
   }
   // Calculate the difference
   const avergaeReplyTimedifference = Math.abs(avgReplyTimeMinutes - totalSavedMinutes);
-console.log("allTagsData", allTagsData?.results.map(item => item.name));
+  console.log("allTagsData", allTagsData?.results.map(item => item.name));
 
-useEffect(()=>{
-// setTagList( allTagsData?.results.map(item => item.name))
-setTagList(["All", ...allTagsData?.results.map(item => item.name)]);
-},[allTagsData])
-
-
-console.log("filterTag", filterTag , reportTags);
+  useEffect(() => {
+    // setTagList( allTagsData?.results.map(item => item.name))
+    setTagList(["All", ...allTagsData?.results.map(item => item.name)]);
+  }, [allTagsData])
 
 
-useEffect(()=>{
+  console.log("filterTag", filterTag, reportTags);
+
+
+  useEffect(() => {
     if (selectedTag == "All") {
       setFilterTag(reportTags);
     } else {
       const filteredTags = reportTags.filter((tag) => tag?._id === selectedTag);
       setFilterTag(filteredTags);
     }
-},[tagList , selectedTag])
+  }, [tagList, selectedTag])
 
   const userGet = JSON.parse(
     localStorage.getItem("user") ?? localStorage.getItem("user") ?? "{}"
@@ -172,19 +174,7 @@ useEffect(()=>{
       setCalender(false);
     }
   };
-  // const handleDateRange = (start, end) => {
-  //   const startDate = new Intl.DateTimeFormat("en-US", {
-  //     month: "long",
-  //     day: "numeric",
-  //     year: "numeric",
-  //   }).format(start);
-  //   const endDate = new Intl.DateTimeFormat("en-US", {
-  //     month: "long",
-  //     day: "numeric",
-  //     year: "numeric",
-  //   }).format(end);
-  //   setDateRange(`${startDate}-${endDate}`);
-  // };
+
 
   useEffect(() => {
     dispatch(
@@ -227,15 +217,7 @@ useEffect(()=>{
   };
   const [selectedOptions, setSelectedOptions] = useState([]);
 
-  // const handleSelection = (option) => {
-  //   if (selectedOptions.some((val) => option._id === val._id)) {
-  //     setSelectedOptions(
-  //       selectedOptions.filter((item) => item._id !== option._id)
-  //     );
-  //   } else {
-  //     setSelectedOptions([...selectedOptions, option]);
-  //   }
-  // };
+
   const handleSelectProspects = (opt) => {
     const opta = getOption(opt);
     dispatch(GetProspectsLeads(opta));
@@ -609,14 +591,17 @@ useEffect(()=>{
             if (selectedOptions.some((data) => val.color === data.color[0])) {
 
 
-              return colorConverter(data.color[0]);
+              // return colorConverter(data.color[0]);
+              return data.color[0]
             } else {
-              return colorConverter(val.color);
+              // return colorConverter(val.color);
+              return val.color
             }
           } else {
 
 
-            return colorConverter(val.color);
+            // return colorConverter(val.color);
+            return val.color
           }
         }),
         borderColor: filterTag?.map((val) => {
@@ -694,53 +679,53 @@ useEffect(()=>{
   //   },
   // };
 
- 
+
   const optionsBar = {
-  indexAxis: "y", // Horizontal bars
-  responsive: true,
-  maintainAspectRatio: false,
-  plugins: {
-    legend: {
-      display: false, // No legend needed
-    },
-    tooltip: {
-      enabled: true, // Tooltip on hover
-    },
-  },
-  elements: {
-    bar: {
-      minBarLength: 5, // 👈 Ensures even the smallest bar has a visible size (5px)
-    },
-  },
-  scales: {
-    x: {
-      beginAtZero: true,
-      grid: {
-        display: true,
-        color: "rgba(0, 0, 0, 0.1)", // Dotted grid lines
-        borderDash: [4, 4],
+    indexAxis: "y", // Horizontal bars
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: false, // No legend needed
       },
-      ticks: {
-        stepSize: 250, // Adjust step size
-        font: {
-          size: 12,
+      tooltip: {
+        enabled: true, // Tooltip on hover
+      },
+    },
+    elements: {
+      bar: {
+        minBarLength: 5, // 👈 Ensures even the smallest bar has a visible size (5px)
+      },
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        grid: {
+          display: true,
+          color: "rgba(0, 0, 0, 0.1)", // Dotted grid lines
+          borderDash: [4, 4],
         },
-        color: "#333",
-      },
-    },
-    y: {
-      grid: {
-        display: false, // Hide horizontal grid lines
-      },
-      ticks: {
-        font: {
-          size: 14,
+        ticks: {
+          stepSize: 250, // Adjust step size
+          font: {
+            size: 12,
+          },
+          color: "#333",
         },
-        color: "#333",
+      },
+      y: {
+        grid: {
+          display: false, // Hide horizontal grid lines
+        },
+        ticks: {
+          font: {
+            size: 14,
+          },
+          color: "#333",
+        },
       },
     },
-  },
-};
+  };
 
   const dataLine = {
     labels: messageLabelWithGap,
@@ -951,7 +936,7 @@ useEffect(()=>{
     // setAvgTodayDate(`${year}-${month}-${day}`);
     dispatch(GetAvgReplyTime("today"));
     dispatch(GetSavedAvgReplyTime("today"));
-       dispatch(getAllTagsList("", "", ""));
+    dispatch(getAllTagsList("", "", ""));
   }, []);
 
 
@@ -979,22 +964,36 @@ useEffect(()=>{
       setAvgReplyDate("Cancel")
     }
   }, [singleUser])
-  console.log("dataBar", dataBar , selectedTag);
+  console.log("dataBar", dataBar?.datasets[0]?.backgroundColor    , selectedTag);
 
   return (
     <DashboardStyled lead2={lead2}>
-      <div className="header">
+      {/* <div className="header">
         <span className="heading-text">
           <h1 style={{ color: " #012635" }}>Dashboard</h1>
         </span>
-        {/* <div className="searchField">
-          <input type="text" placeholder="Search for a user" />
-        </div> */}
+       
+      </div> */}
+
+      <div
+
+        className='pageHeaderLayout'
+      >
+        <div >
+          <h1
+
+            className='body1SemiBold textPrimeryColor'
+          >Dashboard</h1>
+        </div>
+
+
       </div>
+
+
       <div className="cards">
-        <div style={{ maxWidth: "1280px", margin: "auto" }} className="section1">
+        <div style={{ maxWidth: "1334px", margin: "auto" }} className="section1">
           <div className="item1">
-            <h1 style={{ padding: "16px" }}>
+            <h1 className="body3Medium textPrimeryColor" style={{ padding: "16px" }}>
               What's on your plate
               <span className="info">
                 <LightTooltip
@@ -1028,30 +1027,33 @@ useEffect(()=>{
                       gap: "20px",
                       justifyContent: "center",
                       alignItems: "center",
+                      height: "36px"
                     }}
                   >
                     <header className="iconWrapper">
                       <span>
-                        <img style={{ width: "45px", height: "45px" }} src={Assets.Images.UnRead} alt="icon" />
+                        <img style={{ width: "36px", height: "36px" }} src={Assets.Images.UnRead} alt="icon" />
                       </span>
                     </header>
-                    <div className="subHeading">
+                    <div className="subHeading textSecondaryColor">
                       <h5
                         style={{
-                          fontWeight: "600",
-                          color: "#00000099",
-                          fontSize: "18px",
+                          // fontWeight: "600",
+                          // color: "#00000099",
+                          // fontSize: "18px",
                         }}
+                        className="body4Medium"
                       >
                         Unread
                       </h5>
                       <div>
                         <span
-                          style={{
-                            color: "#777777",
-                            fontSize: "12px",
-                            fontWeight: "400",
-                          }}
+                          // style={{
+                          //   color: "#777777",
+                          //   fontSize: "12px",
+                          //   fontWeight: "400",
+                          // }}
+                          className="body6Medium textSecondaryColor"
                         >
                           Respond now
                         </span>
@@ -1062,7 +1064,7 @@ useEffect(()=>{
                     </div>
                   </div>
                   <div>
-                    <h5 style={{ fontWeight: "400", fontSize: "32px", color: "#000000" }}>
+                    <h5 className="heading6Medium textPrimeryColor" >
                       {unReadCount}
                     </h5>
                   </div>
@@ -1078,30 +1080,23 @@ useEffect(()=>{
                       gap: "20px",
                       justifyContent: "center",
                       alignItems: "center",
+                      height: "36px"
                     }}
                   >
                     <header className="iconWrapper">
                       <span>
-                        <img style={{ width: "45px", height: "45px" }} src={Assets.Images.UnAnswered} alt="icon" />
+                        <img style={{ width: "36px", height: "36px" }} src={Assets.Images.UnAnswered} alt="icon" />
                       </span>
                     </header>
-                    <div className="subHeading">
+                    <div className="subHeading textSecondaryColor">
                       <h5
-                        style={{
-                          fontWeight: "600",
-                          color: "#00000099",
-                          fontSize: "18px",
-                        }}
+                        className="body4Medium textSecondaryColor"
                       >
                         Unanswered
                       </h5>
                       <div>
                         <span
-                          style={{
-                            color: "#777777",
-                            fontSize: "12px",
-                            fontWeight: "400",
-                          }}
+                          className="body6Medium textSecondaryColor"
                         >Replay now</span>
                         <span>
                           <img src={Assets.Images.ArrowIcon} alt="icon" />
@@ -1110,7 +1105,7 @@ useEffect(()=>{
                     </div>
                   </div>
                   <div>
-                    <h5 style={{ fontWeight: "400", fontSize: "32px", color: "#000000" }}>
+                    <h5 className="heading6Medium textPrimeryColor" >
                       {unAnsweredCount}
                     </h5>
                   </div>
@@ -1127,30 +1122,23 @@ useEffect(()=>{
                       gap: "20px",
                       justifyContent: "center",
                       alignItems: "center",
+                      height: "36px"
                     }}
                   >
                     <header className="iconWrapper">
                       <span>
-                        <img style={{ width: "45px", height: "45px" }} src={Assets.Images.Remainder} alt="icon" />
+                        <img style={{ width: "36px", height: "36px" }} src={Assets.Images.Remainder} alt="icon" />
                       </span>
                     </header>
-                    <div className="subHeading">
+                    <div className="subHeading textSecondaryColor">
                       <h5
-                        style={{
-                          fontWeight: "600",
-                          color: "#00000099",
-                          fontSize: "18px",
-                        }}
+                        className="body4Medium textSecondaryColor"
                       >
                         Reminder
                       </h5>
                       <div>
                         <span
-                          style={{
-                            color: "#777777",
-                            fontSize: "12px",
-                            fontWeight: "400",
-                          }}
+                          className="body6Medium textSecondaryColor"
                         >View now</span>
                         <span>
                           <img src={Assets.Images.ArrowIcon} alt="icon" />
@@ -1159,7 +1147,7 @@ useEffect(()=>{
                     </div>
                   </div>
                   <div>
-                    <h5 style={{ fontWeight: "400", fontSize: "32px" }}>
+                    <h5 className="heading6Medium textPrimeryColor" >
                       {reminderCount}
                     </h5>
                   </div>
@@ -1175,6 +1163,7 @@ useEffect(()=>{
                       gap: "20px",
                       justifyContent: "center",
                       alignItems: "center",
+                      height: "36px",
                     }}
                   >
                     <header
@@ -1182,26 +1171,18 @@ useEffect(()=>{
                       style={{ backgroundColor: "#EBE9F8" }}
                     >
                       <span>
-                        <img style={{ width: "45px", height: "45px" }} src={Assets.Images.NoStatus} alt="icon" />
+                        <img style={{ width: "36px", height: "36px" }} src={Assets.Images.NoStatus} alt="icon" />
                       </span>
                     </header>
-                    <div className="subHeading">
+                    <div className="subHeading textSecondaryColor">
                       <h5
-                        style={{
-                          fontWeight: "600",
-                          color: "#00000099",
-                          fontSize: "18px",
-                        }}
+                        className="body4Medium textSecondaryColor"
                       >
                         No status
                       </h5>
                       <div>
                         <span
-                          style={{
-                            color: "#777777",
-                            fontSize: "12px",
-                            fontWeight: "400",
-                          }}
+                          className="body6Medium textSecondaryColor"
                         >View Inbox</span>
                         <span>
                           <img src={Assets.Images.ArrowIcon} alt="icon" />
@@ -1210,7 +1191,7 @@ useEffect(()=>{
                     </div>
                   </div>
                   <div>
-                    <h5 style={{ fontWeight: "400", fontSize: "32px", color: "#000000" }}>
+                    <h5 className="heading6Medium textPrimeryColor">
                       {noStatusCount}
                     </h5>
                   </div>
@@ -1220,8 +1201,8 @@ useEffect(()=>{
           </div>
 
           <div className="item2">
-            <div className="heading" style={{ padding: "16px", marginBottom: "0px", height: "64px" }}>
-              <h1>
+            <div className="heading" style={{ padding: "16px", marginBottom: "0px", height: "56px" }}>
+              <h1 className="body3Medium textPrimeryColor" >
                 Prospect Leads
                 <span className="info">
                   <LightTooltip
@@ -1270,52 +1251,20 @@ useEffect(()=>{
                   <div className="item">
                     <div className="head">
                       <section>
-                        {/* <div className="item">
-                          <CircularProgressbarStyled
-                            value={calculatePercentageForDeliver(prospectLeads)}
-                            text={`${calculatePercentageForDeliver(
-                              prospectLeads
-                            )}%`}
-                            styles={buildStyles({
-                              textSize: "2.1rem",
-                              pathTransitionDuration: 0.5,
-                              pathColor: `${
-                                !lead2 ? "#5791DE" : "rgb(160, 200, 161)"
-                              }`,
-                              trailColor: "#f8f8f8",
-                              textAnchor: "middle",
-                            })}
-                          />
-                        </div> */}
+
                         <div id="item">
-                          {/* <Progress
-                            percent={calculatePercentageForDeliver(
-                              prospectLeads
-                            )}
-                            type="circle"
-                            width={width}
-                            strokeWidth={10}
 
-                            status="active"
-                            theme={{
-                              active: {
-                                symbol:
-                                  calculatePercentageForDeliver(prospectLeads),
-                                trailColor: "#C2FFEC",
-
-                                color: `${!lead2 ? "#00BD82" : "rgb(160, 200, 161)"
-                                  }`,
-                              },
-                            }}
-                          /> */}
 
                           <CustomCircularProgress
                             percentage={calculatePercentageForDeliver(prospectLeads)}
-                            strokeWidth={10}
-                            trailWidth={6}
+
+                            strokeWidth={5}
+                            trailWidth={3}
                             progressColor={!lead2 ? '#00BD82' : 'rgb(160, 200, 161)'}
                             trailColor="#C2FFEC"
                             textColor="#333"
+                            size={70}
+                            radius={30}
                           />
                         </div>
                         <span className="info">
@@ -1350,7 +1299,7 @@ useEffect(()=>{
                       </div>
                     </div>
                     <span className="verticalLine" />
-                    <span className="horizantalLine" />
+                    {/* <span className="horizantalLine" /> */}
                     <div className="body">
                       <div className="subitem">
                         <span>Initial Msg</span>
@@ -1463,17 +1412,19 @@ useEffect(()=>{
                           /> */}
 
 
-                              <CustomCircularProgress
+                          <CustomCircularProgress
                             percentage={
                               calculatePercentageForResponse(prospectLeads)
                                 ? calculatePercentageForResponse(prospectLeads)
                                 : 0
                             }
-                            strokeWidth={10}
-                            trailWidth={6}
+                            strokeWidth={5}
+                            trailWidth={3}
                             progressColor={!lead2 ? '#3086EE' : 'rgb(160, 200, 161)'}
                             trailColor="#D6E7FC"
                             textColor="#333"
+                            size={70}
+                            radius={30}
                           />
                         </div>
                         <span className="info">
@@ -1508,7 +1459,7 @@ useEffect(()=>{
                       </div>
                     </div>
                     <span className="verticalLine" />
-                    <span className="horizantalLine" />
+                    {/* <span className="horizantalLine" /> */}
                     <div className="body">
                       <div className="subitem">
                         <span>Initial Msg</span>
@@ -1569,32 +1520,9 @@ useEffect(()=>{
               ) : (
                 <div className="item" style={{ backgroundColor: "#ECF4EC" }}>
                   <div className="head">
-                    {/* <blockquote> */}
-                    {/* <div className="item">
-                        <CircularProgressbarStyled
-                          value={
-                            calculatePercentageForResponse(prospectLeads)
-                              ? calculatePercentageForResponse(prospectLeads)
-                              : 0
-                          }
-                          text={`${
-                            calculatePercentageForResponse(prospectLeads)
-                              ? calculatePercentageForResponse(prospectLeads)
-                              : 0
-                          }%`}
-                          styles={buildStyles({
-                            strokeLinecap: "butt",
-                            pathTransitionDuration: 0.5,
-                            pathColor: `${
-                              !lead2 ? "rgb(98, 127, 166)" : "rgb(160, 200, 161)"
-                            }`,
-                            trailColor: "#f8f8f8",
-                            textAnchor: "middle",
-                          })}
-                        />
-                      </div> */}
+
                     <div id="item">
-                    
+
                       <Progress
                         percent={
                           calculatePercentageForResponse(prospectLeads)
@@ -1731,8 +1659,8 @@ useEffect(()=>{
           </div>
 
           <div className="item3">
-            <div className="heading" style={{ padding: "16px 16px 0px 16px", height: "64px" }}>
-              <h1>
+            <div className="heading" style={{ padding: "16px 16px 16px 16px", height: "56px" }}>
+              <h1 className="body3Medium textPrimeryColor" >
                 Lead Breakdown
                 <span style={{ display: "flex", alignItems: "center" }} className="info">
                   <LightTooltip
@@ -1814,7 +1742,7 @@ useEffect(()=>{
             </div>
           </div>
         </div>
-        <div style={{ maxWidth: "1280px", margin: "auto" }} className="section2">
+        <div style={{ maxWidth: "1334px", margin: "auto" }} className="section2">
           <span
             style={{
               display: "flex",
@@ -1828,11 +1756,279 @@ useEffect(()=>{
             <img src={Assets.Images.InfoFloting} alt="icon" />
           </span>
 
+          <div className="item6">
+            <div className="head">
+              <h1 className="body3Medium textPrimeryColor" >
+                Top 3 Campaigns
+                <span className="info">
+                  <LightTooltip
+                    placement="top"
+                    arrow
+                    title={<p>Track your top performing campaigns</p>}
+                  >
+
+                    <img style={{ marginLeft: "8px" }} src={Assets.Images.FaInfoCircle} alt="icon" />
+
+                  </LightTooltip>
+                </span>
+              </h1>
+            </div>
+
+            {/* Campaigns Table */}
+            <div className="campaign-table-container">
+              <table className="campaign-table">
+                <thead>
+                  <tr>
+                    <th
+                      style={{
+                        fontSize: "14px",
+                        lineHeight: "22px",
+                        fontWeight: "500",
+                        color: "#012635",
+                        maxWidth:"100px"
+                      }}
+                    >
+                      Campaigns
+                    </th>
+                    <th title="Hot">
+                      <img src={Assets.Images.FaFireIcon} alt="icon" />
+                    </th>
+                    <th title="Warm">
+                      <img
+                        src={Assets.Images.FaThermometerEmptyIcon}
+                        alt="icon"
+                      />
+                    </th>
+                    <th title="Nurture">
+                      <img src={Assets.Images.FaSeedlingIcon} alt="icon" />
+                    </th>
+                    <th title="Drip">
+                      <img src={Assets.Images.FaTintIcon} alt="icon" />
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {topThreeCampaigns?.map((camp) => (
+                    <tr
+                      key={camp.campaignId}
+                      className="campaign-row"
+                      onClick={() => navigate(`/campaigns/${camp.campaignId}`)}
+                      onKeyDown={(e) => handleKeyDown(e, camp.campaignId)}
+                      tabIndex="0" // Makes the row focusable
+                      role="button" // Indicates that the row is clickable
+                      aria-label={`View details for ${camp?.campaign && camp.campaign
+                        }`} // Accessibility label
+                    >
+                      <td className="campaign-name" style={{maxWidth:"100px"}}>
+                        {camp?.campaign && camp.campaign}
+                      </td>
+                      <td>
+                        {camp?.statuses?.find((val) => val.status === "Hot")
+                          ?.count || 0}
+                      </td>
+                      <td>
+                        {" "}
+                        {camp?.statuses?.find((val) => val.status === "Warm")
+                          ?.count || 0}
+                      </td>
+                      <td>
+                        {" "}
+                        {camp?.statuses?.find((val) => val.status === "Nurture")
+                          ?.count || 0}
+                      </td>
+                      <td>
+                        {camp?.statuses?.find((val) => val.status === "Drip")
+                          ?.count || 0}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="item5">
+            <div className="avgReply">
+              <div
+                className="heading"
+                style={{ padding: "16px 16px 16px 16px" }}
+              >
+                <h1 className="body3Medium textPrimeryColor" style={{ display: "flex" }}>
+                  Last 30 Minutes
+                  <span style={{ display: "flex", alignItems: "center" }} className="info">
+                    <LightTooltip
+                      placement="top"
+                      arrow
+                      title={
+                        <>
+                          <p>Last 30 minutes</p>
+                        </>
+                      }
+                    >
+
+                      <img style={{ marginLeft: "8px" }} src={Assets.Images.FaInfoCircle} alt="icon" />
+
+                    </LightTooltip>
+                  </span>{" "}
+                </h1>
+              </div>
+              <span className="horizantalLine" />
+              <div className="body" style={{ padding: "16px 16px 16px 16px", height: "90px" }}>
+                <span>
+                  <h4
+                    // style={{
+                    //   fontSize: "20px",
+                    //   fontWeight: 600,
+                    //   lineHeight: "28px",
+                    //   color: "#012635",
+                    // }}
+                    className="head heading6Medium textPrimeryColor"
+                  >
+                    {reportMessageLast30?.[0]?.sent || 0} Sent
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: "12px",
+                      fontWeight: 400,
+                      lineHeight: "20px",
+                      color: "#777777",
+                    }}
+                  >
+                    {reportMessageLast30?.[0]?.received || 0} Received
+                  </p>
+                </span>
+                <section>
+                  <img style={{ width: "32px", height: "32px" }} src={Assets.Images.icon_Arrow} alt="icon" />
+                  <div></div>
+                </section>
+              </div>
+            </div>
+
+            <div className="avgReply">
+              <div
+                className="heading"
+                style={{ padding: "8px 16px 8px 16px", display: "flex", alignItems: "center" }}
+
+              >
+                <h1 className="body3Medium textPrimeryColor" style={{ display: "flex" }}>
+                  <span style={{ width: "90px" }}>
+                    Avg.<br /> Reply Time
+                  </span>
+                  <span style={{ display: "flex", alignItems: "center" }} className="info">
+                    <LightTooltip
+                      placement="top"
+                      arrow
+                      title={
+                        <>
+                          <p>Monitor message response</p>
+                          <p>times</p>
+                          <p>across all users</p>
+                        </>
+                      }
+                    >
+
+                      <img style={{ marginLeft: "8px" }} src={Assets.Images.FaInfoCircle} alt="icon" />
+
+                    </LightTooltip>
+                  </span>
+
+
+                </h1>
+                <div className="right-selector">
+                  <LightTooltip
+                    placement="top"
+                    arrow
+                    title={
+                      <>
+                        <p>{singleUser?.resetAverageReplyDate ? moment(singleUser?.resetAverageReplyDate).tz(userGet?.timeZone).format('MMMM Do YYYY, h:mm:ss a') : "reset"}</p>
+
+                      </>
+                    }
+                  >
+                    <buttun onClick={handleReset} style={{ border: singleUser?.resetAverageReplyDate ? 0 : "solid 1px lightgray", borderRadius: "8px", backgroundColor: singleUser?.resetAverageReplyDate && "#EA3815", color: singleUser?.resetAverageReplyDate && "#fff", cursor: "pointer", height: "32px", width: "32px", display: "flex", justifyContent: "center", alignItems: "center" }} className="reset">
+                      {singleUser?.resetAverageReplyDate ? <LuRotateCcw color="white" size={20} /> : <LuRotateCcw color="#012635" size={20} />}
+
+                    </buttun>
+                  </LightTooltip>
+                  <div style={{ width: "fit-content" }} className="day-selector">
+
+                    <Dropdown
+                      name={"Today"}
+                      options={["Yesterday", "Today", "This Week", "This Month"]}
+                      downIcon={true}
+                      onSelect={(opt) => {
+                        const opta = getOption(opt);
+                        setAvgFilterText(opt);
+                        dispatch(GetAvgReplyTime(opta));
+                        dispatch(GetSavedAvgReplyTime(opta))
+                      }}
+                      isOpen={openDropdown === 3}
+                      onToggle={(e) => {
+                        if (e == "close") {
+                          setOpenDropdown(null)
+                        } else if (e == "open") {
+                          handleToggle(3)
+                        }
+
+                      }}
+                    />
+                    {/* <input
+                  type="date"
+                  value={avgReplyDate}
+                  max={avgTodayDate}
+                  onChange={(e) => {
+                    setAvgReplyDate(e.target.value);
+                    dispatch(GetAvgReplyTime(e.target.value));
+                  }}
+                /> */}
+                  </div>
+                </div>
+              </div>
+              <span className="horizantalLine" />
+              <div className="body" style={{ padding: "16px", justifyContent: "start", height: "90px", alignItems: "center" }}>
+                <h4
+                  // style={{
+                  //   fontSize: "20px",
+                  //   fontWeight: 600,
+                  //   lineHeight: "28px",
+                  //   color: "#012635",
+                  // }}
+                  className="head heading6Medium textPrimeryColor"
+                >
+                  {loading
+                    ? ""
+                    : avgReplyTime?.hours > 0
+                      ? `${avgReplyTime.hours} Hours`
+                      : `${avgReplyTime?.minutes} Minutes`}{" "}
+                </h4>
+                <p
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 400,
+                    lineHeight: "20px",
+                    color: "#777777",
+                    paddingLeft: "10px"
+                  }}
+                >
+                  {avgReplyTime?.hours > 0 && `${avgReplyTime.minutes} Minutes`}
+                </p>
+                <div></div>
+                <section style={{ flex: 1, justifyContent: "end" }} className="icons-align">
+                  {avgReplyTimeMinutes > totalSavedMinutes && <img src={Assets.Images.Plus} alt="icon" />}
+                  {avgReplyTimeMinutes < totalSavedMinutes && <img src={Assets.Images.Minus} alt="icon" />}
+                  {avgReplyTimeMinutes > 0 && avergaeReplyTimedifference}
+                </section>
+              </div>
+            </div>
+          </div>
+
+
+
           <div className="item4">
-            <div className="head" style={{ padding: "16px 16px 0px 16px" }}>
+            <div className="head" style={{ padding: "16px 16px 0px 16px", height: "56px" }}>
               <div>
                 <div className="left">
-                  <h1>
+                  <h1 className="body3Medium textPrimeryColor" >
                     Drip Automations
                     <span className="info">
                       <LightTooltip
@@ -1914,7 +2110,7 @@ useEffect(()=>{
             </div>
             <span className="horizantalLine" />
             <div className="body">
-              <div className="item" style={{justifyContent: "start"  , gap:"30px"}}>
+              <div className="item" style={{ justifyContent: "start", gap: "30px" }}>
                 <header>
                   <div>
                     <img style={{ width: "28px", height: "28px" }} src={Assets.Images.Calender} alt="icon" />
@@ -1952,7 +2148,7 @@ useEffect(()=>{
                   </div>
                 </section>
               </div>
-              <div className="item" style={{justifyContent: "start" , gap:"30px"}}>
+              <div className="item" style={{ justifyContent: "start", gap: "30px" }}>
                 <header>
                   <div>
                     <img style={{ width: "28px", height: "28px" }} src={Assets.Images.Topdrip} alt="icon" />
@@ -1960,7 +2156,7 @@ useEffect(()=>{
                   <h1>Top Drip Automations</h1>
                 </header>
                 <section>
-       
+
                   {topDrip?.map((data) => (
                     <div className="subitem">
                       <span>{data?._id && data._id}</span>
@@ -1972,275 +2168,17 @@ useEffect(()=>{
             </div>
           </div>
 
-          <div className="item5">
-            <div className="avgReply">
-              <div
-                className="heading"
-                style={{ padding: "16px 16px 16px 16px" }}
-              >
-                <h1 style={{ display: "flex" }}>
-                  Last 30 Minutes
-                  <span style={{ display: "flex", alignItems: "center" }} className="info">
-                    <LightTooltip
-                      placement="top"
-                      arrow
-                      title={
-                        <>
-                          <p>Last 30 minutes</p>
-                        </>
-                      }
-                    >
-
-                      <img style={{ marginLeft: "8px" }} src={Assets.Images.FaInfoCircle} alt="icon" />
-
-                    </LightTooltip>
-                  </span>{" "}
-                </h1>
-              </div>
-              <span className="horizantalLine" />
-              <div className="body" style={{ padding: "16px 16px 16px 16px", height: "90px" }}>
-                <span>
-                  <h4
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: 600,
-                      lineHeight: "28px",
-                      color: "#012635",
-                    }}
-                  >
-                    {reportMessageLast30?.[0]?.sent || 0} Sent
-                  </h4>
-                  <p
-                    style={{
-                      fontSize: "12px",
-                      fontWeight: 400,
-                      lineHeight: "20px",
-                      color: "#777777",
-                    }}
-                  >
-                    {reportMessageLast30?.[0]?.received || 0} Received
-                  </p>
-                </span>
-                <section>
-                  <img style={{ width: "32px", height: "32px" }} src={Assets.Images.icon_Arrow} alt="icon" />
-                  <div></div>
-                </section>
-              </div>
-            </div>
-
-            <div className="avgReply">
-              <div
-                className="heading"
-                style={{ padding: "8px 16px 8px 16px", display: "flex", alignItems: "center" }}
-
-              >
-                <h1 style={{ display: "flex" }}>
-                  <span style={{ width: "90px" }}>
-                    Avg.<br /> Reply Time
-                  </span>
-                  <span style={{ display: "flex", alignItems: "center" }} className="info">
-                    <LightTooltip
-                      placement="top"
-                      arrow
-                      title={
-                        <>
-                          <p>Monitor message response</p>
-                          <p>times</p>
-                          <p>across all users</p>
-                        </>
-                      }
-                    >
-
-                      <img style={{ marginLeft: "8px" }} src={Assets.Images.FaInfoCircle} alt="icon" />
-
-                    </LightTooltip>
-                  </span>
 
 
-                </h1>
-                <div className="right-selector">
-                  <LightTooltip
-                    placement="top"
-                    arrow
-                    title={
-                      <>
-                        <p>{singleUser?.resetAverageReplyDate ? moment(singleUser?.resetAverageReplyDate).tz(userGet?.timeZone).format('MMMM Do YYYY, h:mm:ss a') : "reset"}</p>
 
-                      </>
-                    }
-                  >
-                    <buttun onClick={handleReset} style={{ border: singleUser?.resetAverageReplyDate ? 0 : "solid 1px lightgray", borderRadius: "8px", backgroundColor: singleUser?.resetAverageReplyDate && "#EA3815", color: singleUser?.resetAverageReplyDate && "#fff", cursor: "pointer", height: "32px", width: "32px", display: "flex", justifyContent: "center", alignItems: "center" }} className="reset">
-                      {singleUser?.resetAverageReplyDate ? <LuRotateCcw color="white" size={20} /> : <LuRotateCcw color="#012635" size={20} />}
-
-                    </buttun>
-                  </LightTooltip>
-                  <div style={{ width: "fit-content" }} className="day-selector">
-
-                    <Dropdown
-                      name={"Today"}
-                      options={["Yesterday", "Today", "This Week", "This Month"]}
-                      downIcon={true}
-                      onSelect={(opt) => {
-                        const opta = getOption(opt);
-                        setAvgFilterText(opt);
-                        dispatch(GetAvgReplyTime(opta));
-                        dispatch(GetSavedAvgReplyTime(opta))
-                      }}
-                      isOpen={openDropdown === 3}
-                      onToggle={(e) => {
-                        if (e == "close") {
-                          setOpenDropdown(null)
-                        } else if (e == "open") {
-                          handleToggle(3)
-                        }
-
-                      }}
-                    />
-                    {/* <input
-                  type="date"
-                  value={avgReplyDate}
-                  max={avgTodayDate}
-                  onChange={(e) => {
-                    setAvgReplyDate(e.target.value);
-                    dispatch(GetAvgReplyTime(e.target.value));
-                  }}
-                /> */}
-                  </div>
-                </div>
-              </div>
-              <span className="horizantalLine" />
-              <div className="body" style={{ padding: "16px", justifyContent: "start", height: "90px", alignItems: "center" }}>
-                <h4
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    lineHeight: "28px",
-                    color: "#012635",
-                  }}
-                >
-                  {loading
-                    ? ""
-                    : avgReplyTime?.hours > 0
-                      ? `${avgReplyTime.hours} Hours`
-                      : `${avgReplyTime?.minutes} Minutes`}{" "}
-                </h4>
-                <p
-                  style={{
-                    fontSize: "12px",
-                    fontWeight: 400,
-                    lineHeight: "20px",
-                    color: "#777777",
-                    paddingLeft: "10px"
-                  }}
-                >
-                  {avgReplyTime?.hours > 0 && `${avgReplyTime.minutes} Minutes`}
-                </p>
-                <div></div>
-                <section style={{ flex: 1, justifyContent: "end" }} className="icons-align">
-                  {avgReplyTimeMinutes > totalSavedMinutes && <img src={Assets.Images.Plus} alt="icon" />}
-                  {avgReplyTimeMinutes < totalSavedMinutes && <img src={Assets.Images.Minus} alt="icon" />}
-                  {avgReplyTimeMinutes > 0 && avergaeReplyTimedifference}
-                </section>
-              </div>
-            </div>
-          </div>
-          <div className="item6">
-            <div className="head">
-              <h1>
-                Top 3 Campaigns
-                <span className="info">
-                  <LightTooltip
-                    placement="top"
-                    arrow
-                    title={<p>Track your top performing campaigns</p>}
-                  >
-
-                    <img style={{ marginLeft: "8px" }} src={Assets.Images.FaInfoCircle} alt="icon" />
-
-                  </LightTooltip>
-                </span>
-              </h1>
-            </div>
-
-            {/* Campaigns Table */}
-            <div className="campaign-table-container">
-              <table className="campaign-table">
-                <thead>
-                  <tr>
-                    <th
-                      style={{
-                        fontSize: "14px",
-                        lineHeight: "22px",
-                        fontWeight: "500",
-                        color: "#012635",
-                      }}
-                    >
-                      Campaigns
-                    </th>
-                    <th title="Hot">
-                      <img src={Assets.Images.FaFireIcon} alt="icon" />
-                    </th>
-                    <th title="Warm">
-                      <img
-                        src={Assets.Images.FaThermometerEmptyIcon}
-                        alt="icon"
-                      />
-                    </th>
-                    <th title="Nurture">
-                      <img src={Assets.Images.FaSeedlingIcon} alt="icon" />
-                    </th>
-                    <th title="Drip">
-                      <img src={Assets.Images.FaTintIcon} alt="icon" />
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {topThreeCampaigns?.map((camp) => (
-                    <tr
-                      key={camp.campaignId}
-                      className="campaign-row"
-                      onClick={() => navigate(`/campaigns/${camp.campaignId}`)}
-                      onKeyDown={(e) => handleKeyDown(e, camp.campaignId)}
-                      tabIndex="0" // Makes the row focusable
-                      role="button" // Indicates that the row is clickable
-                      aria-label={`View details for ${camp?.campaign && camp.campaign
-                        }`} // Accessibility label
-                    >
-                      <td className="campaign-name">
-                        {camp?.campaign && camp.campaign}
-                      </td>
-                      <td>
-                        {camp?.statuses?.find((val) => val.status === "Hot")
-                          ?.count || 0}
-                      </td>
-                      <td>
-                        {" "}
-                        {camp?.statuses?.find((val) => val.status === "Warm")
-                          ?.count || 0}
-                      </td>
-                      <td>
-                        {" "}
-                        {camp?.statuses?.find((val) => val.status === "Nurture")
-                          ?.count || 0}
-                      </td>
-                      <td>
-                        {camp?.statuses?.find((val) => val.status === "Drip")
-                          ?.count || 0}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-        <div style={{ maxWidth: "1280px", margin: "auto" }} className="section3">
+        <div style={{ maxWidth: "1334px", margin: "auto" }} className="section3">
           <div className="item7">
             <div className="graphs">
               <div className="graphbody">
-                <div className="head" style={{ padding: "8px 16px 8px 16px" }}>
+                <div className="head" style={{ padding: "8px 16px 8px 16px" , height:"56px" }}>
                   <div className="heading">
-                    <h1 style={{ display: "flex", alignItems: "center" }}>
+                    <h1 className="body3Medium textPrimeryColor"  style={{ display: "flex", alignItems: "center" }}>
                       Text Activity
                       <span style={{ display: "flex", alignItems: "center" }} className="info">
                         <LightTooltip
@@ -2433,9 +2371,9 @@ useEffect(()=>{
           <div className="item8">
             <div
               className="tagsHeader"
-              style={{ padding: "8px 16px 8px 16px" }}
+              style={{ padding: "8px 16px 8px 16px" , height:"56px" }}
             >
-              <h1 style={{ display: "flex", alignItems: "center" }}>
+              <h1 className="body3Medium textPrimeryColor"  style={{ display: "flex", alignItems: "center" }}>
                 Tags
                 <span style={{ display: "flex", alignItems: "center" }} className="info">
                   <LightTooltip
@@ -2506,14 +2444,19 @@ useEffect(()=>{
               className="tagsBody"
               style={{ padding: "16px", opacity: "0.5" }}
             >
-              <Bar data={dataBar} options={optionsBar} />
+              {/* <Bar data={dataBar} options={optionsBar} /> */}
+              <HorizontalBarChart
+                labels={dataBar?.labels}
+                data={ dataBar?.datasets[0]?.data }
+                colors={dataBar?.datasets[0]?.backgroundColor }
+              />
             </div>
           </div>
         </div>
         <Item9Container>
           <TagsHeader>
             <div>
-              <HeaderTitle>Flag</HeaderTitle>
+              <HeaderTitle className="body3Medium textPrimeryColor">Flag</HeaderTitle>
             </div>
 
             <DropdownsContainer>

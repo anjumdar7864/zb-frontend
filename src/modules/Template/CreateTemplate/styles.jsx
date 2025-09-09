@@ -35,7 +35,7 @@ export const StyledMenu = MUIStyled((props) => (
 }));
 
 export const CreateTemplateStyled = styled.div`
-  padding-inline: 4rem;
+  padding-inline: 16px;
   ${theme.queryStatement(900)} {
     padding: 1.3rem 1.3rem;
   }
@@ -44,17 +44,17 @@ export const CreateTemplateStyled = styled.div`
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    padding: 2rem 0rem;
+    padding: 16px 0px;
     
     & > h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #012635;
+      // font-size: 2rem;
+      // font-weight: 700;
+      // color: #012635;
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      line-height: 2.2rem;
+      // line-height: 2.2rem;
     }
     & > button {
       background-color: white;
@@ -94,7 +94,7 @@ export const CreateTemplateStyled = styled.div`
       padding-bottom: 1rem;
 
       display: grid;
-      gap: 2rem;
+      gap: 16px;
       align-content: start;
 
       & > .top {
@@ -119,15 +119,16 @@ export const CreateTemplateStyled = styled.div`
               align-items: center;
 
               & > .text {
-                font-size: 1.2rem;
-                font-weight: 500;
-                color:#012635;
+                // font-size: 1.2rem;
+                // font-weight: 500;
+                // color:#012635;
               }
               & > .icon {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 & > .info {
+                display:flex ; 
                   & > * {
                     margin-left: 0.5rem;
                     font-size: 1.1rem;
@@ -140,7 +141,7 @@ export const CreateTemplateStyled = styled.div`
 
           & > input {
             padding-inline:1.4rem;
-            height:4rem;
+            height:40px;
             border: 1px solid #D3D7DD;
             border-radius: 0.8rem;
             font-size: 1.2rem;
@@ -234,14 +235,14 @@ export const CreateTemplateStyled = styled.div`
               justify-content: space-between;
               & > .inner{
               & > h2 {
-                font-size: 1.6rem;
-                color: #012635;
-                font-weight: 600;
-                line-height: 2.8rem;
+                // font-size: 1.6rem;
+                // color: #012635;
+                // font-weight: 600;
+                // line-height: 2.8rem;
               }
               & > p {
-                font-size: 1.2rem;
-                color:#777777;
+                // font-size: 1.2rem;
+                // color:#777777;
                 & > span {
                   color: #3086EE;
                 }
@@ -336,16 +337,16 @@ export const CreateTemplateStyled = styled.div`
               display: flex;
               align-items: center;
               justify-content: space-between;
-              padding-inline:1.5rem;
+              padding-inline:16px;
             & > .messageUnderHeader {
               & > h5 {
-                font-size: 1.6rem;
-                color: #012635;
-                font-weight: 600;
+                // font-size: 1.6rem;
+                // color: #012635;
+                // font-weight: 600;
               }
             }
             & > .track {
-                padding: 1.2rem 0rem 1.2rem 2.6rem ;
+                padding: 8px 0rem 8px 16px ;
               & > .trackChild{
                 display: flex;
                 align-items: center;
@@ -431,8 +432,8 @@ export const CreateTemplateStyled = styled.div`
                     justify-self: stretch;
 
                     & > .text {
-                      width: 3rem;
-                      height: 3rem;
+                      width: 32px;
+                      height: 32px;
                       display: flex;
                       border-radius: 0.8rem;
                       justify-content: center;
@@ -635,7 +636,7 @@ export const CreateTemplateStyled = styled.div`
                 z-index: 2;
                 background-color: transparent;
                 word-break: break-word;
-                font-size: 1.2rem;
+                font-size: 14px;
                 font-weight: 500;
                 line-height: 2rem;
                 letter-spacing: 0.5px;
@@ -652,7 +653,7 @@ export const CreateTemplateStyled = styled.div`
                   display: inline;
                   word-break: break-word;
                   color: #777777;
-                  font-size: 1.2rem;
+                  font-size: 14px;
                   font-weight: 500;
                   line-height: 2rem;
                   letter-spacing: 0.5px;
@@ -703,7 +704,7 @@ export const CreateTemplateStyled = styled.div`
               display: flex;
               align-items: center;
               justify-content: space-between;
-              padding:1.5rem 1.5rem;
+              padding:16px;
 
               & > section {
                 display: flex;
@@ -747,13 +748,15 @@ export const CreateTemplateStyled = styled.div`
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                    padding: 0.8rem 1.3rem;
+                    // font-size: 1.1rem;
+                    // font-weight: 500;
+                    // padding: 0.8rem 1.3rem;
+                      height:32px;
+                      padding: 0px 12px;
                     border-radius: 0.8rem;
                     & > * {
                       &:first-child {
-                        font-size: 1.2rem;
+                        // font-size: 1.2rem;
                         color: #8582af;
                       }
                     }
@@ -766,9 +769,10 @@ export const CreateTemplateStyled = styled.div`
                       display: flex;
                       align-items: center;
                       gap: 0.5rem;
-                      font-size: 1.1rem;
-                      font-weight: 500;
-                      padding: 0.8rem 1.3rem;
+                      // font-size: 1.1rem;
+                      // font-weight: 500;
+                      height:32px;
+                      padding: 0px 12px;
                       border-radius: 0.8rem;
                       & > * {
                         &:first-child {
@@ -912,7 +916,7 @@ export const CreateTemplateStyled = styled.div`
               grid-template-columns: auto auto auto;
               justify-content: space-between;
               align-items: center;
-              padding: 1.5rem 1.5rem;
+              padding: 16px;
       
               & > button {
                 display: grid;
@@ -923,7 +927,8 @@ export const CreateTemplateStyled = styled.div`
                 transition: background-color 300ms;
                 border-radius: 0.8rem;
                 border: 1px solid #012635;
-                padding: 0.8rem 5.2rem;
+                padding: 0 12px;
+                height:32px ; 
                 & > .icon {
                   font-size: 1.4rem;
                   line-height: 0;
@@ -931,8 +936,8 @@ export const CreateTemplateStyled = styled.div`
                 }
 
                 & > .text {
-                  font-size: 1.1375rem;
-                  color: #282a3c;
+                  // font-size: 1.1375rem;
+                  // color: #282a3c;
                 }
 
                 &:not(:disabled):hover {
@@ -950,8 +955,8 @@ export const CreateTemplateStyled = styled.div`
                   }
                   & > .text {
                     color: #fff;
-                    font-size: 1.4rem;
-                    font-weight: 400;
+                    // font-size: 1.4rem;
+                    // font-weight: 400;
                   }
 
                   &:not(:disabled):hover {
@@ -962,8 +967,8 @@ export const CreateTemplateStyled = styled.div`
               & > .info {
                 position: relative;
                 & > .text {
-                  color: #777777;
-                  font-size: 1.3rem;
+                  // color: #777777;
+                  // font-size: 1.3rem;
                   
                 }
                 & > .icon {
@@ -990,11 +995,13 @@ export const CreateTemplateStyled = styled.div`
               justify-content: center;
               grid-template-columns: auto auto;
               transition: background-color 300ms;
-              padding: 1.1rem 2rem;
+              padding: 0px 12px;
               border-radius: 0.8rem;
               margin-right: 1rem;
               border:1px solid #777777;
               background-color: transparent;
+              height:40px ; 
+              width:100px ; 
               & > .icon {
                 font-size: 1.5rem;
                 line-height: 0;
@@ -1002,7 +1009,7 @@ export const CreateTemplateStyled = styled.div`
               }
 
               & > .text {
-                font-size: 1.3rem;
+                // font-size: 1.3rem;
                 color: #777777;
               }
 
@@ -1021,7 +1028,9 @@ export const CreateTemplateStyled = styled.div`
               grid-template-columns: auto auto;
               background-color: #00BD82;
               transition: background-color 300ms;
-              padding: 1.1rem 5rem;
+              padding: 0px 12px;
+              height:40px ; 
+              width:196px ; 
               border-radius: 0.8rem;
 
               & > .icon {
@@ -1132,8 +1141,8 @@ export const CreateTemplateStyled = styled.div`
         }
 
         & > .empty {
-          min-height: 4.8rem;
-          padding: 1.3rem;
+          // min-height: 4.8rem;
+          padding: 16px;
           border: 1px solid #E0E0E0;
           border-radius: 0.8rem;
           display: grid;
@@ -1283,9 +1292,9 @@ export const CreateTemplateStyled = styled.div`
               }
 
               & > .text {
-                font-size: 1.3rem;
-                color: #012635;
-                font-weight: 600;
+                // font-size: 1.3rem;
+                // color: #012635;
+                // font-weight: 600;
               }
             }
 

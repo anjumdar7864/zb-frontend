@@ -18,8 +18,8 @@ export const MyPaginationStyled = styled.div`
     gap: 1rem;
 
     & button {
-      width: 3.45rem;
-      height: 3.45rem;
+      width: 32px;
+      height: 32px;
       border-radius:8px;
       display: flex;
       align-items: center;
@@ -44,7 +44,7 @@ export const MyPaginationStyled = styled.div`
 
     & > .group {
       background-color: #fff;
-      height: 3.45rem;
+      height: 32px;
       display: flex;
       border-radius: 8px;
 

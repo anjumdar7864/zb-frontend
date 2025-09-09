@@ -4,12 +4,12 @@ import { useDispatch } from "react-redux";
 import classNames from "classnames";
 import { toast } from "react-hot-toast";
 
-import { sendWrongNumber, removeWrongNumber, sendWrongNumberList } from "@/store/actions";
+import { sendWrongNumber, removeWrongNumber, sendWrongNumberList, removeWrongNumberList } from "@/store/actions";
 
 import { SelectPhoneModalStyled } from "./styles";
 import { RxCross2 } from "react-icons/rx";
 
-const SelectWrongPhoneModal = ({ onClose, selectedUserInbox }) => {
+const SelectWrongPhoneModal = ({ onClose, selectedUserInbox , chatbox }) => {
   const dispatch = useDispatch();
   const {
     _id,
@@ -83,28 +83,58 @@ const SelectWrongPhoneModal = ({ onClose, selectedUserInbox }) => {
       };
     }
     if (isWrongNumber) {
-      dispatch(
-        removeWrongNumber(_id, body, () => {
-          toast.success(`Removed wrong number mark for ${phone}`);
-          onClose(e);
-        })
-      );
-    } else if (selectedId) {
-      dispatch(
-        sendWrongNumberList(_id, body, () => {
-          toast.success(`! ${phone} was marked as wrong number.`);
-          onClose(e);
-        })
-      );
+      if(chatbox){
+        dispatch(
+          removeWrongNumber(_id, body, () => {
+            toast.success(`Removed wrong number mark for ${phone}`);
+            onClose(e);
+          })
+        );
+      }else{
+        
+
+        dispatch(
+          removeWrongNumberList(_id, body, () => {
+            toast.success(`Removed wrong number mark for ${phone}`);
+            onClose(e);
+          })
+        );
+      }
+  
     } else {
-    
+    if(chatbox){
       dispatch(
         sendWrongNumber(_id, body, () => {
           toast.success(`! ${phone} was marked as wrong number.`);
           onClose(e);
         })
       );
+    } else{
+      dispatch(
+        sendWrongNumberList(_id, body, () => {
+          toast.success(`! ${phone} was marked as wrong number.`);
+          onClose(e);
+        })
+      );
     }
+  
+    }
+    //  else if (selectedId) {
+    //   dispatch(
+    //     sendWrongNumberList(_id, body, () => {
+    //       toast.success(`! ${phone} was marked as wrong number.`);
+    //       onClose(e);
+    //     })
+    //   );
+    // } else {
+    
+    //   dispatch(
+    //     sendWrongNumber(_id, body, () => {
+    //       toast.success(`! ${phone} was marked as wrong number.`);
+    //       onClose(e);
+    //     })
+    //   );
+    // }
   };
 
   return (

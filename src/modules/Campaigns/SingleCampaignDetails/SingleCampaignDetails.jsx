@@ -185,14 +185,14 @@ const SingleCampaignDetails = () => {
       <div className="top">
         <div className="bottom">
           <button onClick={() => setIsLeftSidebarOpen(true)}>
-            <span style={{ overflow: "visible" }} className="text">
+            <span style={{ overflow: "visible" }} className="text textPrimeryColor body2Medium">
               {singleCampaign?.title ?? singleCampaign?.name ?? ""}
             </span>
             <span className="icon">
               <FaAngleDown />
             </span>
           </button>
-          <p>
+          <p className="body4Medium">
             <span>Market: </span>
             <span>
               {singleCampaign?.market?.areaCode ??
@@ -205,7 +205,7 @@ const SingleCampaignDetails = () => {
       <div className="charts" style={{ width: "100%" }}>
         <div className="left">
           <div className="Header">
-            <h2>
+            <h2 className="body3Medium textPrimeryColor">
               Campaign Message Statics
             </h2>
           </div>
@@ -213,7 +213,7 @@ const SingleCampaignDetails = () => {
             <div className="left">
               <div
                 className="item"
-                style={{ minHeight: "300px", position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                style={{ minHeight: "176px",  position: "relative", display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
                 <DoughnutPieChart
                   singleCampaign={singleCampaign}
@@ -226,20 +226,20 @@ const SingleCampaignDetails = () => {
             </div>
             <div className="center">
               <div className="item">
-                <h6>Total Delivered</h6>
+                <h6 className="body3Regular">Total Delivered</h6>
                 <div className="top">
                   <span className="dot"></span>
-                  <span className="text">
+                  <span className="text body1Medium">
                     {singleCampaign?.totalDelivered &&
                       singleCampaign?.totalDelivered}
                   </span>
                 </div>
               </div>
               <div className="item">
-                <h6>Delivery</h6>
+                <h6 className="body3Regular">Delivery</h6>
                 <div className="top">
                   <span
-                    className="text"
+                    className="text body1Medium"
 
                   >
                     {singleCampaign?.delivered && singleCampaign?.delivered}%
@@ -247,13 +247,13 @@ const SingleCampaignDetails = () => {
                 </div>
               </div>
               <div className="item">
-                <h6>Total Undelivered</h6>
+                <h6 className="body3Regular">Total Undelivered</h6>
                 <div className="top">
                   <span
                     className="dot"
                     style={{ backgroundColor: "red" }}
                   ></span>
-                  <span className="text">
+                  <span className="text body1Medium">
                     {singleCampaign?.sentALL &&
                       Math.abs(
                         singleCampaign?.sentALL - singleCampaign?.totalDelivered
@@ -262,10 +262,10 @@ const SingleCampaignDetails = () => {
                 </div>
               </div>
               <div className="item">
-                <h6>Total Responses</h6>
+                <h6 className="body3Regular">Total Responses</h6>
                 <div className="top">
                   <span className="dot"></span>
-                  <span className="text">
+                  <span className="text body1Medium">
                     {singleCampaign?.totalResponse &&
                       singleCampaign?.totalResponse}
                   </span>
@@ -273,19 +273,19 @@ const SingleCampaignDetails = () => {
               </div>
 
               <div className="item">
-                <h6>Response</h6>
+                <h6 className="body3Regular">Response</h6>
                 <div className="top">
                   <span className="dot"></span>
-                  <span className="text">
+                  <span className="text body1Medium">
                     {singleCampaign?.response && singleCampaign?.response}%
                   </span>
                 </div>
               </div>
 
               <div className="item">
-                <h6>Total Leads</h6>
+                <h6 className="body3Regular">Total Leads</h6>
                 <div className="top">
-                  <span className="text">{allData && allData}</span>
+                  <span className="text body1Medium">{allData && allData}</span>
                 </div>
               </div>
             </div>
@@ -296,7 +296,7 @@ const SingleCampaignDetails = () => {
           style={{ backgroundColor: "white", borderRadius: "12px" , display: 'flex', flexDirection: 'column',   }}
         >
           <div className="Header">
-            <h2>
+            <h2 className="body3Medium  textPrimeryColor" >
               Leads Breakdown
             </h2>
           </div>
@@ -362,25 +362,26 @@ const DirectImportReports = () => {
     setCurrentPage(1);
 
   };
+console.log("currentData" , currentData , singleCampaign);
 
   return (
     <>
       <ImportReportsStyled>
         <div className="Header">
-          <h2>Direct Import Reports</h2>
+          <h2 className="body3Medium textPrimeryColor">Direct Import Reports</h2>
         </div>
         <div className="overflow">
           <div className="table">
 
             <div className="row" style={{ position: "sticky", top: "0px", zIndex: 100, backgroundColor: "white", borderBlock: "1.5px solid #80808052" }}>
-              <h6 style={{ justifyContent: 'space-between' }}>
+              <h6 className="body4Medium textPrimeryColor" style={{ justifyContent: 'space-between' }}>
                 List Name
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow style={{ color: "#777777", fontSize: "10px" }} />
                   <BiSolidDownArrow style={{ color: "#777777", fontSize: "10px" }} />
                 </div>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Total Rows
                 <span className="info">
                   <LightTooltip
@@ -397,7 +398,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Total Prospects
                 <span className="info">
                   <LightTooltip
@@ -414,7 +415,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Mobiles
                 <span className="info">
                   <LightTooltip
@@ -431,7 +432,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor" >
                 Landlines
                 <span className="info">
                   <LightTooltip
@@ -448,7 +449,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Existing Matches
                 <span className="info">
                   <LightTooltip
@@ -465,7 +466,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Deliverability
                 <span className="info">
                   <LightTooltip
@@ -482,7 +483,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Response
                 <span className="info">
                   <LightTooltip
@@ -499,7 +500,7 @@ const DirectImportReports = () => {
                   </LightTooltip>
                 </span>
               </h6>
-              <h6>
+              <h6 className="body4Medium textPrimeryColor">
                 Created
                 <span className="info">
                   <LightTooltip
@@ -534,7 +535,7 @@ const DirectImportReports = () => {
                       singleDirectImport?.listName && singleDirectImport?.listName
                     }
                   >
-                    <td>
+                    <td className="body4Medium textSecondaryColor">
                       {singleDirectImport?.listName
                         ? singleDirectImport?.listName.endsWith(".csv")
                           ? singleDirectImport?.listName.slice(
@@ -545,16 +546,17 @@ const DirectImportReports = () => {
                         : "--"}
                     </td>
                   </LightTooltip>
-                  <td>
+                  <td className="body4Medium textSecondaryColor">
                     {singleDirectImport?.totalRows
                       ? singleDirectImport?.totalRows
                       : 0}
                   </td>
-                  <td>{singleDirectImport?.totalPropspects ?? 0}</td>
-                  <td>{singleDirectImport?.mobile ?? 0}</td>
-                  <td>{singleDirectImport?.landlines ?? 0}</td>
-                  <td>{singleDirectImport?.excistingMatches ?? 0}</td>
+                  <td className="body4Medium textSecondaryColor">{singleDirectImport?.totalPropspects ?? 0}</td>
+                  <td className="body4Medium textSecondaryColor">{singleDirectImport?.mobile ?? 0}</td>
+                  <td className="body4Medium textSecondaryColor">{singleDirectImport?.landlines ?? 0}</td>
+                  <td className="body4Medium textSecondaryColor">{singleDirectImport?.excistingMatches ?? 0}</td>
                   <td
+                  className="body4Medium "
                     style={{
                       color: `${parseFloat(
                         (singleDirectImport?.delivered /
@@ -582,8 +584,11 @@ const DirectImportReports = () => {
                       ).toFixed(2)
                       : 0}
                     %
+
+
+                    
                   </td>
-                  <td>
+                  <td className="body4Medium textSecondaryColor">
                     {singleDirectImport?.delivered > 0
                       ? (
                         (singleDirectImport?.response /
@@ -593,7 +598,7 @@ const DirectImportReports = () => {
                       : 0}{" "}
                     %
                   </td>
-                  <td>
+                  <td className="body4Medium textSecondaryColor">
                     {formatDateToLong(
                       singleDirectImport?.createdAt ?? new Date()
                     )}
@@ -621,7 +626,7 @@ const DirectImportReports = () => {
           }}
         >
           <div>
-            Total:{" "}0
+            Total:{currentData?.length || 0}
 
           </div>
 
@@ -706,19 +711,19 @@ const BatchReports = () => {
   return (
     <BatchReportsStyled>
       <div className="Header">
-        <h2>Batch Reports</h2>
+        <h2 className="body3Medium textPrimeryColor">Batch Reports</h2>
       </div>
       <div className="overflow">
         <div className="table">
           <div className="row" style={{ position: "sticky", top: "0px", zIndex: 100, backgroundColor: "white", borderBlock: "1.5px solid #80808052" }}>
-            <h6 style={{ justifyContent: 'space-between' }}>
+            <h6 className="body4Medium textPrimeryColor" style={{ justifyContent: 'space-between' }}>
               Batch Number
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <BiSolidUpArrow style={{ color: "#777777", fontSize: "10px" }} />
                 <BiSolidDownArrow style={{ color: "#777777", fontSize: "10px" }} />
               </div>
             </h6>
-            <h6>
+            <h6 className="body4Medium textPrimeryColor">
               List Name
               <span className="info">
                 <LightTooltip
@@ -726,7 +731,7 @@ const BatchReports = () => {
                   arrow
                   title={
                     <>
-                      <p>List Name</p>
+                      <p >List Name</p>
 
                     </>
                   }
@@ -735,7 +740,7 @@ const BatchReports = () => {
                 </LightTooltip>
               </span>
             </h6>
-            <h6>
+            <h6 className="body4Medium textPrimeryColor">
               User
               <span className="info">
                 <LightTooltip
@@ -752,7 +757,7 @@ const BatchReports = () => {
                 </LightTooltip>
               </span>
             </h6>
-            <h6>
+            <h6 className="body4Medium textPrimeryColor">
               Deliverability
               <span className="info">
                 <LightTooltip
@@ -769,7 +774,7 @@ const BatchReports = () => {
                 </LightTooltip>
               </span>
             </h6>
-            <h6>
+            <h6 className="body4Medium textPrimeryColor">
               Response
               <span className="info">
                 <LightTooltip
@@ -786,7 +791,7 @@ const BatchReports = () => {
                 </LightTooltip>
               </span>
             </h6>
-            <h6>
+            <h6 className="body4Medium textPrimeryColor">
               Template
               <span className="info">
                 <LightTooltip
@@ -803,7 +808,7 @@ const BatchReports = () => {
                 </LightTooltip>
               </span>
             </h6>
-            <h6>
+            <h6 className="body4Medium textPrimeryColor">
               Last Send
               <span className="info">
                 <LightTooltip
@@ -823,13 +828,13 @@ const BatchReports = () => {
           </div>
           {compaignBatchReport?.result?.map((data, i) => (
             <div className="row2" key={i}>
-              <div style={{ display: "flex", flexDirection: 'column', fontSize: "14px", color: "#777777", fontWeight: 500, paddingInline: "1.3rem", paddingBlock: "0.7rem" }}>
-                <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '0.5rem' }}>
+              <div style={{ display: "flex", flexDirection: 'column', fontSize: "14px", color: "#777777", fontWeight: 500, paddingInline: "16px", paddingBlock: "8px" }}>
+                <div className="body4Medium textSecondaryColor" style={{ display: 'flex', alignItems: 'center' }}>
                   <p >{data?.batchNumber && data.batchNumber}</p>
                   -
-                  <p style={{ margin: "0px" }}>{data?.batchSenderNumber && data.batchSenderNumber.slice(-4)}</p>
+                  <p className="body4Medium textSecondaryColor" style={{ margin: "0px" }}>{data?.batchSenderNumber && data.batchSenderNumber.slice(-4)}</p>
                 </div>
-                <p>{formatDate(data?.createdAt)}</p>
+                <p className="body4Medium textSecondaryColor">{formatDate(data?.createdAt)}</p>
               </div>
               <td>
                 <LightTooltip
@@ -837,7 +842,7 @@ const BatchReports = () => {
                   placement="top"
                   title={data?.listName && data?.listName}
                 >
-                  <td>
+                  <td className="body4Medium textSecondaryColor">
                     {data?.listName
                       ? data?.listName.length > 42
                         ? data?.listName.slice(0, 42) + "..."
@@ -846,7 +851,7 @@ const BatchReports = () => {
                   </td>
                 </LightTooltip>
               </td>
-              <td>
+              <td className="body4Medium textSecondaryColor">
                 {(data?.user?.firstName &&
                   data.user.firstName + " " + data.user.lastName) ||
                   (data?.admin?.fullName && data.admin.fullName)}
@@ -860,12 +865,13 @@ const BatchReports = () => {
                   fontWeight: `${parseFloat(data?.delivered) <= 84 ? "600" : "inherit"
                     }`,
                 }}
+                className="body4Medium "
               >
                 {data?.delivered && data?.delivered.toFixed(2)}%
               </td>
-              <td>{data?.response && data?.response.toFixed(2)}%</td>
-              <td>{data?.template?.name}</td>
-              <td>
+              <td className="body4Medium textSecondaryColor">{data?.response && data?.response.toFixed(2)}%</td>
+              <td className="body4Medium textSecondaryColor">{data?.template?.name}</td>
+              <td className="body4Medium textSecondaryColor">
                 {formatDateOnlyDate(data?.lastSent)}
               </td>
             </div>
@@ -977,7 +983,7 @@ const DIReport = () => {
   return (
     <BatchReportsStyled>
       <div className="Header">
-        <h2>Direct Import Reports</h2>
+        <h2  >Direct Import Reports</h2>
       </div>
       <div className="overflow">
         <div className="table">

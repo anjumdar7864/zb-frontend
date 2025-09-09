@@ -44,7 +44,7 @@ export const GetAllDNC = (search, page, limit , sorting) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -83,7 +83,7 @@ export const deleteDNC = (id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -123,7 +123,7 @@ export const addNewDnc = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -163,7 +163,7 @@ export const updateDnc = (id, body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -202,7 +202,7 @@ export const getSingleDnc = (id) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -244,7 +244,7 @@ export const exportDnc = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -286,7 +286,7 @@ export const importDnc = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -329,7 +329,7 @@ export const exportProspect = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -371,7 +371,7 @@ export const getConnectedCrm = () => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -413,7 +413,7 @@ export const updateConnectedCrm = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -455,7 +455,7 @@ export const connectCrm = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -497,7 +497,7 @@ export const changeCrmStatus = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({

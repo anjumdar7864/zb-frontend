@@ -31,13 +31,8 @@ const tokenMiddleware =
         dispatch({ type: authConstant.LOGOUT });
       }
     } catch (error) {
-      if (error.response?.data?.message === "Session expired") {
-        localStorage.clear();
-        dispatch({
-          type: authConstant.SESSION_EXPIRE,
-          payload: { err: "Session has been expired" },
-        });
-      } else if (error.response && error.response.status === 403) {
+      // Handle 403 error explicitly or other errors
+      if (error.response && error.response.status === 403) {
         console.error(
           "Error: Token is expired or unauthorized (403), logging out..."
         );

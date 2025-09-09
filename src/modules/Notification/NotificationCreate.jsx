@@ -110,7 +110,7 @@ export default function CreateNotification() {
         <main className={styles.mainGrid}>
           <form onSubmit={submit} className={styles.formContainer} noValidate>
             <div className={styles.card}>
-              <div className={styles.formSection}>
+              <div style={{marginTop:"0px"}} className={styles.formSection}>
                 <label className={`body3Medium textPrimeryColor`}>Notification information</label>
               </div>
 
@@ -120,6 +120,7 @@ export default function CreateNotification() {
                   <select
                     value={form.category}
                     onChange={(e) => onChange('category', e.target.value)}
+                    style={{ zIndex: 1 }} 
                     className={`${styles.selectInput} body4Regular textPrimeryColor ${errors.category ? styles.errorInput : ''}`}
                   >
                     <option value=''>Select</option>
@@ -130,24 +131,13 @@ export default function CreateNotification() {
                 </div>
               </div>
 
-              {/* <div className={styles.formSection}>
-                <label className={`body4Medium textPrimeryColor`}>Notification Type</label>
-                <div className={styles.checkboxGroup}>
-                  <label className={`${styles.checkboxLabel} body4Regular textPrimeryColor`}>
-                    <input type="checkbox" checked={form.types.email} onChange={() => onCheck('email')} />
-                    Email
-                  </label>
-                  <label className={`${styles.checkboxLabel} body4Regular textPrimeryColor`}>
-                    <input type="checkbox" checked={form.types.popup} onChange={() => onCheck('popup')} />
-                    Popup
-                  </label>
-                </div>
-              </div> */}
+         
 
               <div className={styles.formSection}>
                 <label className={`body4Medium textPrimeryColor`}>Notification Title</label>
                 <input
                   value={form.title}
+                  maxLength={30}
                   onChange={(e) => onChange('title', e.target.value)}
                   placeholder='Enter Notification Title'
                   className={`${styles.textInput} body4Regular textPrimeryColor ${errors.title ? styles.errorInput : ''}`}
@@ -160,24 +150,15 @@ export default function CreateNotification() {
                   value={form.description}
                   onChange={(e) => onChange('description', e.target.value)}
                   rows={4}
+                  maxLength={200}
                   placeholder='Enter Description'
                   className={`${styles.textarea} body4Regular textPrimeryColor ${errors.description ? styles.errorInput : ''}`}
                 />
               </div>
 
-              {/* <div className={`${styles.formSection} ${styles.grid2}`}>
-                <div>
-                  <label className={`body4Medium textPrimeryColor`}>CTA Title</label>
-                  <input value={form.ctaTitle} onChange={(e) => onChange('ctaTitle', e.target.value)} placeholder="Enter CTA Title" className={`${styles.textInput} body4Regular textPrimeryColor`} />
-                </div>
-                <div>
-                  <label className={`body4Medium textPrimeryColor`}>CTA Link</label>
-                  <input value={form.ctaLink} onChange={(e) => onChange('ctaLink', e.target.value)} placeholder="http://Lorem Ipsum is simply dummy text" className={`${styles.textInput} body4Regular textPrimeryColor`} />
-                </div>
-              </div> */}
-
+      
               <div className={styles.formActions}>
-                <button type='button' className={`${styles.button} ${styles.buttonCancel} body4Medium textPrimeryColor`}>
+                <button onClick={() => navigate(-1)} type='button' className={`${styles.button} ${styles.buttonCancel} body4Medium textPrimeryColor`}>
                   Cancel
                 </button>
                 <button type='submit' disabled={loader} className={`${styles.button} ${styles.buttonSubmit} body4Medium textWhiteColor`}>
@@ -187,7 +168,7 @@ export default function CreateNotification() {
             </div>
           </form>
 
-          <div style={{ width: '100%', maxWidth: '600px', display: 'flex', flexDirection: 'column' }}>
+          <div style={{ width: '100%', maxWidth: '600px',  minHeight:"470px" ,  display: 'flex', flexDirection: 'column' , backgroundColor:"white" , border:"solid 1px #E0E0E0" , borderRadius:"8px" }}>
             <div style={{}}>
               <div
                 style={{
@@ -208,6 +189,7 @@ export default function CreateNotification() {
                   minHeight: '400px',
                   display: 'flex',
                   alignItems: 'center',
+                  maxWidth:"550px"
                 }}
               >
                 <div
@@ -266,6 +248,8 @@ export default function CreateNotification() {
                       color: '#535151',
                       textAlign: 'center',
                       marginBottom: '16px',
+                      overflowWrap: 'break-word',
+                      wordBreak: 'break-word', 
                     }}
                   >
                     {previewSub || 'Please be aware of this important notification.'}

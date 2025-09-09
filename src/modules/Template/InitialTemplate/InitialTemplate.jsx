@@ -97,6 +97,7 @@ const InitialTemplate = () => {
   const [templateType, setTemplateType] = useState("all");
   // const [searchText, setSearchText] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch();
   const { loading, countData, templatesData } = useSelector(
     (s) => s.templateReducer
@@ -132,7 +133,7 @@ const InitialTemplate = () => {
       }
     });
   };
-  console.log("check sort", sortingInfo);
+
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -171,13 +172,13 @@ const InitialTemplate = () => {
           : sortingInfo?.direction === 1
             ? "asec"
             : "desc",
-            sortByResponse:
-            sortingInfo?.sortedBy !== "response"
-              ? undefined
-              : sortingInfo?.direction === 1
-                ? "asec"
-                : "desc",
-            
+      sortByResponse:
+        sortingInfo?.sortedBy !== "response"
+          ? undefined
+          : sortingInfo?.direction === 1
+            ? "asec"
+            : "desc",
+
       sortByDelivery:
         sortingInfo?.sortedBy !== "delivery"
           ? undefined
@@ -202,8 +203,16 @@ const InitialTemplate = () => {
     setIsLoaderShowing(loading);
   }, [loading, setIsLoaderShowing]);
 
+  useEffect(() => {
+    if (templatesData?.results?.length > 0) {
+      setIsLoading(false);
+
+    }
+  }, [templatesData])
+
   useLayoutEffect(() => {
     dispatch(getAllTemplates({ ...queryParams, search: searchText }));
+    setIsLoading(true)
   }, [dispatch, queryParams, searchText]);
 
   // useEffectWithDependency(() => {
@@ -289,6 +298,11 @@ const InitialTemplate = () => {
   ];
   // Template category option
 
+
+  console.log("loading", loading);
+
+
+
   const DropdownIndicator = (props) => {
     return (
       <components.DropdownIndicator {...props}>
@@ -297,7 +311,7 @@ const InitialTemplate = () => {
     );
   };
 
-  
+
 
   return (
     <InitialTemplateStyled
@@ -321,10 +335,11 @@ const InitialTemplate = () => {
         </div>
         <div className="right">
           <div
-            className="TemplateC"
-            style={{ color: "#777777", cursor: "pointer", marginRight: "10px" }}
+            className={`TemplateC body4Medium textSecondaryColor`}
+            style={{ cursor: "pointer", marginRight: "10px" }}
+
           >
-            Template category
+            Template type
           </div>
           <Select
             components={{
@@ -349,7 +364,7 @@ const InitialTemplate = () => {
               control: (baseStyles, state) => ({
                 ...baseStyles,
                 width: 300,
-                height: "4rem",
+                height: "40px",
               }),
             }}
             IndicatorsContainer={false}
@@ -370,7 +385,7 @@ const InitialTemplate = () => {
                     onClick={() => setIsCreateUserOpen(true)}
                     style={{
                       width: "111px",
-                      height: "4rem",
+                      height: "40px",
                       backgroundColor: "#00BD82",
                       borderRadius: "8px",
                       display: "flex",
@@ -406,7 +421,7 @@ const InitialTemplate = () => {
                   }`}
               // onClick={() => handleSort("name")}
               >
-                <span className="text">Name</span>
+                <span className="text body4Medium textPrimeryColor ">Name</span>
                 {/* <SortIcon
                 direction={sortingInfo.direction}
                 isSorted={sortingInfo.sortedBy === "name"}
@@ -442,7 +457,7 @@ const InitialTemplate = () => {
                   }`}
               // onClick={() => handleSort("messages")}
               >
-                <span className="text">Messages</span>
+                <span className="text body4Medium textPrimeryColor">Messages</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -473,7 +488,7 @@ const InitialTemplate = () => {
                   }`}
               // onClick={() => handleSort("type")}
               >
-                <span className="text">Type</span>
+                <span className="text body4Medium textPrimeryColor">Type</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -504,7 +519,7 @@ const InitialTemplate = () => {
                   }`}
               // onClick={() => handleSort("delivery")}
               >
-                <span className="text">Delivery %</span>
+                <span className="text body4Medium textPrimeryColor">Delivery %</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -535,7 +550,7 @@ const InitialTemplate = () => {
                   }`}
               // onClick={() => handleSort("response")}
               >
-                <span className="text">Response %</span>
+                <span className="text body4Medium textPrimeryColor">Response %</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -566,7 +581,7 @@ const InitialTemplate = () => {
                   }`}
               // onClick={() => handleSort("response")}
               >
-                <span className="text">Date</span>
+                <span className="text body4Medium textPrimeryColor">Date</span>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <BiSolidUpArrow
                     onClick={() => {
@@ -595,13 +610,17 @@ const InitialTemplate = () => {
               <h6
                 className={`col sort info ${sortingInfo.sortedBy === "response" ? "select" : ""
                   }`}
-              >      <span className="text">Action</span></h6>
+              >      <span className="text body4Medium textPrimeryColor">Action</span></h6>
             </div>
-            {templatesData?.results?.length === 0 && (
+            {isLoading &&  templatesData?.results?.length === 0 ? (
+              <div className="row body">
+                <p className="error">Loading...</p>
+              </div>
+            ) : templatesData?.results?.length === 0 ? (
               <div className="row body">
                 <p className="error">No Record Found!</p>
               </div>
-            )}
+            ) : null}
             {templatesData?.results?.map((data, i) => (
               <TableRow
                 key={i}
@@ -640,11 +659,12 @@ const InitialTemplate = () => {
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <div
               style={{
-                fontSize: "14px",
-                lineHeight: "22px",
-                fontWeight: 500,
-                color: "#333333",
+                // fontSize: "14px",
+                // lineHeight: "22px",
+                // fontWeight: 500,
+                // color: "#333333",
               }}
+              className="body4Medium textPrimeryColor"
             >
               Entries
             </div>
@@ -661,7 +681,8 @@ const InitialTemplate = () => {
         onOkay={() => {
           setSelectedDeleteId((p) => {
             dispatch(
-              deleteTemplate({ ...queryParams, _id: p, search: searchText })
+              deleteTemplate({ ...queryParams, _id: p, search: searchText } , "", (e)=> toast.error(e?.response?.data?.message)
+              )
             );
             return "";
           });
@@ -690,7 +711,7 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
         className="col2 data"
         style={{ paddingLeft: isOpen ? "1rem" : "0rem" }}
       >
-        <p style={{ color: "#777777", fontWeight: 500 }}>
+        <p style={{ fontWeight: 500 }} className="textSecondaryColor">
           {singleTemplate?.name}
         </p>
       </div>
@@ -720,18 +741,18 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
         </button>
       </div>
       <div className="col data">
-        <p style={{ color: "#777777" }}>{singleTemplate?.type}</p>
+        <p className="textSecondaryColor">{singleTemplate?.type}</p>
       </div>
       <div className="col data">
         <p
           style={{
             color: `${parseFloat(singleTemplate?.deliveredPercentage) <= 84
-                ? "#ff0000be"
-                : "inherit"
+              ? "#ff0000be"
+              : "inherit"
               }`,
             fontWeight: `${parseFloat(singleTemplate?.deliveredPercentage) <= 84
-                ? "600"
-                : "500"
+              ? "600"
+              : "500"
               }`,
           }}
         >
@@ -739,12 +760,12 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
         </p>
       </div>
       <div className="col data">
-        <p style={{ color: "#777777" }}>
+        <p className="textSecondaryColor">
           {parseFloat(singleTemplate?.responsePercentage).toFixed(2)}%
         </p>
       </div>
       <div className="col data">
-        <p style={{ color: "#777777" }}>
+        <p className="textSecondaryColor">
           {formatDate(singleTemplate?.createdAt)}
         </p>
       </div>
@@ -792,7 +813,7 @@ const TableRow = ({ onDelete, singleTemplate, user }) => {
                     className="item"
                     key={index}
                   >
-                    <span>{`Message ${index + 1}`}</span>
+                    <span className="body4Medium textPrimeryColor">{`Message ${index + 1}`}</span>
                     <div
                       className="itemInner"
                       style={{

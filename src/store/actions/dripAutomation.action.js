@@ -171,7 +171,7 @@ export const createDrip = (body) => {
       });
     } catch (error) {
       if (
-        error.response.data.message === "Session expired"
+        error.response.data.message === "Session expiredd"
       ) {
         localStorage.clear();
         dispatch({
@@ -304,7 +304,7 @@ export const deleteDrip = (id) => {
 //       // });
 //     } catch (error) {
 //       if (
-//         error.response.data.message === "Session expired"
+//         error.response.data.message === "Session expiredd"
 //       ) {
 //         localStorage.clear();
 //         dispatch({

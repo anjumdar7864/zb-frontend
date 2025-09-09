@@ -622,7 +622,7 @@ const ImportModal = ({ onClose }) => {
   return (
     <ImportModalStyled>
       <div className="top">
-        <h2>Import</h2>
+        <h2 >Import</h2>
       </div>
       <div className="middle" ref={dropRef}>
         <label className="center">

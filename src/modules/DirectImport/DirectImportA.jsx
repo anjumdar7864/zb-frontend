@@ -137,15 +137,19 @@ const DirectImportA = () => {
 
   return (
     <div style={{ height: "100%", overflow: "auto" , display:"flex" , flexDirection:"column" }}>
-      <div style={{paddingBottom:"40px" , height:"100%" , overflow:"none"}} className={styles.container}>
-        <div className={styles.top}>
-          <div className={styles.title}>Direct Import</div>
+      <div style={{paddingBottom:"8px" , height:"100%" , overflow:"none"}} className={styles.container}>
+        <div 
+        //  className={styles.top}
+        className="pageHeaderLayout"
+         
+         >
+          <div     className='body1SemiBold textPrimeryColor'>Direct Import</div>
           <div >
             <div style={{ display: "flex", gap: "10px" }}>
             {(user.role === 'admin' || user.permissions.includes('Search')) && (
               <div className={styles.searchContainer}>
                 <div style={{display:"flex" , alignItems:"center"}}>
-                <FiSearch size={22}/>
+                <FiSearch size={18}/>
                 </div>
                 <input
                   placeholder="Search for a user"
@@ -180,7 +184,7 @@ const DirectImportA = () => {
           style={{
             display: "flex",
             justifyContent: "space-between",
-            height: "56px",
+            height: "48px",
             backgroundColor: "white",
             border: '1px solid #E0E0E0', 
             borderEndEndRadius:"8px" , 

@@ -40,11 +40,11 @@ import axios from "axios";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { useGlobalContext } from "@/hooks";
+import HomeData from "@/data/HomeData.json";
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-
-const stripePromise = loadStripe(import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY?.replace(/\/$/, '') || "pk_test_51RbCRf2N3jMOC2OU3qoKdAKhRe2BIAgOPQctcgwrYVAqpkT5fQUTGOxoLsJte6CqPgsdW6OQjYLc7tlskoo7JoZO00xMTkKnRs");
-
+// const stripePromise = loadStripe("pk_live_51PmzGFRorqx9MnTUzqzIKat47ZUNfXoyxazeRRx3qtPsNLnXJYgm9G9fSuqHKfLqfz30myteo4Bbf3n3TJrEJFFu007rAXSszw");
+const stripePromise = loadStripe(import.meta.env.VITE_APP_STRIPE_PUBLISHABLE_KEY);
 
 export default function SignUp() {
   const dispatch = useDispatch();
@@ -108,7 +108,7 @@ export default function SignUp() {
   };
 
   const selectedSubcriptionData = location.state;
-  console.log("check selectedSubcriptionData", selectedSubcriptionData);
+ 
 
   useEffect(() => {
     // Scroll to the top when the component mounts
@@ -126,6 +126,8 @@ export default function SignUp() {
   ]);
   const [errors, setErrors] = useState({});
   const [clientSecret, setClientSecret] = useState("");
+  const [singleUserShadow, setSingleUserShadow] = useState(null);
+
   const [formData, setFormData] = useState({
     email: singleUser && id ? singleUser?.email : "",
     firstName: singleUser && id ? singleUser?.firstName : "",
@@ -155,8 +157,11 @@ export default function SignUp() {
       singleUser && id
         ? singleUser?.subscriptionId?.subscriptionType
         : selectedSubcriptionData?.subscriptionType,
-    url: import.meta.env.VITE_APP_FRONTEND_BASE_URL,
+    url: import.meta.env.VITE_APP_FRONTEND_BASE_URL || `https://app.zeitblast.com/#/create-password/`,
   });
+
+  
+  
 
   useEffect(() => {
     if (singleUser && userId) {
@@ -198,6 +203,7 @@ export default function SignUp() {
       return false;
     }
   };
+
 
   const submitRecord = async (data, step) => {
     setIsLoaderShowing(true);
@@ -300,6 +306,7 @@ export default function SignUp() {
         email: formData?.email,
         firstName: formData?.firstName,
         lastName: formData?.lastName,
+        phone: formData?.phoneNumber
       };
     } else {
       var body = {
@@ -308,6 +315,7 @@ export default function SignUp() {
         email: formData?.email,
         firstName: formData?.firstName,
         lastName: formData?.lastName,
+        phone: formData?.phoneNumber
       };
     }
 
@@ -365,8 +373,19 @@ export default function SignUp() {
     );
   };
 
+  const appearance = {
+    theme: "stripe",
+    rules: {
+      ".Label": {
+        color: "white", // 🎯 change label color here
+  
+      },
+    },
+  };
+
   const options = {
     clientSecret,
+    appearance ,
   };
 
   // Handle changes to the form inputs
@@ -507,7 +526,9 @@ export default function SignUp() {
     if (result.status == true) {
       setIsLoaderShowing(false);
       setFeedBackSending(false);
-      navigate("/Login");
+      // navigate("/Login");
+      // navigate("https://app.zeitblast.com/#/Login");
+      window.location.href = "https://app.zeitblast.com/#/Login";
     } else {
       toast.error(`${result?.message}`);
       setFeedBackSending(false);
@@ -531,6 +552,34 @@ export default function SignUp() {
       nextStep(); // Call nextStep function when Enter is pressed
     }
   };
+
+  const getMatchingCards = (subscriptionId) => {
+    return HomeData.pricing.cards.filter(
+      (card) => card.subscriptionId === subscriptionId
+    );
+  };
+
+
+  useEffect(() => {
+    if (!singleUser) return;
+
+    try {
+      const matchingCards = getMatchingCards(singleUser?.subscriptionId?._id);
+      if (matchingCards?.length > 0) {
+        const updatedUser = { ...singleUser };
+        if (updatedUser.subscriptionId) {
+          updatedUser.subscriptionId.features = matchingCards[0]?.features;
+        }
+        setSingleUserShadow(updatedUser);
+        // console.log("Updated user with matching features:", updatedUser);
+      }
+    } catch (error) {
+      console.error("Error fetching matching cards:", error);
+      // Consider adding toast notification or other error handling
+    }
+  }, [singleUser]);
+
+
 
   return (
     <>
@@ -606,13 +655,18 @@ export default function SignUp() {
 
               <StepContainer active={currentStep === 4}>
                 {clientSecret && (
-                  <Elements stripe={stripePromise} options={options}  key={clientSecret}>
+                  <Elements stripe={stripePromise} options={options} key={clientSecret}>
                     <Components.Signup.StepFour
                       prevStep={prevStep}
                       nextStep={nextStep}
                       formData={formData}
                       handlePayment={handlePayment}
                       handleChange={handleChange}
+                      // selectedSubcriptionData={
+                      //   userId == null
+                      //     ? selectedSubcriptionData
+                      //     : singleUserShadow?.subscriptionId
+                      // }
                       selectedSubcriptionData={
                         userId == null
                           ? selectedSubcriptionData

@@ -171,7 +171,7 @@ export const ResetTenetPaymentEmail = (body) => {
 //       });
 //     } catch (error) {
 //       if (
-//         error.response.data.message === "Session expired"
+//         error.response.data.message === "Session expiredd"
 //       ) {
 //         localStorage.clear();
 //         dispatch({
@@ -302,7 +302,7 @@ export const ActiveTenant = (body, id, onSuccess) => {
         payload: "Tenant has been activated",
       });
     } catch (error) {
-      if (error.response.data.message === "Session expired") {
+      if (error.response.data.message === "Session expiredd") {
         localStorage.clear();
         dispatch({
           type: authConstant.SESSION_EXPIRE,
