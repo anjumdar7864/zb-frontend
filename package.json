@@ -64,7 +64,7 @@
     "react-if": "^4.1.5",
     "react-infinite-scroll-component": "^6.1.0",
     "react-loader-spinner": "^5.4.5",
-    "react-media-hook": "^0.5.0",
+    "react-media-hook": "^0.5.1",
     "react-multi-date-picker": "^4.5.2",
     "react-phone-input-2": "^2.15.1",
     "react-pie-graph-chart": "^1.0.3",
