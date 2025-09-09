@@ -50,9 +50,11 @@ export const asyncAction = (
           type: actionNames.error,
           payload: error?.response?.data ?? error?.message,
         });
-        onError
-          ? onError(error)
-          : console.error(error?.response?.data?.message ?? error?.message);
+        if (onError) {
+          onError(error);
+        } else {
+          toast.error(error?.response?.data?.message ?? error?.message);
+        }
       }
       console.log(error);
     }
